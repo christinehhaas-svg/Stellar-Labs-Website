@@ -1,0 +1,35 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "export:claims-flyer": "node scripts/export-claims-flyer.mjs",
+    "test:claims-flyer-release": "node --test tests/claims-flyer-release.test.mjs",
+    "test:claims-flyer": "node --test tests/claims-flyer-nutrition.test.mjs",
+    "test:captures": "node --test tests/product-capture.test.mjs tests/capture-transaction.test.mjs tests/merchant-prices.test.mjs",
+    "test:handoff": "node --test tests/mixed-berry-source.test.mjs tests/package-size-serving.test.mjs tests/approved-website-copy.test.mjs tests/electrolyte-handoff.test.mjs tests/electrolyte-retirement.test.mjs tests/comparison-copy.test.mjs tests/one-pound-isolates.test.mjs tests/page-handoff.test.mjs",
+    "test:servings": "node --test tests/package-size-serving.test.mjs",
+    "test:homepage": "node scripts/check-browser-host.mjs && pnpm run test:homepage:parity && playwright test --config tests/homepage/playwright.config.ts",
+    "test:powders": "playwright test --config tests/homepage/playwright.config.ts powder-collections.spec.ts one-pound-isolates.spec.ts",
+    "test:isolates": "node --test tests/one-pound-isolates.test.mjs",
+    "test:browser-runner": "node --test tests/browser-runner.test.mjs",
+    "test:isolates:browser": "playwright test --config tests/homepage/playwright.config.ts one-pound-isolates.spec.ts",
+    "test:supplements:browser": "playwright test --config tests/homepage/playwright.config.ts supplement-purchase.spec.ts supplement-navigation.spec.ts supplement-filter-forced-colors.spec.ts",
+    "test:homepage:parity": "node --test tests/homepage/initializer-parity.test.mjs tests/homepage/brand-story.test.mjs",
+    "typecheck:homepage": "tsc --noEmit -p tests/homepage/tsconfig.json",
+    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
+    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "pnpm run typecheck:libs && pnpm run typecheck:homepage && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
+  },
+  "private": true,
+  "dependencies": {
+    "@replit/connectors-sdk": "^0.4.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "catalog:",
+    "prettier": "^3.9.6",
+    "typescript": "~5.9.3"
+  }
+}
