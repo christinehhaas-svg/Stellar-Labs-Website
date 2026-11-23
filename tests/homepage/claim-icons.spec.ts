@@ -5,6 +5,7 @@ import { expect, test } from "@playwright/test";
 const labels = [
   "Non-GMO",
   "Certified Gluten-Free",
+  "Third-Party Testedfor Heavy Metals",
   "Easy-to-Digest Ingredients",
   "rBGH-Free Whey",
 ];
@@ -107,14 +108,18 @@ for (const surface of [
     ];
     for (const { name, state } of states) {
       expect(state.labels, `${name}: all approved claims`).toEqual(labels);
-      expect(state.icons.map(icon => icon.count)).toEqual([1, 1, 1, 1]);
-      expect(state.icons.map(icon => icon.tag)).toEqual(["img", "img", "svg", "img"]);
-      expect(state.icons.map(icon => icon.meaning)).toEqual(["corn", "gluten-free", "stomach", "rbgh-whey"]);
+      expect(state.icons.map(icon => icon.count)).toEqual([1, 1, 1, 1, 1]);
+      expect(state.icons.map(icon => icon.tag)).toEqual(["img", "img", "svg", "svg", "img"]);
+      expect(state.icons.map(icon => icon.meaning)).toEqual(["corn", "gluten-free", "heavy-metals-testing", "stomach", "rbgh-whey"]);
       expect(state.icons[0].src).toBe(surface.corn);
       expect(state.icons[1].src).toBe(surface.gluten);
-      expect(state.icons[2].paths).toEqual(stomachPaths);
-      expect(state.icons[3].meaning).toBe("rbgh-whey");
-      expect(state.icons[3].tag).toBe("img");
+      expect(state.icons[2].paths).toEqual([
+        "M12 3h8M13 3v9L5.8 25a2.7 2.7 0 0 0 2.4 4h15.6a2.7 2.7 0 0 0 2.4-4L19 12V3M10 18h12",
+        "m12 23 3 3 5-5",
+      ]);
+      expect(state.icons[3].paths).toEqual(stomachPaths);
+      expect(state.icons[4].meaning).toBe("rbgh-whey");
+      expect(state.icons[4].tag).toBe("img");
       expect(state.retiredSlot).toEqual({ hidden: true, display: "none", children: 0 });
       expect(state.buildingCount).toBe(0);
       expect(state.hasFacilityClaim).toBe(false);

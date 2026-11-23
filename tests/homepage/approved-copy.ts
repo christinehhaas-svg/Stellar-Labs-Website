@@ -2,7 +2,7 @@
 // Change these expectations only when the merchant approves new homepage copy.
 export const approvedCopy = {
   announcement: "Subscribe & save 10%",
-  navigation: ["Whey Protein", "Vegan Protein", "Electrolytes", "Supplements", "Recipes & Books"],
+  navigation: ["Whey Protein", "Vegan Protein", "Electrolytes", "Supplements", "Recipes"],
   heading: "LEAN NUTRITION",
   tagline: "Make Every Calorie Count",
   formulaNote: "New Look, Same Formula",

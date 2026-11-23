@@ -45,6 +45,11 @@
       width: calc(100vw - 28px) !important;
       box-sizing: border-box;
     }
+    /* Compact rows also protect native keyboard return in a short outer
+       preview whose embedded document itself has a taller viewport. */
+    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation__links a {
+      padding-block: 4px !important;
+    }
     #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a {
       font-size: 16px !important;
     }
@@ -53,14 +58,6 @@
     }
     #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a.stellar-lean-navigation {
       font-size: 19px !important;
-    }
-  }
-  @media (max-width: 767px) and (orientation: landscape) {
-    /* Compact short supplement viewports so enlarged labels and their
-       rings remain exposed when rotating an open menu.
-       No resize-time scrolling or disclosure/focus changes are needed. */
-    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation__links a {
-      padding-block: 4px !important;
     }
   }
   @media (min-width: 768px) {
@@ -115,15 +112,15 @@
       max-width: 100% !important;
       overflow-x: auto !important;
     }
-    /* Enlarged supplement labels must reflow instead of being partly hidden
-       in the narrow desktop header's horizontal scroll area. */
-    body:has(#supplements-app-mount) #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links {
+    /* Every current label must reflow instead of being partly hidden in
+       the narrow desktop header's horizontal scroll area. */
+    #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links {
       grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
       /* Keep labels clear of the captured account control's hit area. */
       padding-inline-end: 1em !important;
       box-sizing: border-box;
     }
-    body:has(#supplements-app-mount) #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a {
+    #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a {
       white-space: normal !important;
       overflow-wrap: anywhere;
       min-width: 0;

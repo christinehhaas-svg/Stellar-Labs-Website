@@ -113,18 +113,14 @@ async function assertCollection(page: Page, family: Family, filter: Filter) {
   await expect(frame.locator(".sl-collection-heading")).not.toContainText(/\b\d+\s+formulas?\b/i);
   // Exact membership/order and both link affordances prevent cross-formula/flavor cards.
   await assertCompactCards(page, filter.products);
-  const claimsTitle = family === "whey" && filter.name !== "All whey"
-    ? filter.name === "Whey Protein Isolate" ? "Whey Protein Isolate" : "Whey Protein Blend"
-    : title;
-  const claims = frame.getByRole("region", { name: `${claimsTitle} quality callouts`, exact: true });
+  const claims = frame.getByRole("region", { name: `${title} quality callouts`, exact: true });
   const labels = claims.locator(".review-quality-claim > span");
   if (family === "vegan") {
     await expect(labels).toHaveText(veganCollectionClaims);
     // Scope to collection copy, not unrelated navigation/footer or original artwork.
     await assertNoForeignVeganClaims(frame.locator("#supplements-app-mount"));
   }
-  await assertFodmapFootnote(claims, collectionNotes[family],
-    family !== "whey" || filter.name !== "Whey Protein Blend");
+  await assertFodmapFootnote(claims, collectionNotes[family]);
   for (const claim of isolateClaims) {
     await expect(labels.filter({ hasText: claim })).toHaveCount(0);
   }
