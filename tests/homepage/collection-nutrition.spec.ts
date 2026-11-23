@@ -34,7 +34,7 @@ for (const width of [390, 1280]) {
         await expect(frame.locator(".sl-whey-nutrition-caption")).not.toContainText(["As low as"]);
         await expect(frame.locator(".review-quality-claim")).toHaveText([
           "Non-GMO", "Certified Gluten-Free",
-          "5 Major Electrolytes", "Vegan", "No Added Sugars", "Tested for Heavy Metals",
+          "5 Major Electrolytes", "Vegan", "No Added Sugars",
         ]);
         await expect(frame.locator(".sl-collection")).not.toContainText("Strawberry");
         await expect(frame.locator(".sl-product")).toHaveCount(1);
@@ -45,10 +45,10 @@ for (const width of [390, 1280]) {
         await expect(frame.getByRole("navigation", { name: "ELECTROLYTES filters" }).getByRole("link", { name: "Strawberry", exact: true })).toHaveCount(0);
         await expect(frame.locator(".review-quality-strip")).not.toContainText("rBGH");
       } else if (blend) {
-        await expect(frame.locator(".review-quality-claim")).toHaveText(["Easy-to-Digest Ingredients", "Tested for Heavy Metals"]);
+        await expect(frame.locator(".review-quality-claim")).toHaveText(["Easy-to-Digest Ingredients"]);
       } else {
         await expect(frame.locator(".review-quality-claim")).toHaveText([
-          "Non-GMO", "Certified Gluten-Free", "Tested for Heavy Metals",
+          "Non-GMO", "Certified Gluten-Free",
         ]);
       }
       if (!blend) await assertFodmapFootnote(frame.locator(".review-quality-strip"),
@@ -61,7 +61,7 @@ for (const width of [390, 1280]) {
     await expect(frame.locator(".sl-whey-nutrition dt")).toHaveText(["Calories", "Protein", "Carbs", "Sugar"]);
     await expect(frame.locator(".sl-whey-nutrition-value")).toHaveText(["110", "26g", "1g", "0g"]);
     await expect(frame.locator(".sl-whey-nutrition-caption")).toHaveText(["As low as", "Up to", "As low as", "As low as"]);
-    await expect(frame.locator(".review-quality-claim")).toHaveText(["Tested for Heavy Metals"]);
+    await expect(frame.locator(".review-quality-strip")).toHaveCount(0);
     await page.goto("/?category=100-isolate-whey-protein");
     await expect(frame.locator(".sl-whey-nutrition")).toHaveCount(0);
     await expect(frame.locator(".review-quality-claim")).toHaveText(wheyClaimLabels);

@@ -10,6 +10,7 @@ export const modules: ModuleMap = {
   "./components/mockups/infographics/StellarWheyFlyer.tsx": () => import("../components/mockups/infographics/StellarWheyFlyer.tsx"),
   "./components/mockups/stellar-labs/ElectrolyteLemonLime.tsx": () => import("../components/mockups/stellar-labs/ElectrolyteLemonLime.tsx"),
   "./components/mockups/stellar-labs/ElectrolyteStrawberry.tsx": () => import("../components/mockups/stellar-labs/ElectrolyteStrawberry.tsx"),
+  "./components/mockups/stellar-labs/Faqs.tsx": () => import("../components/mockups/stellar-labs/Faqs.tsx"),
   "./components/mockups/stellar-labs/Homepage.tsx": () => import("../components/mockups/stellar-labs/Homepage.tsx"),
   "./components/mockups/stellar-labs/PowderCollectionPage.tsx": () => import("../components/mockups/stellar-labs/PowderCollectionPage.tsx"),
   "./components/mockups/stellar-labs/PowderElectrolytes.tsx": () => import("../components/mockups/stellar-labs/PowderElectrolytes.tsx"),

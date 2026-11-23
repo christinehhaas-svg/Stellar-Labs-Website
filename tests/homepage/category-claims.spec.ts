@@ -19,10 +19,9 @@ for (const surface of [
           : /^(Vegan|Vegetarian|Sweetened with Stevia)/.test(text) ? "leaf"
           : text === "No Added Sugars" ? "sugar"
           : /^rBGH-Free/.test(text) ? "milk" : "check";
-        const icon = /^Tested for Heavy Metals/.test(text) ? "testing" : expected;
         expect(text).not.toContain(" · ");
         await expect(badge.locator("[data-claim-icon]")).toHaveCount(1);
-        await expect(badge.locator("[data-claim-icon]")).toHaveAttribute("data-claim-icon", icon);
+        await expect(badge.locator("[data-claim-icon]")).toHaveAttribute("data-claim-icon", expected);
         await expect(badge).toBeVisible();
       }
     }
@@ -42,7 +41,6 @@ for (const surface of [
       ["Vegan", "leaf"], ["Certified Gluten-Free", "gluten-free"], ["Non-GMO", "corn"],
       ["Easy-to-Digest Ingredients", "stomach"], ["No Added Sugars", "sugar"],
       ["Certified Gluten-Free · except Night Time Fat Burn", "gluten-free"],
-      ["Tested for Heavy Metals", "testing"],
     ]);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });

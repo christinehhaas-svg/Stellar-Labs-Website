@@ -1,0 +1,48 @@
+#header-group, .header-section { position: relative !important; top: auto !important; }
+#supplements-app-mount .sl-faqs-page { background: #fff; color: #23201f; }
+#supplements-app-mount .sl-faqs-title { padding: 32px 24px; border-bottom: 5px solid #111; text-align: center; }
+#supplements-app-mount .sl-faqs-title h1 { margin: 0; font-size: clamp(28px, 3vw, 34px); font-weight: 700; line-height: 1.25; letter-spacing: 0; text-transform: uppercase; }
+#supplements-app-mount .sl-faqs-title p { margin: 10px auto 0; max-width: 620px; color: #4c4c4c; font-size: 15px; font-weight: 500; line-height: 1.6; }
+#supplements-app-mount .sl-faqs-body { max-width: 880px; margin: 0 auto; padding: 48px 24px 72px; font-size: 15px; font-weight: 500; line-height: 1.75; }
+#supplements-app-mount .sl-faqs-list { border-top: 1px solid #d9d6d2; }
+#supplements-app-mount .sl-faq { border-bottom: 1px solid #d9d6d2; }
+#supplements-app-mount .sl-faq > summary {
+  display: grid; grid-template-columns: 34px minmax(0, 1fr) 20px; align-items: center; gap: 14px;
+  min-height: 44px; padding: 20px 4px; cursor: pointer; list-style: none;
+  font-size: 18px; font-weight: 700; line-height: 1.4; color: #23201f;
+}
+#supplements-app-mount .sl-faq > summary::-webkit-details-marker { display: none; }
+#supplements-app-mount .sl-faq-num { font-size: 12px; font-weight: 700; letter-spacing: .08em; color: #08758c; font-variant-numeric: tabular-nums; }
+#supplements-app-mount .sl-faq-icon { position: relative; width: 14px; height: 14px; justify-self: end; }
+#supplements-app-mount .sl-faq-icon::before, #supplements-app-mount .sl-faq-icon::after {
+  content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 2px; background: currentColor; transition: transform 160ms ease;
+}
+#supplements-app-mount .sl-faq-icon::after { transform: rotate(90deg); }
+#supplements-app-mount .sl-faq[open] .sl-faq-icon::after { transform: rotate(0deg); }
+#supplements-app-mount .sl-faq > summary:hover .sl-faq-q { text-decoration: underline; text-underline-offset: 4px; }
+#supplements-app-mount .sl-faq > summary:focus-visible { outline: 2px solid #08758c; outline-offset: 2px; }
+#supplements-app-mount .sl-faq-answer { padding: 0 38px 22px 52px; color: #3a3735; }
+#supplements-app-mount .sl-faq-answer p { margin: 0 0 14px; }
+#supplements-app-mount .sl-faq-answer p:last-child { margin-bottom: 0; }
+#supplements-app-mount .sl-faq-answer ul { margin: 0 0 14px; padding-left: 20px; }
+#supplements-app-mount .sl-faq-answer a, #supplements-app-mount .sl-faqs-help a { color: #08758c; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+#supplements-app-mount .sl-faq-answer a:focus-visible, #supplements-app-mount .sl-faqs-help a:focus-visible { outline: 2px solid #08758c; outline-offset: 4px; }
+#supplements-app-mount .sl-faqs-help { margin-top: 44px; padding: 26px 24px; background: #f4f6f6; border-left: 5px solid #111; }
+#supplements-app-mount .sl-faqs-help h2 { margin: 0 0 6px; font-size: 20px; font-weight: 700; text-transform: uppercase; }
+#supplements-app-mount .sl-faqs-help p { margin: 0; }
+@media (max-width: 700px) {
+  #supplements-app-mount .sl-faqs-title { padding: 24px 18px; }
+  #supplements-app-mount .sl-faqs-body { padding: 28px 18px 48px; line-height: 1.7; }
+  #supplements-app-mount .sl-faq > summary { grid-template-columns: 26px minmax(0, 1fr) 16px; gap: 10px; font-size: 16px; padding: 16px 2px; }
+  #supplements-app-mount .sl-faq-answer { padding: 0 4px 20px 38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #supplements-app-mount .sl-faq-icon::before, #supplements-app-mount .sl-faq-icon::after { transition: none; }
+}
+#supplements-app-mount .sl-faq--featured { background: #f4f6f6; border-left: 5px solid #111; }
+#supplements-app-mount .sl-faq--featured > summary { padding-left: 14px; font-size: 20px; }
+#supplements-app-mount .sl-faq--featured .sl-faq-answer { padding-left: 62px; font-size: 17px; font-weight: 700; color: #23201f; }
+@media (max-width: 700px) {
+  #supplements-app-mount .sl-faq--featured > summary { padding-left: 10px; font-size: 17px; }
+  #supplements-app-mount .sl-faq--featured .sl-faq-answer { padding-left: 46px; font-size: 16px; }
+}

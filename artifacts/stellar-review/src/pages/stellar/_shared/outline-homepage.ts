@@ -1,5 +1,4 @@
-import { commonProductQuality, heavyMetalsTestingClaim } from "./quality-claims";
-import { testingArtwork } from "./claim-icons";
+import { commonProductQuality } from "./quality-claims";
 
 /** Collection-level wording must not imply every claim applies to every SKU. */
 export function initializeOutlineHomepage(doc: Document, localUrl: (path: string) => string) {
@@ -74,7 +73,6 @@ export function initializeOutlineHomepage(doc: Document, localUrl: (path: string
     "Easy-to-Digest Ingredients",
     "rBGH-Free Whey",
     "", // Retired GLP-1 Friendly claim.
-    heavyMetalsTestingClaim,
   ];
   const container = callouts[0]?.parentElement;
   if (!container) return;
@@ -119,19 +117,6 @@ export function initializeOutlineHomepage(doc: Document, localUrl: (path: string
       return;
     }
     if (!statements[index]) { callout.remove(); return; }
-    if (statements[index] === heavyMetalsTestingClaim) {
-      callout.hidden = false;
-      callout.style.removeProperty("display");
-      const artwork = doc.createElement("div");
-      artwork.innerHTML = testingArtwork;
-      const icon = artwork.firstElementChild!;
-      icon.setAttribute("aria-hidden", "true");
-      icon.setAttribute("focusable", "false");
-      icon.setAttribute("data-stellar-icon", "heavy-metals");
-      const label = doc.createElement("span");
-      label.textContent = heavyMetalsTestingClaim;
-      callout.replaceChildren(icon, label);
-    }
     if (statements[index] === "rBGH-Free Whey") {
       callout.hidden = false;
       callout.style.removeProperty("display");

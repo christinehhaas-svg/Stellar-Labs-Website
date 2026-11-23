@@ -3,10 +3,12 @@ export const reviewAsset = (path: string) => path;
 export const reviewUrl = (route: string) => route;
 
 import { initializeTopNavigation } from "../../../../../stellar-review/src/pages/stellar/_shared/top-navigation";
+import { ensureFaqFooterLink } from "../../../../../stellar-review/src/pages/stellar/_shared/footer-faq-link";
 
 export function initializeReviewLinks(doc: Document) {
   restoreCategoryNavigation(doc);
   initializeTopNavigation(doc, reviewUrl);
+  ensureFaqFooterLink(doc);
   // The removed Shopify accordion runtime normally opens these desktop menus.
   // Start expanded so the footer remains visible and usable without that script.
   for (const menu of doc.querySelectorAll<HTMLDetailsElement>("footer details")) menu.open = true;
@@ -20,6 +22,8 @@ export function initializeReviewLinks(doc: Document) {
     "Store Locator": "/pages/store-locator",
     "About": "/pages/about-us",
     "Contact Us": "/pages/contact",
+    "FAQs": "/pages/faqs",
+    "FAQ": "/pages/faqs",
     "Shipping & Policies": "/pages/shipping-information",
     "Refund policy": "/pages/shipping-information",
     "Shipping policy": "/pages/shipping-information",

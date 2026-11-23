@@ -1,4 +1,5 @@
 import { initializeTopNavigation } from "./_shared/top-navigation";
+import { ensureFaqFooterLink } from "./_shared/footer-faq-link";
 
 /** The review website owns its assets and routes; it never depends on Canvas URLs. */
 export function reviewUrl(route: string) {
@@ -16,6 +17,7 @@ export function reviewAsset(capturedPath: string) {
 export function initializeReviewLinks(doc: Document) {
   restoreCategoryNavigation(doc);
   initializeTopNavigation(doc, reviewUrl);
+  ensureFaqFooterLink(doc);
   // The removed Shopify accordion runtime normally opens these desktop menus.
   // Start expanded so the footer remains visible and usable without that script.
   for (const menu of doc.querySelectorAll<HTMLDetailsElement>("footer details")) menu.open = true;
@@ -35,6 +37,8 @@ export function initializeReviewLinks(doc: Document) {
     "Store Locator": "/pages/store-locator",
     "About": "/pages/about-us",
     "Contact Us": "/pages/contact",
+    "FAQs": "/pages/faqs",
+    "FAQ": "/pages/faqs",
     "Shipping & Policies": "/pages/shipping-information",
     "Refund policy": "/pages/shipping-information",
     "Shipping policy": "/pages/shipping-information",

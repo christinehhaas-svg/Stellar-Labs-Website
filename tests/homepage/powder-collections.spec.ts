@@ -123,13 +123,14 @@ async function assertCollection(page: Page, family: Family, filter: Filter) {
     // Scope to collection copy, not unrelated navigation/footer or original artwork.
     await assertNoForeignVeganClaims(frame.locator("#supplements-app-mount"));
   }
-  await assertFodmapFootnote(claims, collectionNotes[family]);
+  if (family === "whey" && filter.name === "Whey isolate") await expect(claims).toHaveCount(0);
+  else await assertFodmapFootnote(claims, collectionNotes[family]);
   for (const claim of isolateClaims) {
     await expect(labels.filter({ hasText: claim })).toHaveCount(0);
   }
   if (family === "whey") {
     await expect(labels).toHaveText(filter.name === "All whey" ? wheyClaimLabels
-      : filter.name === "Whey blends" ? ["Easy-to-Digest Ingredients", "Tested for Heavy Metals"] : ["Tested for Heavy Metals"]);
+      : filter.name === "Whey blends" ? ["Easy-to-Digest Ingredients"] : []);
     const values = frame.locator(".sl-whey-nutrition-value");
     if (filter.name === "Whey isolate") {
       await expect(values).toHaveText(["110", "26g", "1g", "0g"]);
@@ -143,7 +144,7 @@ async function assertCollection(page: Page, family: Family, filter: Filter) {
     else await expect(values).toHaveCount(0);
   }
   if (family === "electrolyte") {
-    await expect(labels).toHaveText(["Non-GMO", "Certified Gluten-Free", "5 Major Electrolytes", "Vegan", "No Added Sugars", "Tested for Heavy Metals"]);
+    await expect(labels).toHaveText(["Non-GMO", "Certified Gluten-Free", "5 Major Electrolytes", "Vegan", "No Added Sugars"]);
     await expect(frame.locator(".sl-collection")).not.toContainText("Strawberry");
     await expect(frame.locator(".sl-whey-nutrition dt")).toHaveText(["Calories", "Potassium", "Magnesium", "Calcium", "Sodium"]);
     await expect(frame.locator(".sl-whey-nutrition-value")).toHaveText(["5", "280mg", "51mg", "47mg", "80mg"]);

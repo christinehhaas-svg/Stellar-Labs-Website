@@ -2,7 +2,6 @@ import { PersonStanding, CheckCircle2, FlaskConical, Leaf, CandyOff } from "luci
 import { reviewAsset } from "../review-links";
 import styles from "../_quality-callouts.css?inline";
 import { claimIcon, stomachArtwork, type ClaimIcon } from "./claim-icons";
-import { heavyMetalsTestingClaim } from "./quality-claims";
 
 export type QualityCallout = {
   label: string;
@@ -14,7 +13,6 @@ export type QualityCallout = {
 export function qualityCallouts(statements: string[]): QualityCallout[] {
   const claims = statements.flatMap(statement => statement.split(/\s*·(?!\s*except\b)\s*/i))
     .filter(claim => !/^Tested for Heavy Metals\b/i.test(claim));
-  claims.push(heavyMetalsTestingClaim);
   return claims.map((statement) => {
     const label = statement.replace(/^Tested for Heavy Metals:.*$/, "Tested for Heavy Metals")
       .replace(/^Certified Gluten-Free[*†‡]+$/, "Certified Gluten-Free")

@@ -231,12 +231,6 @@ function PowderCollection({ category }: { category: PowderCollection }) {
             .sl-electrolyte-collection-claims .review-quality-strip>p{max-width:80%;margin-right:0}
           }
         `}</style>}
-        {category === "whey" && filter === "isolate" && <QualityCallouts
-          listing
-          items={qualityCallouts([])}
-          label="Whey Protein Isolate quality callouts"
-          note=""
-        />}
         {category === "whey" && filter === "blend" && <QualityCallouts
           listing
           items={qualityCallouts(["Easy-to-Digest Ingredients"])}

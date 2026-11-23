@@ -25,11 +25,11 @@ export const vegan = [
   { component: "VeganVanilla", handle: "vanilla-vegan-shake", title: "Vanilla Vegan Plant Protein Shake 2lb", flavor: "Vanilla", formula: "vegan" },
 ] as const;
 export const veganCollectionClaims = [
-  "Non-GMO", "Certified Gluten-Free", "Tested for Heavy Metals",
+  "Non-GMO", "Certified Gluten-Free",
 ];
 export const veganProductClaims = [
   "Certified Gluten-Free", "Non-GMO",
-  "Vegan", "Sweetened with Stevia", "Tested for Heavy Metals",
+  "Vegan", "Tested for Heavy Metals", "Sweetened with Stevia",
 ];
 export type Product = (typeof whey)[number] | (typeof electrolytes)[number] | (typeof vegan)[number];
 export function collectionRepresentatives(products: readonly Product[]) {
@@ -58,7 +58,7 @@ export const filters = {
 export type Filter = (typeof filters)[Family][number];
 
 export const wheyClaimLabels = [
-  "Non-GMO", "Certified Gluten-Free", lowFodmap, "rBGH-Free Whey", "No Added Sugars", "Tested for Heavy Metals",
+  "Non-GMO", "Certified Gluten-Free", lowFodmap, "rBGH-Free Whey", "No Added Sugars",
 ];
 export function reviewPath(family: Family, filter: Filter) {
   const category = family === "whey" ? "100-isolate-whey-protein"
