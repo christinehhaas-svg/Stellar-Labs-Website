@@ -1,0 +1,42 @@
+.stellar-handoff{margin:0;background:#e8e5e1;color:#23201f;font-family:Arial,sans-serif;line-height:1.4}
+.stellar-handoff *{box-sizing:border-box}
+.handoff-page{width:816px;height:1056px;padding:36px 42px;background:#fff;overflow:hidden;break-after:page}
+.handoff-page:last-child{break-after:auto}
+.handoff-header{margin-bottom:22px}
+.handoff-top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d9d5d1;padding-bottom:13px;margin-bottom:16px}
+.handoff-top strong{font-size:26px;letter-spacing:2px;line-height:1}
+.handoff-top strong span{display:inline-block;font-size:10px;letter-spacing:1px;margin-left:7px}
+.handoff-top>span{font-size:9px;letter-spacing:.8px;color:#78716c}
+.handoff-eyebrow{color:#087e91!important;text-transform:uppercase;font-size:10px!important;font-weight:700;letter-spacing:1.3px;margin:0 0 7px!important}
+.handoff-header h1{font-size:33px;line-height:1.1;letter-spacing:-1px;white-space:pre-line;margin:0 0 10px;font-weight:700}
+.handoff-header>p:last-child{font-size:12px;line-height:1.5;margin:0;color:#615b57;max-width:650px}
+.handoff-category{margin-bottom:18px}
+.handoff-category-heading{display:flex;justify-content:space-between;align-items:center;height:52px;margin-bottom:9px}
+.handoff-category-heading>div{position:relative;padding-left:36px}
+.handoff-number{position:absolute;left:0;top:4px;font-size:13px;font-weight:700;color:#0798a9}
+.handoff-category-heading h2{font-size:20px;line-height:1.2;margin:0 0 4px;font-weight:700}
+.handoff-category-heading p{font-size:10px;color:#78716c;margin:0}
+.handoff-category-heading>img{width:58px;height:58px;object-fit:contain}
+.handoff-claims{background:#23201f;padding:16px 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 18px;color:#fff}
+.handoff-claim{display:flex;align-items:center;gap:8px;font-size:11px;line-height:1.35;font-weight:700;min-height:25px}
+.handoff-claim img,.handoff-claim svg{width:23px;height:23px;object-fit:contain;flex:none;color:#00a8b8}
+.handoff-category>p{font-size:10px;line-height:1.5;margin:8px 0 0;color:#615b57}
+.handoff-footer{font-size:10px;line-height:1.5;color:#615b57;border-top:1px solid #ddd8d3;padding-top:12px;margin-top:15px}
+.handoff-footer>div{display:flex;justify-content:space-between;gap:15px;font-size:8px;letter-spacing:.6px;margin-top:11px;color:#78716c}
+.handoff-appendix .handoff-header{margin-bottom:16px}
+.handoff-appendix .handoff-header h1{font-size:30px}
+.handoff-copy-section{margin-bottom:12px}
+.handoff-copy-section h2{font-size:18px;font-weight:700;margin:0 0 7px;display:flex;justify-content:space-between;align-items:center}
+.handoff-copy-section h2 span{font-size:10px;font-weight:400;color:#78716c}
+.handoff-copy-section p{font-size:10px;line-height:1.5;color:#615b57;margin:6px 0 0}
+.handoff-copy-section .handoff-copy-line{padding:10px 12px;background:#eef7f7;border-left:3px solid #00a8b8;color:#23201f;font-size:10px;font-weight:700;line-height:1.55;margin:0 0 9px}
+.handoff-copy-section table{width:100%;border-collapse:collapse;font-size:10px;margin:8px 0}
+.handoff-copy-section th{text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:.5px;background:#f3f1ee}
+.handoff-copy-section td,.handoff-copy-section th{padding:4px 9px;border-bottom:1px solid #e6e1dc;vertical-align:top;line-height:1.35}
+.handoff-copy-section td:first-child{width:39%;font-weight:600}
+.handoff-rules{background:#f5f3f0;padding:12px 15px;margin-top:10px;border:1px solid #e8e3dd}
+.handoff-rules h3{font-size:12px;font-weight:700;margin:0 0 6px}
+.handoff-rules p{font-size:10px;color:#615b57;line-height:1.5;margin:6px 0 0}
+.handoff-appendix .handoff-footer{padding-top:0;margin-top:10px}
+@page{size:letter;margin:0}
+@media print{html,body{margin:0!important;padding:0!important;background:#fff!important}.stellar-handoff{background:#fff}.handoff-page{print-color-adjust:exact;-webkit-print-color-adjust:exact}}

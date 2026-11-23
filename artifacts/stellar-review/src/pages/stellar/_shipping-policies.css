@@ -1,0 +1,32 @@
+#header-group, .header-section { position: relative !important; top: auto !important; }
+#supplements-app-mount .sl-shipping-page { background: #fff; color: #23201f; }
+#supplements-app-mount .sl-shipping-title { padding: 32px 24px; border-bottom: 5px solid #111; text-align: center; }
+#supplements-app-mount .sl-shipping-title h1 { margin: 0; font-size: clamp(28px, 3vw, 34px); font-weight: 700; line-height: 1.25; letter-spacing: 0; text-transform: uppercase; }
+#supplements-app-mount .sl-shipping-body { max-width: 1200px; margin: 0 auto; padding: 54px 24px 72px; font-size: 15px; font-weight: 500; line-height: 1.75; }
+#supplements-app-mount .sl-shipping-body section + section { margin-top: 38px; }
+#supplements-app-mount .sl-shipping-body h2 { margin: 0 0 12px; font-size: 28px; font-weight: 700; line-height: 1.3; letter-spacing: 0; text-transform: uppercase; }
+#supplements-app-mount .sl-shipping-body h3 { margin: 26px 0 10px; font-size: 17px; font-weight: 700; line-height: 1.4; letter-spacing: 0; text-transform: none; }
+#supplements-app-mount .sl-shipping-body p { margin: 0 0 22px; }
+#supplements-app-mount .sl-shipping-body ul { padding-left: 22px; margin: 0 0 22px; }
+#supplements-app-mount .sl-shipping-body li { margin: 4px 0; }
+#supplements-app-mount .sl-shipping-body a { color: #08758c; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+#supplements-app-mount .sl-shipping-body a:focus-visible { outline: 2px solid #08758c; outline-offset: 4px; }
+#supplements-app-mount .sl-shipping-intro { color: #4c4c4c; }
+#supplements-app-mount .sl-information-photo-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  gap: 36px;
+  align-items: start;
+}
+#supplements-app-mount .sl-information-photo { margin: 0; }
+#supplements-app-mount .sl-information-photo img { display: block; width: 100%; height: auto; }
+#supplements-app-mount .sl-shipping-photo-intro { margin-bottom: 32px; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: center; }
+#supplements-app-mount .sl-shipping-photo-intro > div { text-align: center; }
+#supplements-app-mount .sl-shipping-photo-intro > div p:last-child { margin-bottom: 0; }
+#supplements-app-mount .sl-shipping-photo-intro > .sl-information-photo { width: min(100%, 420px); justify-self: center; }
+@media (max-width: 700px) {
+  #supplements-app-mount .sl-information-photo-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  #supplements-app-mount .sl-shipping-title { padding: 24px 18px; }
+  #supplements-app-mount .sl-shipping-body { padding: 30px 20px 48px; font-size: 15px; line-height: 1.7; }
+  #supplements-app-mount .sl-shipping-body h2 { font-size: 24px; }
+}

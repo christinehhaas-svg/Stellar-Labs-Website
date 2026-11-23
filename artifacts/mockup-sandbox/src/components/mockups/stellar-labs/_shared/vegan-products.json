@@ -1,0 +1,52 @@
+[
+  {
+    "component": "VeganChocolate",
+    "handle": "chocolate-vegan-shake",
+    "formula": "vegan",
+    "flavor": "Chocolate",
+    "size": "2lb",
+    "title": "Chocolate Vegan Protein · 2 lb",
+    "price": 6495,
+    "source": "https://www.stellarlabsnutrition.com/products/chocolate-vegan-shake",
+    "capturedAt": "2026-10-05T12:22:19.526Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-vegan/chocolate-vegan-shake-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_VeganShake_2LB_Chocolate-Front.png?v=1774538034"
+      },
+      {
+        "src": "/__mockup/images/stellar-vegan/chocolate-vegan-shake-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_VeganShake_2LB_Chocolate-Left.png?v=1774538112"
+      },
+      {
+        "src": "/__mockup/images/stellar-vegan/chocolate-vegan-shake-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_VeganShake_2LB_Chocolate-Right.png?v=1774538112"
+      }
+    ]
+  },
+  {
+    "component": "VeganVanilla",
+    "handle": "vanilla-vegan-shake",
+    "formula": "vegan",
+    "flavor": "Vanilla",
+    "size": "2lb",
+    "title": "Vanilla Vegan Protein · 2 lb",
+    "price": 6495,
+    "source": "https://www.stellarlabsnutrition.com/products/vanilla-vegan-shake",
+    "capturedAt": "2026-10-05T12:22:20.534Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-vegan/vanilla-vegan-shake-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_VeganShake_2LB_Vanilla-Front.png?v=1774538277"
+      },
+      {
+        "src": "/__mockup/images/stellar-vegan/vanilla-vegan-shake-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_VeganShake_2LB_Vanilla-Left.png?v=1774538393"
+      },
+      {
+        "src": "/__mockup/images/stellar-vegan/vanilla-vegan-shake-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_VeganShake_2LB_Vanilla-Right.png?v=1774538393"
+      }
+    ]
+  }
+]

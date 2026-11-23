@@ -1,0 +1,266 @@
+[
+  {
+    "component": "ProteinChocolateIsolate1lb",
+    "handle": "100-isolate-whey-protein-shake-chocolate-1lb",
+    "formula": "isolate",
+    "flavor": "Chocolate",
+    "size": "1lb",
+    "title": "Chocolate Whey Protein Isolate · 1 lb",
+    "price": 5295,
+    "available": false,
+    "variantId": null,
+    "source": "",
+    "capturedAt": "",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-proteins/chocolate-isolate-1lb-mockup.webp",
+        "original": ""
+      }
+    ],
+    "originalDescription": ""
+  },
+  {
+    "component": "ProteinVanillaIsolate1lb",
+    "handle": "100-isolate-whey-protein-shake-vanilla-1lb",
+    "formula": "isolate",
+    "flavor": "Vanilla",
+    "size": "1lb",
+    "title": "Vanilla Whey Protein Isolate · 1 lb",
+    "price": 5295,
+    "available": false,
+    "variantId": null,
+    "source": "",
+    "capturedAt": "",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-proteins/vanilla-isolate-1lb-mockup.webp",
+        "original": ""
+      }
+    ],
+    "originalDescription": ""
+  },
+  {
+    "component": "ProteinMixedBerry",
+    "handle": "100-isolate-whey-protein-shake-mixed-berry",
+    "formula": "isolate",
+    "flavor": "Mixed Berry",
+    "size": "1lb",
+    "title": "Mixed Berry Whey Protein Isolate · 1 lb",
+    "price": 5295,
+    "available": true,
+    "variantId": 47257439469742,
+    "source": "https://www.stellarlabsnutrition.com/products/100-isolate-whey-protein-shake-mixed-berry",
+    "capturedAt": "2026-10-05T10:10:05.161Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-mixed-berry-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_MixedBerry-Front_1024x1024_4be62f15-8b82-4112-a49f-ea6d73c4641b.png?v=1774721675"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-mixed-berry-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_MixedBerry-Left.png?v=1774721675"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-mixed-berry-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_MixedBerry-Right.png?v=1774721675"
+      }
+    ],
+    "originalDescription": "<p><strong>WHY STELLAR LABS® 100% ISOLATE WHEY PROTEIN POWDER?</strong></p>\n<p>Stellar Labs® 100% Isolate Whey Protein Powder – Mixed Berry keeps your metabolism functioning at its very best. This clean, high-quality protein is free of fillers and quickly delivers essential amino acids directly to your muscles. Enhanced with digestive enzymes for maximum absorption and low in sugar, one easy-to-mix serving provides as much protein as 3 ounces of meat, poultry, or fish.</p>\n<p>All Stellar Labs® 100% Isolate Whey Protein Powders are GLP-1, weight loss surgery, and IBS friendly—perfect for athletes, vegetarians, and anyone seeking additional protein sources. Easy on the digestive system and low in sugar, you can confidently reach your protein needs conveniently without stomach distress and empty calories. Enjoy the rich, smooth taste of mixed berry while fueling your fitness goals.</p>"
+  },
+  {
+    "component": "ProteinUnflavored",
+    "handle": "whey-protein-shake-unflavored",
+    "formula": "isolate",
+    "flavor": "Unflavored",
+    "size": "1lb",
+    "title": "Unflavored Whey Protein Isolate · 1 lb",
+    "price": 5295,
+    "available": true,
+    "variantId": 47255877484718,
+    "source": "https://www.stellarlabsnutrition.com/products/whey-protein-shake-unflavored",
+    "capturedAt": "2026-10-05T10:10:05.267Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-proteins/whey-protein-shake-unflavored-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_Unflavored-Front_1024x1024_a52461bc-ace0-4d41-b5ae-6faa03868809.png?v=1774721704"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/whey-protein-shake-unflavored-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_Unflavored-Left.png?v=1774721704"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/whey-protein-shake-unflavored-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_Unflavored-Right.png?v=1774721704"
+      }
+    ],
+    "originalDescription": "<p><strong>WHY STELLAR LABS® 100% ISOLATE WHEY PROTEIN POWDER?</strong></p>\n<p>Stellar Labs® 100% Isolate Whey Protein Powder – Unflavored keeps your metabolism functioning at its very best. This clean, high-quality protein is free of fillers and quickly delivers essential amino acids directly to your muscles. Enhanced with digestive enzymes for maximum absorption and low in sugar, one easy-to-mix serving provides as much protein as 3 ounces of meat, poultry, or fish.</p>\n<p>All Stellar Labs® 100% Isolate Whey Protein Powders are GLP-1, weight loss surgery, and IBS friendly—perfect for athletes, vegetarians, and anyone seeking additional protein sources. Easy on the digestive system and low in sugar, you can confidently reach your protein needs conveniently without stomach distress and empty calories.</p>"
+  },
+  {
+    "component": "ProteinVanillaIsolate",
+    "handle": "100-isolate-whey-protein-shake-vanilla",
+    "formula": "isolate",
+    "flavor": "Vanilla",
+    "size": "2lb",
+    "title": "Vanilla Whey Protein Isolate · 2 lb",
+    "price": 8995,
+    "available": true,
+    "variantId": 47255890329774,
+    "source": "https://www.stellarlabsnutrition.com/products/100-isolate-whey-protein-shake-vanilla",
+    "capturedAt": "2026-10-05T10:10:05.551Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-vanilla-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_2LB_Vanilla-Front.png?v=1774536104"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-vanilla-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_2LB_Vanilla-Left.png?v=1774536112"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-vanilla-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_2LB_Vanilla-Right.png?v=1774536112"
+      }
+    ],
+    "originalDescription": "<p><strong>WHY STELLAR LABS® 100% ISOLATE WHEY PROTEIN POWDER?</strong></p>\n<p>Stellar Labs® 100% Isolate Whey Protein Powder – Vanilla keeps your metabolism functioning at its very best. This clean, high-quality protein is free of fillers and quickly delivers essential amino acids directly to your muscles. Enhanced with digestive enzymes for maximum absorption and low in sugar, one easy-to-mix serving provides as much protein as 3 ounces of meat, poultry, or fish.</p>\n<p>All Stellar Labs® 100% Isolate Whey Protein Powders are GLP-1, weight loss surgery, and IBS friendly—perfect for athletes, vegetarians, and anyone seeking additional protein sources. Easy on the digestive system and low in sugar, you can confidently reach your protein needs conveniently without stomach distress and empty calories. Enjoy the rich, smooth taste of vanilla while fueling your fitness goals.</p>"
+  },
+  {
+    "component": "ProteinChocolateIsolate",
+    "handle": "100-isolate-whey-protein-shake-chocolate",
+    "formula": "isolate",
+    "flavor": "Chocolate",
+    "size": "2lb",
+    "title": "Chocolate Whey Protein Isolate · 2 lb",
+    "price": 8995,
+    "available": true,
+    "variantId": 47255900225710,
+    "source": "https://www.stellarlabsnutrition.com/products/100-isolate-whey-protein-shake-chocolate",
+    "capturedAt": "2026-10-05T10:10:05.599Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-chocolate-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_2LB_Chocolate-Front.png?v=1774536038"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-chocolate-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_2LB_Chocolate-Left.png?v=1774536072"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-chocolate-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_2LB_Chocolate-Right.png?v=1774536072"
+      }
+    ],
+    "originalDescription": "<p><strong>WHY STELLAR LABS® 100% ISOLATE WHEY PROTEIN POWDER?</strong></p>\n<p>Stellar Labs® 100% Isolate Whey Protein Powder – Chocolate keeps your metabolism functioning at its very best. This clean, high-quality protein is free of fillers and quickly delivers essential amino acids directly to your muscles. Enhanced with digestive enzymes for maximum absorption and low in sugar, one easy-to-mix serving provides as much protein as 3 ounces of meat, poultry, or fish.</p>\n<p>All Stellar Labs® 100% Isolate Whey Protein Powders are GLP-1, weight loss surgery, and IBS friendly—perfect for athletes, vegetarians, and anyone seeking additional protein sources. Easy on the digestive system and low in sugar, you can confidently reach your protein needs conveniently without stomach distress and empty calories. Enjoy the rich, smooth taste of chocolate while fueling your fitness goals.</p>"
+  },
+  {
+    "component": "ProteinCappuccino",
+    "handle": "100-isolate-whey-protein-shake-cappuccino",
+    "formula": "isolate",
+    "flavor": "Cappuccino",
+    "size": "1lb",
+    "title": "Cappuccino Whey Protein Isolate · 1 lb",
+    "price": 5295,
+    "available": true,
+    "variantId": 47670466904238,
+    "source": "https://www.stellarlabsnutrition.com/products/100-isolate-whey-protein-shake-cappuccino",
+    "capturedAt": "2026-10-05T10:10:05.280Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-cappuccino-front-verified.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_Cappuccino-Front_1024x1024.png"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-cappuccino-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_Cappuccino-Left.png?v=1774721615"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/100-isolate-whey-protein-shake-cappuccino-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_Cappuccino-Right.png?v=1774721615"
+      }
+    ],
+    "originalDescription": "<p><strong>WHY STELLAR LABS® 100% ISOLATE WHEY PROTEIN POWDER – CAPPUCCINO FLAVORED?</strong></p>\n<p>Stellar Labs® 100% Isolate Whey Protein Powder – Cappuccino Flavored keeps your metabolism functioning at its very best. This clean, high-quality protein is free of fillers and quickly delivers essential amino acids directly to your muscles. Enhanced with digestive enzymes for maximum absorption and low in sugar, one easy-to-mix serving provides as much protein as 3 ounces of meat, poultry, or fish.</p>\n<p>All Stellar Labs® 100% Isolate Whey Protein Powders are GLP-1, weight loss surgery, and IBS friendly—perfect for athletes, vegetarians, and anyone seeking additional protein sources. Easy on the digestive system and low in sugar, you can confidently reach your protein needs conveniently without stomach distress and empty calories. Enjoy the rich, smooth taste of cappuccino while fueling your fitness goals.</p>"
+  },
+  {
+    "component": "ProteinCaramelBlend",
+    "handle": "whey-protein-salted-caramel-shake",
+    "formula": "blend",
+    "flavor": "Caramel",
+    "size": "2lb",
+    "title": "Salted Caramel Whey Protein Blend · 2 lb",
+    "price": 7895,
+    "available": true,
+    "variantId": 29308191244333,
+    "source": "https://www.stellarlabsnutrition.com/products/whey-protein-salted-caramel-shake",
+    "capturedAt": "2026-10-05T10:10:05.356Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-proteins/whey-protein-salted-caramel-shake-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyShake_2LB_SaltedCaramel-Front.png?v=1774537096"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/whey-protein-salted-caramel-shake-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyShake_2LB_SaltedCaramel-Right.png?v=1774537096"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/whey-protein-salted-caramel-shake-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyShake_2LB_SaltedCaramel-Left.png?v=1774537097"
+      }
+    ],
+    "originalDescription": "<h3 style=\"float: left;\"><strong>How about a natural take on your everyday protein shake?</strong></h3>\n<h3 style=\"float: left;\"><span>Stellar Labs® whey protein contains NO GMO’s, synthetic colors, artificial sweeteners, or preservatives and packs 24 grams of protein per serving. Our shakes are flavored with only the best natural ingredients and sweetened with a touch of low-calorie Stevia. </span></h3>\n<p> </p>\n<p><strong>Why Stellar Labs Whey Protein?</strong></p>\n<p>Stellar Labs® Whey Protein is high in protein! Stellar Labs® Whey Protein is easy to digest. Our protein is absorbed immediately and delivers essential amino acids directly to your muscles to keep your metabolism functioning at its very best.*</p>\n<p><strong>Enjoy with Ease, No Blender Required!</strong></p>\n<p>Our formula mixes easily with liquid in a shaker, blender, or with a simple glass and spoon. You will not believe how great it tastes!</p>\n<p><strong>SUGGESTED USE:</strong></p>\n<p>Mix one rounded scoop with 6-8 ounces of water, milk or your favorite non-dairy beverage. Vary the amount of liquid for taste preference.</p>"
+  },
+  {
+    "component": "ProteinVanillaBlend",
+    "handle": "vanilla-whey-protein-shake",
+    "formula": "blend",
+    "flavor": "Vanilla",
+    "size": "2lb",
+    "title": "Vanilla Whey Protein Blend · 2 lb",
+    "price": 7895,
+    "available": true,
+    "variantId": 28808819585,
+    "source": "https://www.stellarlabsnutrition.com/products/vanilla-whey-protein-shake",
+    "capturedAt": "2026-10-05T10:10:05.477Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-proteins/vanilla-whey-protein-shake-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyShake_2LB_Vanilla-Front.png?v=1774538486"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/vanilla-whey-protein-shake-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyShake_2LB_Vanilla-Left.png?v=1774538497"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/vanilla-whey-protein-shake-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyShake_2LB_Vanilla-Right.png?v=1774538497"
+      }
+    ],
+    "originalDescription": "<h3><strong>How about a natural take on your everyday protein shake?</strong></h3>\n<h3>Stellar Labs cold-pressed whey protein contains no artificial flavors, colors, sweeteners or preservatives and packs 25g of protein per serving. Our shakes are flavored with only the best natural ingredients and sweetened with a touch of low-calorie Stevia.</h3>\n<p>The Stellar Labs Cold Pressed Whey Protein Chocolate and Vanilla Shake have 24-25 grams of Low Lactose Whey Protein, are Low in Sugar, Gluten Free, with nothing artificial and free of other ingredients including sugar alcohols that may trigger digestive discomfort. </p>\n<p><strong>Why Stellar Labs Cold-Pressed Whey?</strong></p>\n<p>It’s filled with active ingredients that provide antioxidant benefits, boost immune function and enhance muscle recovery and growth. The protein in Stellar Labs cold-pressed whey is absorbed immediately, delivering essential amino acids directly to your muscles, keeping your metabolism functioning at its very best. Enjoy with ease, no blender required! Our formula mixes easily with liquid in a shaker, blender, or with a simple glass and spoon. You will not believe how great it tastes!</p>\n<p><strong>SUGGESTED USE:</strong></p>\n<p>Mix one rounded scoop with 6-8 ounces of water or milk. Vary the amount of liquid for taste preference.</p>\n<p> </p>"
+  },
+  {
+    "component": "ProteinChocolateBlend",
+    "handle": "grass-fed-whey-chocolate-protein-shake",
+    "formula": "blend",
+    "flavor": "Chocolate",
+    "size": "2lb",
+    "title": "Chocolate Whey Protein Blend · 2 lb",
+    "price": 7895,
+    "available": true,
+    "variantId": 28737051905,
+    "source": "https://www.stellarlabsnutrition.com/products/grass-fed-whey-chocolate-protein-shake",
+    "capturedAt": "2026-10-05T10:10:05.656Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-proteins/grass-fed-whey-chocolate-protein-shake-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyShake_2LB_Chocolate-Front.png?v=1774538557"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/grass-fed-whey-chocolate-protein-shake-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyShake_2LB_Chocolate-Left.png?v=1774538579"
+      },
+      {
+        "src": "/__mockup/images/stellar-proteins/grass-fed-whey-chocolate-protein-shake-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyShake_2LB_Chocolate-Right.png?v=1774538579"
+      }
+    ],
+    "originalDescription": "<h3><strong>How about a natural take on your high protein shake?</strong></h3>\n<p>Stellar Labs cold-pressed whey protein contains:</p>\n<ul>\n<li>24g of protein per serving</li>\n<li>No sweeteners or preservatives</li>\n</ul>\n<p>Our shakes are flavored with only the best natural ingredients and sweetened with a touch of low-calorie Stevia.</p>\n<p>The Stellar Labs Cold Pressed Whey Protein Chocolate and Vanilla Shake have 24-25 grams of Low Lactose Whey Protein, are Low in Sugar, Gluten Free, with nothing artificial and free of other ingredients including sugar alcohols that may trigger digestive discomfort. </p>\n<p><strong>Why Stellar Labs Cold-Pressed Whey?</strong></p>\n<p>It’s filled with active ingredients that provide antioxidant benefits, boost immune function and enhance muscle recovery and growth. The protein in Stellar Labs cold-pressed whey is absorbed immediately, delivering essential amino acids directly to your muscles, keeping your metabolism functioning at its very best.</p>\n<p><strong>Enjoy with ease, no blender required</strong></p>\n<p>Our formula mixes easily with liquid in a shaker, blender, or with a simple glass and spoon. You will not believe how great it tastes!</p>\n<p><strong>SUGGESTED USE:</strong></p>\n<p>Mix one rounded scoop with 6-8 ounces of water or milk. Vary the amount of liquid for taste preference.</p>"
+  }
+]

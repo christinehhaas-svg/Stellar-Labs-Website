@@ -1,0 +1,63 @@
+name: Website browser checks
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-browsers-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  browser:
+    name: Website / ${{ matrix.browser }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    env:
+      CI: "true"
+      HOMEPAGE_TEST_STANDALONE: "1"
+      HOMEPAGE_TEST_BASE_URL: http://127.0.0.1:18080
+      HOMEPAGE_TEST_REPORTER: list,html
+      PLAYWRIGHT_HTML_OUTPUT_DIR: generated-artifacts/browser-report
+      PLAYWRIGHT_HTML_OPEN: never
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - name: Install locked workspace dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Install the matching browser and native libraries
+        run: pnpm exec playwright install --with-deps ${{ matrix.browser }}
+      - name: Check test types and source parity
+        run: |
+          pnpm typecheck:homepage
+          pnpm test:homepage:parity
+          pnpm test:browser-runner
+      - name: Run the existing browser coverage
+        run: pnpm exec playwright test --config tests/homepage/playwright.config.ts --project=${{ matrix.browser }}
+      - name: Retain browser report, screenshots, and traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-checks-${{ matrix.browser }}
+          path: |
+            generated-artifacts/browser-report
+            generated-artifacts/homepage-tests
+          if-no-files-found: warn
+          retention-days: 7

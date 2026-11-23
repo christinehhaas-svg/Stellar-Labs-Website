@@ -1,0 +1,37 @@
+#supplements-app-mount .sl-about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+#supplements-app-mount .sl-about-photo {
+  margin: 0;
+}
+#supplements-app-mount .sl-about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#supplements-app-mount .sl-about-founder {
+  margin-bottom: 24px;
+}
+#supplements-app-mount .sl-about-founder h2 {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 2.1vw, 28px);
+  line-height: 1.25;
+  color: #23201f;
+}
+#supplements-app-mount .sl-about-founder p {
+  margin: 0;
+  font-weight: 600;
+}
+@media (max-width: 700px) {
+  #supplements-app-mount .sl-about-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  #supplements-app-mount .sl-about-photo {
+    width: min(100%, 360px);
+    justify-self: center;
+  }
+}

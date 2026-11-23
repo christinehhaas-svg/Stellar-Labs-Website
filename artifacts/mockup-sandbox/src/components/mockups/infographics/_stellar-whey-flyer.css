@@ -1,0 +1,14 @@
+.whey-handoff .handoff-header{margin-bottom:19px}
+.whey-handoff .handoff-header h1{font-size:32px}
+.whey-formula{margin-bottom:20px}
+.whey-formula .handoff-category-heading{height:72px;margin-bottom:10px}
+.whey-formula .handoff-category-heading>img{height:74px;width:74px}
+.whey-formula-copy{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:13px}
+.whey-formula-copy h3{font-size:10px;text-transform:uppercase;letter-spacing:.6px;font-weight:700;color:#087e91;margin:0 0 6px}
+.whey-formula-copy ul{margin:0;padding-left:15px;font-size:11px;color:#615b57;line-height:1.5}
+.whey-formula-copy li{margin:0 0 4px}
+.whey-flavors{font-size:10px;color:#615b57;line-height:1.5;margin:10px 0 0;padding-top:8px;border-top:1px solid #e6e1dc}
+.whey-details{padding:11px 14px;background:#eef7f7;border-left:3px solid #00a8b8;font-size:10px;line-height:1.5;color:#615b57}
+.whey-details p{margin:0 0 4px}
+.whey-details p:last-child{margin:0}
+.whey-handoff .handoff-footer{font-size:10px;line-height:1.5;margin-top:14px}

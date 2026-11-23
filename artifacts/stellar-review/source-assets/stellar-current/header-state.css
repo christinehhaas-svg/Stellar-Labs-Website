@@ -1,0 +1,168 @@
+/*
+ * The Shopify header normally receives its initial visual state from the
+ * theme's header-component module. That module is intentionally absent from
+ * this read-only capture. Reproduce the captured first-frame state using the
+ * original header colors and logo treatment.
+ */
+#header-component {
+  --color-background-top-row: #23201f !important;
+  --color-background-bottom-row: #23201f !important;
+  --color-foreground: #fff !important;
+  --color-foreground-rgb: 255 255 255 !important;
+  --color-transparent-text: #fff !important;
+  --color-transparent-text-rgb: 255 255 255 !important;
+  --header-logo-display: block !important;
+  --header-logo-inverse-display: none !important;
+  color: #fff !important;
+  background-color: #23201f !important;
+}
+
+#header-component .header__row {
+  --color-foreground: #fff !important;
+  --color-foreground-rgb: 255 255 255 !important;
+  color: #fff !important;
+}
+
+#header-component .header__underlay-closed,
+#header-component .header__underlay-open {
+  --color-background-top-row: #23201f !important;
+  --color-background-bottom-row: #23201f !important;
+}
+
+#header-component .header-logo__image-container--original,
+#header-component .header-logo__image {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#header-component .header-actions__action,
+#header-component .menu-list__link {
+  color: #fff !important;
+}
+
+/* All original top-level links are visible in this read-only baseline. */
+#header-component overflow-list::part(more),
+#header-component overflow-list > [slot="more"] {
+  display: none !important;
+}
+
+/* Preserve the source theme's always-visible header without its scroll script. */
+#header-group {
+  display: block !important;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+#header-component[data-menu-style="menu"] .menu-list__list-item:not([slot="more"]) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Keep the shop categories visible even without the captured theme's menu runtime. */
+#header-component .header-menu {
+  display: none !important;
+}
+
+.stellar-shop-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 0 20px 16px;
+  background: #23201f;
+  color: #fff;
+  font-family: var(--font-heading--family), Inter, sans-serif;
+}
+
+.stellar-shop-navigation__heading {
+  display: none;
+  color: #32c0cb;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.stellar-shop-navigation__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 28px;
+  width: 100%;
+}
+
+.stellar-shop-navigation__links a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: var(--font-heading--weight, 500);
+  line-height: 1.4;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.stellar-shop-navigation__links a:hover,
+.stellar-shop-navigation__links a:focus-visible {
+  color: #32c0cb;
+  text-decoration: underline;
+}
+
+@media (min-width: 1000px) {
+  #header-component .header__row--top .header__columns {
+    grid-template-columns: auto minmax(0, 1fr) auto !important;
+    column-gap: 36px;
+    align-items: center;
+    padding-block: 24px;
+  }
+  #header-component .header__column--center {
+    width: 100%;
+    min-width: 0;
+  }
+  #header-component .header-menu-group,
+  #header-component .header__navigation-bar-row {
+    display: none !important;
+  }
+  #header-component .stellar-shop-navigation {
+    padding: 0;
+    gap: 10px;
+    width: 100%;
+  }
+  #header-component .stellar-shop-navigation__heading {
+    display: block;
+    line-height: 1.2;
+  }
+  #header-component .stellar-shop-navigation__links {
+    flex-wrap: nowrap;
+    gap: 18px;
+  }
+  #header-component .stellar-shop-navigation__links a {
+    font-size: clamp(10px, 0.97vw, 14px);
+  }
+}
+
+@media (max-width: 749px) {
+  #shopify-section-template--21473298907310__section_kBK3Vn .text-block--AdjNXUkxGc0tYRSttb__text_r4ePdQ h1 {
+    font-size: clamp(26px, 7.2vw, 38px);
+    line-height: 1.14;
+  }
+  .stellar-shop-navigation {
+    padding: 10px 12px 14px;
+  }
+  .stellar-shop-navigation__heading {
+    display: block;
+  }
+  .stellar-shop-navigation__links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px 4px;
+    text-align: center;
+  }
+  .stellar-shop-navigation__links a {
+    font-size: 11px;
+    white-space: normal;
+  }
+}

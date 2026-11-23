@@ -1,0 +1,23 @@
+[
+  {
+    "handle": "supplements-lemon-lime-electrolyte-powder",
+    "title": "Lemon Lime Electrolytes",
+    "price": 2999,
+    "available": true,
+    "variants": [{ "id": 101 }],
+    "images": [
+      "https://fixture.invalid/lemon-front.png",
+      "https://fixture.invalid/lemon-new-panel.png"
+    ],
+    "description": "Fixture lemon description"
+  },
+  {
+    "handle": "strawberry-electrolyte-powder",
+    "title": "Strawberry Electrolytes",
+    "price": 3499,
+    "available": true,
+    "variants": [{ "id": 102 }],
+    "images": ["https://fixture.invalid/strawberry-front.png"],
+    "description": "Fixture strawberry description"
+  }
+]

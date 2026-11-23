@@ -1,0 +1,59 @@
+[
+  {
+    "component": "ElectrolyteLemonLime",
+    "handle": "supplements-lemon-lime-electrolyte-powder",
+    "formula": "electrolyte",
+    "flavor": "Lemon Lime",
+    "size": "30 servings",
+    "title": "Lemon Lime Electrolyte Powder",
+    "price": 3195,
+    "available": true,
+    "variantId": 29308327624749,
+    "source": "https://www.stellarlabsnutrition.com/products/supplements-lemon-lime-electrolyte-powder",
+    "capturedAt": "2026-10-05T10:21:48.562Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-electrolytes/supplements-lemon-lime-electrolyte-powder-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_ElectrolytePowder_SugarFree_LemonLime-Front.png?v=1774888827"
+      },
+      {
+        "src": "/__mockup/images/stellar-electrolytes/supplements-lemon-lime-electrolyte-powder-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_ElectrolytePowder_SugarFree_LemonLime-Left.png?v=1774888842"
+      },
+      {
+        "src": "/__mockup/images/stellar-electrolytes/supplements-lemon-lime-electrolyte-powder-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_ElectrolytePowder_SugarFree_LemonLime-Right.png?v=1774888842"
+      }
+    ],
+    "originalDescription": "<div style=\"float: left;\">\n<h3>Why Stellar Labs® ELECTROLYTE POWDER?</h3>\n<h3>Confidently consume four of the most important electrolytes for optimal muscle and nerve function lost through sweat and activity without the gas, bloating and other digestive discomfort.</h3>\n<p>Our formula mixes easily with liquid in a shaker or with a simple glass and spoon. One serving a day is recommended, although more may be necessary depending on your activity level. Talk with your registered dietitian nutritionist or physician about how much you should consume for optimal hydration.</p>\n<p><strong>SUGGESTED USE: </strong>Mix one scoop of Stellar Labs® electrolyte powder into 12-16 oz of water.</p>\n</div>"
+  },
+  {
+    "component": "ElectrolyteStrawberry",
+    "handle": "strawberry-electrolyte-powder",
+    "formula": "electrolyte",
+    "flavor": "Strawberry",
+    "size": "40 servings",
+    "title": "Strawberry Electrolyte Powder",
+    "price": 3195,
+    "available": false,
+    "discontinued": true,
+    "variantId": 44159566971054,
+    "source": "https://www.stellarlabsnutrition.com/products/strawberry-electrolyte-powder",
+    "capturedAt": "2026-10-05T10:21:48.558Z",
+    "images": [
+      {
+        "src": "/__mockup/images/stellar-electrolytes/strawberry-electrolyte-powder-0.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_ElectrolytePowder_SugarFree_Strawberry-Front.png?v=1774540083"
+      },
+      {
+        "src": "/__mockup/images/stellar-electrolytes/strawberry-electrolyte-powder-1.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_ElectrolytePowder_SugarFree_Strawberry-Right.png?v=1774540083"
+      },
+      {
+        "src": "/__mockup/images/stellar-electrolytes/strawberry-electrolyte-powder-2.png",
+        "original": "https://cdn.shopify.com/s/files/1/1409/0320/files/SL_ElectrolytePowder_SugarFree_Strawberry-Left.png?v=1774540083"
+      }
+    ],
+    "originalDescription": "<div style=\"float: left;\">\n<h3>Why Stellar Labs® ELECTROLYTE POWDER?</h3>\n<h3>Confidently consume four of the most important electrolytes for optimal muscle and nerve function lost through sweat and activity without the gas, bloating and other digestive discomfort.</h3>\n<p>Our formula mixes easily with liquid in a shaker or with a simple glass and spoon. One serving a day is recommended, although more may be necessary depending on your activity level. Talk with your registered dietitian nutritionist or physician about how much you should consume for optimal hydration.</p>\n<p><strong>SUGGESTED USE: </strong>Mix one scoop of Stellar Labs® electrolyte powder into 12-16 oz of water.</p>\n</div>"
+  }
+]

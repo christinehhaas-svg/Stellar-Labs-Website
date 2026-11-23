@@ -1,0 +1,169 @@
+.stellar-supplements-shell{width:100%;height:100dvh;min-height:100dvh;overflow:hidden;background:#fff}
+#supplements-app-mount .sl-nutrition-summary{padding:18px;margin:18px 0;border:1px solid #b6cecc;background:#f3f8f7;border-radius:4px}
+#supplements-app-mount .sl-nutrition-summary h3{margin:0 0 10px;font-size:15px;letter-spacing:0;text-transform:none}
+#supplements-app-mount .sl-nutrition-summary .sl-facts{font-size:14px;line-height:1.8;color:#23201f}
+#supplements-app-mount .sl-nutrition-summary a{display:inline-block;margin-top:12px;font-size:13px;color:#087e91;text-decoration:underline}
+.stellar-supplements-frame{display:block;width:100%;height:100%;border:0;background:#fff}
+#supplements-app-mount{font-family:Inter,Arial,sans-serif;color:#23201f;background:#fff}
+#supplements-app-mount *{box-sizing:border-box}
+#supplements-app-mount .sl-card-nutrition{width:100%;margin:8px auto;container-type:inline-size;text-align:center}
+#supplements-app-mount .sl-card-per-serving{margin:0 0 6px;font-size:11px;line-height:1.4;text-align:center;font-style:italic}
+#supplements-app-mount .sl-card-nutrition-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:82%;gap:3px;margin:0 auto;padding:0;text-align:center}
+#supplements-app-mount .sl-card-shake-metrics{grid-template-columns:repeat(4,max-content);width:max-content;justify-content:center;gap:clamp(6px,4cqi,10px)}
+#supplements-app-mount .sl-card-nutrition-row>div{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
+#supplements-app-mount .sl-card-nutrition-row dt{font-size:clamp(10px,6.3cqi,12px);font-weight:400;line-height:1.3;white-space:nowrap}
+#supplements-app-mount .sl-card-nutrition-row dd{order:-1;margin:0;font-size:clamp(14px,7.8cqi,16px);font-weight:600;line-height:1.2;white-space:nowrap}
+#supplements-app-mount .sl-card-serving-note,#supplements-app-mount .sl-card-reference-note{margin:9px 0 0;text-align:center;font-size:11px;line-height:1.5;font-style:italic}
+#supplements-app-mount .sl-card-reference-note{font-size:10px}
+#supplements-app-mount .sl-product-price{margin:4px 0 5px;text-align:center;font-size:16px;font-weight:600;line-height:1.4;color:#23201f}
+#supplements-app-mount .sl-product-copy{container-type:inline-size}
+#supplements-app-mount .sl-collection .sl-product-copy{display:flex;flex-direction:column;align-items:stretch}
+#supplements-app-mount .sl-collection .sl-product-copy h2{font-size:18px;display:grid;grid-template-rows:32px 20px;gap:1px;margin-bottom:0}
+#supplements-app-mount .sl-card-name{display:flex;align-items:center;justify-content:center}
+#supplements-app-mount .sl-card-variant{display:block;margin:0;font-size:14px;line-height:20px;font-weight:400}
+#supplements-app-mount .sl-collection .sl-product-copy .sl-details-button{display:table;margin:8px auto 0}
+#supplements-app-mount .sl-product-copy .sl-card-dietary-claims{font-size:clamp(8px,4.5cqi,11px);font-weight:500;line-height:1.6;text-align:center;color:#007a9e}
+#supplements-app-mount .sl-card-dietary-claims span{display:block;white-space:nowrap}
+#supplements-app-mount .sl-supplement-card .sl-product-copy{text-align:center}
+#supplements-app-mount .sl-collection .sl-supplement-card .sl-product-copy h2{grid-template-rows:48px 20px}
+#supplements-app-mount .sl-product-copy .sl-card-container-count{margin:2px 0 3px;font-size:10px;line-height:1.4;font-style:normal;color:#706b67}
+#supplements-app-mount .sl-supplement-card .sl-product-price{font-size:16px}
+#supplements-app-mount .sl-supplement-card .sl-details-button{display:table;margin:8px auto 0}
+#supplements-app-mount button,#supplements-app-mount a{font:inherit}
+#supplements-app-mount button:focus-visible,#supplements-app-mount a:focus-visible{outline:2px solid #00b7d3;outline-offset:3px}
+#supplements-app-mount img{display:block;max-width:100%}
+#supplements-app-mount .sl-collection{background:#fff;color:#23201f;font-family:Inter,Arial,sans-serif}
+#supplements-app-mount .sl-category-strip{background:#23201f;color:#fff}
+#supplements-app-mount .sl-category-inner{max-width:1440px;min-height:50px;margin:auto;padding:0 5.2%;display:flex;align-items:center;gap:30px}
+#supplements-app-mount .sl-category-lead{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#9c9998;white-space:nowrap}
+#supplements-app-mount .sl-category-inner nav{display:flex;align-items:center;gap:28px;overflow:auto}
+#supplements-app-mount .sl-category-inner nav button,#supplements-app-mount .sl-category-inner nav a{position:relative;border:0;padding:16px 0;background:none;color:#f8f8f8;font-size:12px;white-space:nowrap;cursor:pointer;text-decoration:none}
+#supplements-app-mount .sl-category-inner nav button:after,#supplements-app-mount .sl-category-inner nav a:after{content:"";position:absolute;bottom:9px;left:0;width:0;height:2px;background:#00b7d3;transition:width .18s ease}
+#supplements-app-mount .sl-category-inner nav button:hover:after,#supplements-app-mount .sl-category-inner nav button.is-active:after,#supplements-app-mount .sl-category-inner nav a:hover:after,#supplements-app-mount .sl-category-inner nav a.is-active:after{width:100%}
+#supplements-app-mount .sl-collection-heading{padding:45px 5.2% 39px;background:#fff}
+#supplements-app-mount .sl-heading-inner{max-width:1328px;margin:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+#supplements-app-mount .sl-collection-heading h1{margin:0;font-family:Inter,Arial,sans-serif;font-size:40px;line-height:1.12;letter-spacing:.01em;font-weight:700!important;font-variation-settings:"wght" 700;color:#23201f;text-align:center}
+#supplements-app-mount .sl-heading-inner p{margin:0;color:#514c49;font-size:13px;line-height:1.5;text-align:center}
+#supplements-app-mount .sl-claims-strip{background:#23201f;color:#fff;padding:18px 5.2% 13px}
+#supplements-app-mount .sl-claims-row{max-width:1328px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px;overflow-x:auto}
+#supplements-app-mount .sl-claim{display:flex;flex:0 0 auto;align-items:center;gap:9px;white-space:nowrap;font-family:var(--font-h5--family);font-style:var(--font-h5--style);font-size:11px;font-weight:var(--font-h5--weight);letter-spacing:var(--font-h5--letter-spacing);text-transform:var(--font-h5--case)}
+#supplements-app-mount .sl-claim img{width:24px;height:24px;object-fit:contain}
+#supplements-app-mount .sl-claims-strip>p{max-width:1328px;margin:12px auto 0;color:#c6c3c2;font-size:9px;text-align:center}
+#supplements-app-mount .sl-grid-section{padding:0 5.2% 58px}
+#supplements-app-mount .sl-result-count{max-width:1328px;margin:18px auto 15px;color:#77716e;font-size:11px;text-align:right;white-space:nowrap}
+#supplements-app-mount .sl-product-grid{max-width:1328px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:22px;row-gap:52px}
+#supplements-app-mount .sl-product{min-width:0}
+#supplements-app-mount .sl-product-featured{grid-column:span 2}
+#supplements-app-mount .sl-featured-callouts{margin:14px 0 0}
+#supplements-app-mount .sl-featured-callouts .review-quality-strip{padding:12px 14px}
+#supplements-app-mount .sl-featured-callouts .review-quality-row{grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+#supplements-app-mount .sl-product-image{width:100%;aspect-ratio:1/1.04;padding:0;border:0;background:#f6f6f5;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer}
+#supplements-app-mount .sl-product-image img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .28s ease}
+#supplements-app-mount .sl-product-image:hover img{transform:scale(1.025)}
+#supplements-app-mount .sl-image-hint{position:absolute;right:10px;bottom:10px;padding:6px 9px;background:#fff;color:#4b4745;font-size:10px;opacity:0;transition:opacity .2s}
+#supplements-app-mount .sl-product-image:hover .sl-image-hint,#supplements-app-mount .sl-product-image:focus-visible .sl-image-hint{opacity:1}
+#supplements-app-mount .sl-product-copy{padding:10px 1px 0}
+#supplements-app-mount .review-quality-listing{padding-top:12px!important;padding-bottom:12px!important}
+#supplements-app-mount .sl-whey-collection-claims .review-quality-strip{background:#f5f5f5;color:#23201f;padding-top:10px!important;padding-bottom:8px!important}
+#supplements-app-mount .sl-whey-collection-claims .review-quality-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:12px clamp(12px,1.2vw,22px);overflow:visible;padding:0}
+#supplements-app-mount .sl-whey-collection-claims .review-quality-claim{flex:0 0 auto;color:#23201f;white-space:nowrap}
+#supplements-app-mount .sl-whey-collection-claims .review-quality-strip>p{max-width:1100px;margin:7px auto 0!important;text-align:center;color:#666;font-size:11px;line-height:1.4}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip{background:#fff;color:#23201f;border-bottom:1px solid #e9e9e9}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip .sl-category-inner{max-width:none;min-height:44px;padding:0 5.2%}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav{width:100%;max-width:1328px;margin:0 auto;gap:24px}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav a{padding:12px 0;color:#514c49;font-size:13px;line-height:20px}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav a.is-active{color:#23201f;font-weight:600}
+@media(max-width:1100px){
+  #supplements-app-mount .sl-whey-collection-claims .review-quality-claim{font-size:12px}
+}
+@media(max-width:1000px){
+  #supplements-app-mount .sl-whey-collection-claims .review-quality-row{flex-wrap:wrap;gap:10px 20px}
+}
+@media(min-width:701px) and (max-width:1050px){
+  #supplements-app-mount .sl-whey-collection-claims+.sl-category-strip .sl-category-inner{padding-left:4%;padding-right:4%}
+}
+@media(max-width:700px){
+  #supplements-app-mount .sl-whey-collection-claims+.sl-category-strip .sl-category-inner{padding:0 16px}
+}
+@media(max-width:360px){
+  #supplements-app-mount .sl-whey-collection-claims+.sl-category-strip .sl-category-inner{padding:0 6px}
+}
+#supplements-app-mount .review-quality-listing>p{margin-top:8px!important}
+#supplements-app-mount .sl-product-price.sl-price-unconfirmed{font-size:12px;min-height:22px;display:flex;align-items:center;justify-content:center}
+#supplements-app-mount .sl-product-subtitle{margin:0 0 6px;color:#77716e;font-size:10px;font-weight:600;letter-spacing:.075em;text-transform:uppercase;text-align:center}
+#supplements-app-mount .sl-product-copy h2{margin:0;color:#23201f;font-size:23px;line-height:1.25;font-weight:700;letter-spacing:0;text-align:center;text-transform:none}
+#supplements-app-mount .sl-product-supply{margin:8px 0 13px;color:#716b68;font-size:11px;text-align:center}
+#supplements-app-mount .sl-product-supply span{padding:0 5px;color:#aaa4a1}
+#supplements-app-mount .sl-product-caption{margin:0;color:#4e4946;font-size:12px;line-height:1.55}
+#supplements-app-mount .sl-product-quality-caption{margin:9px 0 0;color:#087e91;font-size:10px;font-weight:600;line-height:1.5}
+#supplements-app-mount .sl-editorial-details h3{margin-top:14px}
+#supplements-app-mount .sl-featured-support{margin:0;color:#4e4946;font-size:12px;line-height:1.5}
+#supplements-app-mount .sl-featured-support>div{margin:0 0 9px}
+#supplements-app-mount .sl-featured-support dt{display:inline;font-weight:650}
+#supplements-app-mount .sl-featured-support dt::after{content:" – "}
+#supplements-app-mount .sl-featured-support dd{display:inline;margin:0}
+#supplements-app-mount .sl-benefits{padding:0 0 0 15px;margin:0;color:#4e4946;font-size:11px;line-height:1.65}
+#supplements-app-mount .sl-benefits li{padding-left:1px}
+#supplements-app-mount .sl-benefits a{margin-left:2px;color:#00a9c3;font-size:10px;font-weight:700;text-decoration:none;vertical-align:super}
+#supplements-app-mount .sl-details-button{display:inline-block;text-decoration:none;margin-top:17px;padding:0 0 5px;border:0;border-bottom:1px solid #00aec7;background:none;color:#23201f;font-size:11px;font-weight:650;cursor:pointer}
+#supplements-app-mount .sl-details-button span{margin-left:15px;color:#009eb6;transition:margin .2s}
+#supplements-app-mount .sl-details-button:hover span{margin-left:20px}
+#supplements-app-mount .sl-label-note{border-top:1px solid #e7e5e4;padding:20px 5.2%;display:flex;align-items:center;justify-content:space-between;gap:15px;color:#6d6764;font-size:10px}
+#supplements-app-mount .sl-label-note p{margin:0}
+#supplements-app-mount .sl-label-note a{color:#008fa6;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+#supplements-app-mount .sl-dialog{position:fixed;inset:0;width:min(920px,calc(100% - 40px));max-width:none;max-height:min(90vh,900px);padding:0;border:0;background:#fff;color:#23201f;box-shadow:0 18px 70px #18151340;overflow:auto}
+#supplements-app-mount .sl-dialog::backdrop{background:#171413ad}
+#supplements-app-mount .sl-dialog-layout{display:grid;grid-template-columns:minmax(280px,.88fr) minmax(360px,1.12fr);min-height:590px}
+#supplements-app-mount .sl-dialog-art{background:#f5f5f4;padding:36px 30px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+#supplements-app-mount .sl-dialog-art>img{width:100%;height:440px;object-fit:contain;mix-blend-mode:multiply}
+#supplements-app-mount .sl-dialog-close{position:absolute;top:14px;right:17px;border:0;background:#fff;width:36px;height:36px;border-radius:50%;font-size:23px;line-height:1;cursor:pointer}
+#supplements-app-mount .sl-art-actions{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:12px;font-size:11px}
+#supplements-app-mount .sl-art-actions button{border:0;background:transparent;color:#087e91;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+#supplements-app-mount .sl-art-actions a{color:#595350;text-decoration:underline;text-underline-offset:3px}
+#supplements-app-mount .sl-dialog-content{padding:42px 42px 30px;overflow:auto}
+#supplements-app-mount .sl-dialog-content h2{margin:0 0 9px;font-size:28px;line-height:1.15;letter-spacing:-.04em;font-weight:650}
+#supplements-app-mount .sl-dialog-count{margin:0 0 26px;color:#6e6865;font-size:12px}
+#supplements-app-mount .sl-dialog-count span{padding:0 5px}
+#supplements-app-mount .sl-dialog-content h3{margin:20px 0 7px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+#supplements-app-mount .sl-dialog-content>p:not(.sl-product-subtitle):not(.sl-dialog-count):not(.sl-dialog-disclaimer){margin:0;color:#4e4946;font-size:12px;line-height:1.65}
+#supplements-app-mount .sl-dialog-benefits,#supplements-app-mount .sl-facts,#supplements-app-mount .sl-warnings{color:#4e4946;font-size:11px;line-height:1.65}
+#supplements-app-mount .sl-facts,#supplements-app-mount .sl-warnings{padding-left:17px;margin:0}
+#supplements-app-mount .sl-warnings{color:#653e34}
+#supplements-app-mount .sl-dialog-disclaimer{margin:19px 0 0;padding-top:13px;border-top:1px solid #e5e1df;color:#77716e;font-size:9px;line-height:1.55}
+#supplements-app-mount .sl-dialog-footer{margin-top:19px;padding-top:16px;border-top:1px solid #e5e1df;display:flex;align-items:center;justify-content:space-between;gap:12px}
+#supplements-app-mount .sl-store-link{display:inline-flex;align-items:center;gap:22px;padding:12px 17px;background:#00b7d3;color:#102c30;text-decoration:none;font-size:11px;font-weight:700}
+#supplements-app-mount .sl-source-link{color:#55504d;font-size:10px;text-decoration:underline;text-underline-offset:3px}
+#supplements-app-mount .sl-store-note{margin:0;color:#77716e;font-size:10px}
+@media(max-width:1050px){#supplements-app-mount .sl-product-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:38px 18px}#supplements-app-mount .sl-grid-section{padding-left:4%;padding-right:4%}}
+@media(max-width:700px){#supplements-app-mount .sl-category-inner{padding:0 18px;display:block}#supplements-app-mount .sl-category-lead{display:block;padding-top:12px}#supplements-app-mount .sl-category-inner nav{gap:21px;margin-right:-18px}#supplements-app-mount .sl-category-inner nav button,#supplements-app-mount .sl-category-inner nav a{padding:12px 0 15px;font-size:11px}#supplements-app-mount .sl-category-inner nav button:after,#supplements-app-mount .sl-category-inner nav a:after{bottom:8px}#supplements-app-mount .sl-collection-heading{padding:34px 20px 30px}#supplements-app-mount .sl-collection-heading h1{font-size:32px}#supplements-app-mount .sl-heading-inner p{max-width:340px;font-size:12px}#supplements-app-mount .sl-claims-strip{padding:15px 18px 12px}#supplements-app-mount .sl-claims-row{justify-content:flex-start;gap:23px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;margin-right:-18px;padding-right:18px}#supplements-app-mount .sl-claims-row::-webkit-scrollbar{display:none}#supplements-app-mount .sl-claim{font-size:10px;gap:7px}#supplements-app-mount .sl-claim img{width:21px;height:21px}#supplements-app-mount .sl-claims-strip>p{text-align:left;font-size:9px;margin-top:10px}#supplements-app-mount .sl-grid-section{padding:0 16px 38px}#supplements-app-mount .sl-result-count{font-size:10px;margin:14px auto 12px}#supplements-app-mount .sl-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:29px 13px}#supplements-app-mount .sl-product-featured{grid-column:1/-1}#supplements-app-mount .sl-product-copy{padding-top:12px}#supplements-app-mount .sl-product-copy h2{font-size:16px}#supplements-app-mount .sl-product-subtitle{font-size:9px}#supplements-app-mount .sl-product-supply{font-size:10px}#supplements-app-mount .sl-benefits{font-size:10px;line-height:1.55;padding-left:13px}#supplements-app-mount .sl-details-button{margin-top:13px;font-size:10px}#supplements-app-mount .sl-label-note{padding:16px 18px;align-items:flex-start;font-size:9px}#supplements-app-mount .sl-dialog{width:calc(100% - 20px);max-height:94vh}#supplements-app-mount .sl-dialog-layout{grid-template-columns:1fr;min-height:0}#supplements-app-mount .sl-dialog-art{padding:36px 22px 15px}#supplements-app-mount .sl-dialog-art>img{height:280px}#supplements-app-mount .sl-dialog-content{padding:24px 24px 26px}#supplements-app-mount .sl-dialog-content h2{font-size:24px}#supplements-app-mount .sl-dialog-count{margin-bottom:17px}}
+@media(max-width:390px){#supplements-app-mount .sl-product-grid{gap:26px 10px}}
+@media(max-width:700px){
+  #supplements-app-mount .sl-card-electrolyte-metrics{grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:10px 4px}
+  #supplements-app-mount .sl-card-electrolyte-metrics dt{font-size:10px}
+  #supplements-app-mount .sl-collection .sl-product-copy{padding-top:8px}
+  #supplements-app-mount .sl-product-grid{row-gap:22px}
+}
+@media(max-width:360px){
+  #supplements-app-mount .sl-collection .sl-product-copy h2{grid-template-rows:44px 20px}
+  #supplements-app-mount .sl-grid-section{padding-left:6px;padding-right:6px}
+  #supplements-app-mount .sl-card-shake-metrics{column-gap:5px}
+}
+@media(min-width:701px){
+  #supplements-app-mount .sl-collection .sl-product-grid{row-gap:24px}
+  #supplements-app-mount .sl-collection .sl-product-image{aspect-ratio:1/1.04}
+  #supplements-app-mount .sl-collection .sl-product-copy{padding-top:8px}
+  #supplements-app-mount .sl-collection .sl-product-copy h2{font-size:20px;line-height:1.25;grid-template-rows:28px 22px}
+  #supplements-app-mount .sl-collection .sl-supplement-card .sl-product-copy h2{grid-template-rows:50px 22px}
+  #supplements-app-mount .sl-collection .sl-card-variant{font-size:15px;line-height:22px}
+  #supplements-app-mount .sl-collection .sl-product-price{font-size:20px;font-weight:700;min-height:28px}
+  #supplements-app-mount .sl-collection .sl-price-unconfirmed{font-size:14px}
+  #supplements-app-mount .sl-collection .sl-card-nutrition{margin:6px auto}
+  #supplements-app-mount .sl-collection .sl-card-per-serving{font-size:12px;margin-bottom:4px}
+  #supplements-app-mount .sl-collection .sl-card-nutrition-row>div{gap:3px}
+  #supplements-app-mount .sl-collection .sl-card-nutrition-row dt{font-size:13px}
+  #supplements-app-mount .sl-collection .sl-card-nutrition-row dd{font-size:18px;font-weight:700}
+  #supplements-app-mount .sl-collection .sl-details-button{font-size:14px;line-height:1.4}
+  @container(max-width:340px){
+    #supplements-app-mount .sl-collection .sl-card-electrolyte-metrics{grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:10px 8px}
+  }
+}

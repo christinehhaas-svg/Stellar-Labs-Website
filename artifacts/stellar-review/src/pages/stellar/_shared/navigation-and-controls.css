@@ -1,0 +1,182 @@
+/* Important layers outrank the captured theme's unlayered hover overrides. */
+@layer stellar-navigation-and-boxes {
+  #header-component[data-stellar-lean-nav] {
+    --stellar-navigation-accent: #32c0cb;
+  }
+  #header-component[data-stellar-lean-nav] :is(.header-menu-heading, .stellar-shop-navigation__heading) {
+    color: var(--stellar-navigation-accent) !important;
+  }
+  :is(button, [role="button"], .button, .sl-whey-category-button, .sl-size-option,
+      .sl-details-button, .sl-catalog-view-product, .sl-protein-flavors a,
+      .sl-protein-jump-links a, .stellar-product-store-link),
+  :is(button, [role="button"], .button, .sl-whey-category-button, .sl-size-option,
+      .sl-details-button, .sl-catalog-view-product, .sl-protein-flavors a,
+      .sl-protein-jump-links a, .stellar-product-store-link) * {
+    text-decoration: none !important;
+  }
+  #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+  #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a:is(:hover, :focus-visible),
+  #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a.stellar-lean-navigation {
+    color: var(--stellar-navigation-accent) !important;
+  }
+  #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a.stellar-lean-navigation:hover {
+    text-decoration: underline !important;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+  }
+  #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a.stellar-lean-navigation {
+    font-size: clamp(18px, 1.5vw, 22px) !important;
+    font-weight: 600 !important;
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+  @media (max-width: 767px) {
+    /* Native focus scrolling must include the ring when this menu is viewed
+       through a short, independently scrolled preview frame. */
+    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation :is(a, summary) {
+      scroll-margin-block: 8px;
+    }
+    #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a {
+      font-size: 16px !important;
+    }
+    body:has(#supplements-app-mount) #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a {
+      overflow-wrap: anywhere;
+    }
+    #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a.stellar-lean-navigation {
+      font-size: 19px !important;
+    }
+  }
+  @media (max-width: 767px) and (orientation: landscape) {
+    /* Use the available width on short supplement viewports so enlarged
+       labels and their rings remain exposed when rotating an open menu.
+       No resize-time scrolling or disclosure/focus changes are needed. */
+    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation__links {
+      width: calc(100vw - 28px) !important;
+      box-sizing: border-box;
+    }
+    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation__links a {
+      padding-block: 4px !important;
+    }
+  }
+  @media (min-width: 768px) {
+    #header-component[data-stellar-lean-nav] .header__row--top .header__columns {
+      display: grid !important;
+      grid-template-columns: auto minmax(0, 1fr) auto !important;
+      align-items: center !important;
+      gap: clamp(10px, 1.1vw, 16px) !important;
+    }
+    #header-component[data-stellar-lean-nav] .header-logo__image {
+      width: clamp(170px, 19vw, 250px) !important;
+      height: auto !important;
+      object-fit: contain;
+    }
+    #header-component[data-stellar-lean-nav] [data-testid="header-top-center"] {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      min-width: 0 !important;
+    }
+    #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links {
+      display: grid !important;
+      grid-template-columns: repeat(6, max-content) !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      column-gap: clamp(20px, 2.4vw, 36px) !important;
+      row-gap: 4px !important;
+    }
+    #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a {
+      white-space: nowrap !important;
+      font-size: clamp(16px, 1.4vw, 20px) !important;
+      font-weight: 600 !important;
+    }
+    #header-component[data-stellar-lean-nav] .stellar-lean-navigation {
+      flex-shrink: 0;
+      margin-right: 0 !important;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1100px) {
+    #header-component[data-stellar-lean-nav] .header__row--top .header__columns {
+      width: calc(100% + 32px) !important;
+      margin-inline: -16px !important;
+      gap: 8px !important;
+    }
+    #header-component[data-stellar-lean-nav] .header-logo__image { width: 140px !important; }
+    #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links { column-gap: 8px !important; }
+    #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a { letter-spacing: 0 !important; }
+  }
+  @media (min-width: 768px) and (max-width: 999px) {
+    #header-component[data-stellar-lean-nav] .stellar-shop-navigation {
+      min-width: 0 !important;
+      max-width: 100% !important;
+      overflow-x: auto !important;
+    }
+    /* Enlarged supplement labels must reflow instead of being partly hidden
+       in the narrow desktop header's horizontal scroll area. */
+    body:has(#supplements-app-mount) #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      /* Keep labels clear of the captured account control's hit area. */
+      padding-inline-end: 1em !important;
+      box-sizing: border-box;
+    }
+    body:has(#supplements-app-mount) #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a {
+      white-space: normal !important;
+      overflow-wrap: anywhere;
+      min-width: 0;
+    }
+  }
+  @media (min-width: 768px) {
+    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation__links {
+      row-gap: 14px !important;
+      padding: 5px !important;
+    }
+    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation a:focus-visible {
+      outline: 2px solid var(--stellar-navigation-accent) !important;
+      outline-offset: 3px !important;
+    }
+  }
+  /* Supplement snapshots retain the theme's drawer grid through 999px.
+     Give navigation its own row instead of overflowing that grid's center.
+     Keep this in the same important layer as the shared navigation rules. */
+  @media (min-width: 768px) and (max-width: 1100px) {
+    #header-component[data-stellar-supplement-nav] .header__row--top .header__columns {
+      grid-template-columns: minmax(0, 1fr) auto !important;
+      grid-template-areas: "left right" "center center" !important;
+      grid-template-rows: auto auto !important;
+      width: 100% !important;
+      margin-inline: 0 !important;
+      padding: 12px 20px !important;
+      gap: 16px !important;
+      height: auto !important;
+    }
+    #header-component[data-stellar-supplement-nav] [data-testid="header-top-left"],
+    #header-component[data-stellar-supplement-nav] [data-testid="header-top-right"] {
+      display: flex !important;
+      align-items: center !important;
+      min-width: 0 !important;
+    }
+    #header-component[data-stellar-supplement-nav] [data-testid="header-top-left"] { grid-area: left !important; }
+    #header-component[data-stellar-supplement-nav] [data-testid="header-top-right"] { grid-area: right !important; justify-content: flex-end !important; }
+    #header-component[data-stellar-supplement-nav] [data-testid="header-top-center"] {
+      grid-area: center !important;
+      width: 100% !important;
+    }
+    #header-component[data-stellar-supplement-nav] .header__drawer,
+    #header-component[data-stellar-supplement-nav] .header-menu-group { display: none !important; }
+    #header-component[data-stellar-supplement-nav] .header-logo { display: flex !important; }
+    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation {
+      width: 100% !important;
+      overflow: visible !important;
+    }
+    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation__links {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: flex-start !important;
+      gap: 14px 18px !important;
+      padding: 5px !important;
+    }
+    #header-component[data-stellar-supplement-nav] .stellar-lean-navigation { flex-basis: 100% !important; }
+  }
+}

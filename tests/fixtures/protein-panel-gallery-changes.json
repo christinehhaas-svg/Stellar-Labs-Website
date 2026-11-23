@@ -1,0 +1,14 @@
+[
+  { "name": "Cappuccino side panels reordered", "component": "ProteinCappuccino", "order": [0, 2, 1] },
+  { "name": "Caramel blend side panels reordered", "component": "ProteinCaramelBlend", "order": [0, 2, 1] },
+  { "name": "Mixed Berry front moved into a side slot", "component": "ProteinMixedBerry", "order": [1, 0, 2] },
+  { "name": "Cappuccino nutrition panel replaced with Chocolate", "component": "ProteinCappuccino", "slot": 1, "donor": "ProteinChocolateIsolate" },
+  { "name": "Mixed Berry ingredients panel replaced with Unflavored", "component": "ProteinMixedBerry", "slot": 2, "donor": "ProteinUnflavored" },
+  { "name": "Vanilla isolate side replaced with Vanilla blend", "component": "ProteinVanillaIsolate", "slot": 1, "donor": "ProteinVanillaBlend" },
+  { "name": "Vanilla blend side replaced with Vanilla isolate", "component": "ProteinVanillaBlend", "slot": 2, "donor": "ProteinVanillaIsolate" },
+  { "name": "Chocolate isolate side replaced with Chocolate blend", "component": "ProteinChocolateIsolate", "slot": 2, "donor": "ProteinChocolateBlend" },
+  { "name": "Chocolate blend side replaced with Chocolate isolate", "component": "ProteinChocolateBlend", "slot": 1, "donor": "ProteinChocolateIsolate" },
+  { "name": "Unflavored panel missing", "component": "ProteinUnflavored", "order": [0, 1] },
+  { "name": "Caramel panel duplicated", "component": "ProteinCaramelBlend", "order": [0, 1, 1] },
+  { "name": "Unexpected Cappuccino panel appended", "component": "ProteinCappuccino", "order": [0, 1, 2, 1] }
+]

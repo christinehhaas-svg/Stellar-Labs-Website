@@ -1,0 +1,66 @@
+/* Header + hero only. Load once on the Shopify index template. */
+.stellar-home-founder { display: block; color: #d1d4db; margin: 0; font-size: clamp(11px,1.05vw,13px); font-weight: 400; line-height: 1.4; letter-spacing: .04em; }
+.stellar-home-formula { position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; z-index: 2; display: block; max-width: 100%; margin: 0; padding: 0 12px; background: transparent; color: #f0f1f3; font: 500 clamp(14px,1.25vw,17px)/1.3 "TT Hoves",sans-serif; letter-spacing: .025em; }
+.stellar-home-tagline { display: block; max-width: 520px; color: #f4f4f6; margin: 0; font-size: clamp(22px,2.1vw,28px); font-weight: 500; line-height: 1.25; }
+.stellar-home-copy > p { display: block; }
+.stellar-home-header, .stellar-home-hero, .stellar-home-categories {
+  --stellar-ink: #0b0d11; --stellar-cyan: #28b9ef;
+  font-family: "TT Hoves", sans-serif;
+  box-sizing: border-box;
+}
+.stellar-home-header *, .stellar-home-hero *, .stellar-home-categories * { box-sizing: border-box; }
+.stellar-home-header { background: var(--stellar-ink); color: #f7f7f7; }
+.stellar-home-announcement { min-height: 36px; display: grid; place-items: center; padding: 8px 12px; border-bottom: 1px solid #ffffff85; font-size: 14px; font-weight: 600; text-align: center; }
+.stellar-home-header-row { display: grid; grid-template-columns: minmax(210px,28%) minmax(0,1fr) auto; align-items: center; gap: clamp(18px,3vw,46px); padding: 0 clamp(24px,3.7vw,50px); min-height: 80px; }
+.stellar-home-logo img { display: block; width: clamp(220px,27vw,276px); max-width: 100%; height: auto; }
+.stellar-home-nav { display: flex; align-items: center; justify-content: center; gap: clamp(15px,2.1vw,27px); }
+.stellar-home-header a { color: #f1f1f1; text-decoration: none; }
+.stellar-home-nav a { font-size: clamp(11px,1.03vw,14px); font-weight: 500; line-height: 1.3; white-space: nowrap; }
+.stellar-home-actions { display: flex; gap: 17px; align-items: center; }
+.stellar-home-actions a { display: flex; align-items: center; justify-content: center; width: 30px; min-height: 44px; }
+.stellar-home-actions svg { width: 22px; height: 22px; }
+.stellar-home-hero { position: relative; height: clamp(360px,34vw,540px); min-height: 360px; overflow: hidden; background: #42464d; background-image: linear-gradient(rgba(13,15,20,.48),rgba(13,15,20,.48)),url("stellar-hero-slate-background.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; color: #f6f6f8; }
+.stellar-home-art { position: absolute; inset: 0 0 0 auto; width: 50%; height: 100%; overflow: visible; }
+.stellar-home-art img { display: block; width: auto; max-width: 100%; height: calc(100% - 36px); margin: 0 0 0 auto; object-fit: contain; object-position: right center; mask-image: none; }
+@media (min-width: 768px) {
+  .stellar-home-art { left: 45%; right: auto; width: 55%; }
+  .stellar-home-art img { margin: 0 auto 0 0; object-position: left center; }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  .stellar-home-copy p { font-size: 16px; }
+}
+.stellar-home-copy { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: clamp(13px,1.35vw,20px); width: 100%; height: 100%; padding: 0 54% 0 clamp(30px,4.2vw,68px); }
+.stellar-home-copy h1 { margin: 0; font: 450 clamp(36px,4.2vw,54px)/1.1 "TT Hoves",sans-serif; letter-spacing: .025em; text-transform: uppercase; white-space: nowrap; }
+.stellar-home-copy p { margin: 0; max-width: 500px; color: #f4f5f7; font: 350 clamp(18px,1.7vw,22px)/1.45 "TT Hoves",sans-serif; letter-spacing: .005em; text-wrap: balance; }
+.stellar-home-cta { display: inline-flex; min-height: 50px; min-width: 242px; align-items: center; justify-content: center; margin-top: 4px; padding: 0 38px; border: 0; border-radius: 3px; background: var(--stellar-cyan); color: #051018; font: 700 15px/1 "TT Hoves",sans-serif; letter-spacing: .035em; text-decoration: none; }
+.stellar-home-cta:hover { background: #57cbf4; }
+.stellar-home-categories { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); align-items: center; min-height: 76px; padding: 0 8%; background: var(--stellar-ink); }
+.stellar-home-categories a { display: flex; align-items: center; justify-content: center; min-height: 44px; color: #eeeef0; font-size: 15px; font-weight: 500; line-height: 1.2; letter-spacing: .16em; text-align: center; text-decoration: none; text-transform: uppercase; }
+.stellar-home-categories a + a { border-left: 1px solid #ffffff80; }
+.stellar-home-header a:hover, .stellar-home-categories a:hover { color: var(--stellar-cyan); }
+.stellar-home-header a:focus-visible, .stellar-home-hero a:focus-visible, .stellar-home-categories a:focus-visible { outline: 2px solid var(--stellar-cyan); outline-offset: 4px; }
+@media (max-width: 767px) {
+  .stellar-home-announcement { min-height: 34px; font-size: 12px; }
+  .stellar-home-header-row { grid-template-columns: minmax(0,1fr) auto; grid-template-rows: 58px auto; gap: 0; padding: 0 17px 10px; }
+  .stellar-home-logo { grid-column: 1; grid-row: 1; }
+  .stellar-home-logo img { width: min(215px,56vw); }
+  .stellar-home-actions { grid-column: 2; grid-row: 1; gap: 13px; }
+  .stellar-home-nav { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 9px 5px; width: 100%; }
+  .stellar-home-nav a { font-size: 12px; text-align: center; }
+  .stellar-home-hero { display: flex; flex-direction: column; height: auto; min-height: 0; }
+  .stellar-home-art { position: relative; order: 2; width: 100%; inset: auto; height: clamp(280px,94vw,360px); }
+  .stellar-home-art img { width: 100%; max-width: 440px; height: calc(100% - 36px); margin: 0 auto; object-fit: contain; object-position: center; }
+  .stellar-home-copy { order: 1; height: auto; gap: 12px; padding: 27px 24px 18px; background: transparent; }
+  .stellar-home-copy h1 { width: max-content; max-width: 100%; font-size: clamp(24px,7.4vw,30px); letter-spacing: .018em; text-align: left; white-space: nowrap; }
+  .stellar-home-copy p { max-width: 440px; font-size: 17px; line-height: 1.42; }
+  .stellar-home-tagline { font-size: clamp(23px,7vw,28px); line-height: 1.18; }
+  .stellar-home-formula { font-size: 15px; }
+  .stellar-home-cta { min-height: 50px; margin-top: 3px; padding: 0 26px; font-size: 14px; }
+  .stellar-home-categories { min-height: 62px; padding: 0 14px; }
+  .stellar-home-categories a { min-height: 44px; padding: 0 4px; font-size: 11px; letter-spacing: .035em; }
+}
+@media (max-width: 360px) {
+  .stellar-home-nav { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .stellar-home-copy { padding-right: 16px; padding-left: 16px; }
+  .stellar-home-copy p { font-size: 15px; }
+}

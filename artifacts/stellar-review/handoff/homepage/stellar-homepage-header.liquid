@@ -1,0 +1,32 @@
+{% comment %}
+  Homepage-only presentation snippet. Render INSTEAD OF the current homepage
+  announcement/header, not alongside it. Leave other templates' headers intact.
+  Prefer retaining the theme's existing search/cart components and handlers in
+  the actions slot; the anchors below are working full-page alternatives.
+  Reuse the existing TT Hoves declarations and unchanged logo.
+{% endcomment %}
+{% if request.page_type == 'index' %}
+  <header class="stellar-home-header">
+    <div class="stellar-home-announcement">Subscribe &amp; save 10%</div>
+    <div class="stellar-home-header-row">
+      <a class="stellar-home-logo" href="{{ routes.root_url }}" aria-label="Stellar Labs home">
+        <img src="{{ 'd0e3e00a06012d0d.png' | asset_url }}" alt="Stellar Labs" width="309" height="43">
+      </a>
+      <nav class="stellar-home-nav" aria-label="Shop">
+        <a href="{{ routes.root_url }}collections/whey-protein">Whey Protein</a>
+        <a href="{{ routes.root_url }}collections/vegan-bars">Vegan Protein</a>
+        <a href="{{ routes.root_url }}collections/electrolytes">Electrolytes</a>
+        <a href="{{ routes.root_url }}collections/supplements">Supplements</a>
+        <a href="{{ routes.root_url }}blogs/recipes">Recipes</a>
+      </nav>
+      <div class="stellar-home-actions">
+        <a href="{{ routes.search_url }}" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg>
+        </a>
+        <a href="{{ routes.cart_url }}" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16l1 15H3L4 7Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+{% endif %}

@@ -1,0 +1,324 @@
+/* Shared All Whey presentation. Legacy whey classes are visual theme hooks,
+   not product classifications; product content and filters remain independent. */
+.stellar-whey-page #header-group,.stellar-whey-page .header-section{position:relative!important;top:auto!important}
+.stellar-whey-page #header-component .header__row--top{min-height:64px!important}
+.stellar-whey-page #header-component .header__row--top .header__columns{padding-block:8px!important}
+.stellar-whey-page #header-component .header-logo{padding-block:8px!important;height:auto!important}
+.stellar-whey-page #header-component .header-logo__image{max-height:34px!important;width:auto!important}
+.stellar-whey-page #header-component>.stellar-shop-navigation{padding-block:8px!important}
+#supplements-app-mount .sl-whey-collection .sl-electrolyte-collection-claims>.review-quality-strip{margin-top:12px}
+#supplements-app-mount .sl-whey-collection-claims .review-quality-row{border-top:0}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip .sl-category-inner{display:block}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip .sl-category-lead{display:block;max-width:1328px;margin:0 auto;padding-top:8px;color:#666}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav button{font-size:15px;font-weight:500;color:#393939;line-height:22px;padding:11px 0}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav button.is-active{font-weight:700;color:#181818}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav button:after{height:3px;background:#00b7d3;bottom:6px}
+#supplements-app-mount .sl-whey-collection[data-collection]:not([data-collection="whey"]) .sl-product-image img{scale:1}
+#supplements-app-mount .sl-whey-collection .sl-supplement-card .sl-product-copy h2{grid-template-rows:56px 24px}
+#supplements-app-mount .sl-whey-collection .sl-price-unconfirmed{font-size:14px}
+#supplements-app-mount .sl-whey-collection .sl-label-note a{display:inline-block;max-width:100%;white-space:normal}
+#supplements-app-mount .sl-whey-collection .sl-whey-nutrition{padding-top:9px;padding-bottom:10px}
+#supplements-app-mount .sl-whey-collection .sl-whey-nutrition-band>.review-quality-strip{margin-top:12px}
+.stellar-whey-page .announcement-bar,
+.stellar-whey-page .announcement-bar__text{background:#dff5f5!important;color:#111!important}
+.stellar-whey-page .announcement-bar__text{font-size:14px!important;font-weight:600!important}
+#supplements-app-mount .sl-whey-collection .sl-product-image{aspect-ratio:1/1.08;align-items:flex-end}
+#supplements-app-mount .sl-whey-collection .sl-product-image img{object-position:center bottom;scale:1.06;transform-origin:50% 100%!important}
+#supplements-app-mount .sl-whey-collection [data-illustrative-package] .sl-product-image img{transform:scale(.785)!important}
+#supplements-app-mount .sl-whey-collection .sl-product-copy{padding-top:10px;color:#181818}
+#supplements-app-mount .sl-whey-collection .sl-product-copy h2{font-size:22px;line-height:1.25;grid-template-rows:30px 24px;color:#181818}
+#supplements-app-mount .sl-whey-collection .sl-card-variant{font-size:16px;line-height:24px;color:#333}
+#supplements-app-mount .sl-whey-collection .sl-product-price{font-size:18px;font-weight:700;min-height:31px;color:#181818}
+#supplements-app-mount .sl-whey-collection .sl-card-nutrition{padding-top:6px;margin:0 auto}
+#supplements-app-mount .sl-whey-collection .sl-card-per-serving{font-size:10px;color:#333;margin:3px 0 0}
+#supplements-app-mount .sl-whey-collection .sl-card-shake-metrics{grid-template-columns:repeat(4,minmax(0,1fr));width:100%;max-width:210px!important;gap:8px}
+#supplements-app-mount .sl-whey-collection .sl-card-nutrition-row dd{font-size:13px;font-weight:700;color:#181818}
+#supplements-app-mount .sl-whey-collection .sl-card-nutrition-row dt{font-size:10.5px;color:#333}
+#supplements-app-mount .sl-whey-collection .sl-product-copy .sl-details-button{display:inline-flex;align-items:center;justify-content:center;width:min(100%,180px);min-height:44px;margin:10px auto 0;padding:10px 14px;border:1px solid #111;border-radius:2px;background:#fff;color:#080808;font-size:14px;line-height:1.4;font-weight:700;text-align:center}
+#supplements-app-mount .sl-whey-collection .sl-details-button span{margin-left:10px;color:inherit}
+@media(hover:hover){
+  #supplements-app-mount .sl-whey-collection .sl-product-copy .sl-details-button:hover{background:#111;border-color:#111;color:#fff}
+}
+#supplements-app-mount .sl-whey-collection-claims .review-quality-claim{font-size:14px}
+#supplements-app-mount .sl-whey-collection-claims .review-quality-icon{width:32px;height:32px;flex:0 0 32px}
+#supplements-app-mount .sl-whey-collection-claims .review-quality-strip>p{font-size:12px;color:#5b5b5b;line-height:1.45}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav a{font-size:15px;font-weight:500;color:#393939;line-height:22px;padding:11px 0}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav a.is-active{font-weight:700;color:#181818}
+#supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav a:after{height:3px;background:#00b7d3;bottom:6px}
+@media(max-width:1100px){
+  #supplements-app-mount .sl-whey-collection-claims .review-quality-claim{font-size:13px}
+}
+@media(max-width:700px){
+  #supplements-app-mount .sl-whey-collection .sl-supplement-card .sl-product-copy h2{grid-template-rows:48px 23px}
+  #supplements-app-mount .sl-whey-collection .sl-card-electrolyte-metrics{grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:10px 12px}
+  #supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav button{font-size:14px}
+  #supplements-app-mount .sl-whey-collection .sl-product-copy h2{font-size:19px;grid-template-rows:48px 23px}
+  #supplements-app-mount .sl-whey-collection .sl-card-variant{font-size:15px;line-height:23px}
+  #supplements-app-mount .sl-whey-collection .sl-product-price{font-size:17px;min-height:27px}
+  #supplements-app-mount .sl-whey-collection .sl-card-per-serving{font-size:9px}
+  #supplements-app-mount .sl-whey-collection .sl-card-shake-metrics{grid-template-columns:repeat(4,minmax(0,1fr));max-width:160px!important;gap:6px}
+  #supplements-app-mount .sl-whey-collection .sl-card-nutrition-row dd{font-size:12px}
+  #supplements-app-mount .sl-whey-collection .sl-card-nutrition-row dt{font-size:9.5px}
+  #supplements-app-mount .sl-whey-collection .sl-product-copy .sl-details-button{font-size:13px}
+  #supplements-app-mount .sl-whey-collection-claims .review-quality-icon{width:28px;height:28px;flex-basis:28px}
+  #supplements-app-mount .sl-whey-collection-claims+.sl-category-strip nav a{font-size:14px}
+}
+@media(max-width:360px){
+  #supplements-app-mount .sl-whey-collection .sl-card-nutrition-row dt{font-size:9px}
+  #supplements-app-mount .sl-whey-collection .sl-card-shake-metrics{gap:4px}
+  #supplements-app-mount .sl-whey-collection-claims .review-quality-claim{font-size:12px}
+  #supplements-app-mount .sl-whey-collection-claims .review-quality-icon{width:26px;height:26px;flex-basis:26px}
+}
+@media(max-width:600px){
+  #supplements-app-mount .sl-whey-collection .sl-whey-nutrition{padding-top:12px;padding-bottom:9px}
+}
+@media(max-width:749px){
+  .stellar-whey-page #header-component .header-logo__image{max-height:28px!important}
+}
+/* Keep all five electrolyte facts together, without shrinking them into a
+   narrow mobile column. The photograph retains its existing mobile size. */
+#supplements-app-mount .sl-whey-collection .sl-card-electrolyte-metrics{display:flex;flex-wrap:nowrap;justify-content:space-between;width:100%;max-width:280px!important;gap:6px}
+#supplements-app-mount .sl-whey-collection .sl-card-electrolyte-metrics>div{flex:0 0 auto}
+#supplements-app-mount .sl-whey-collection .sl-card-electrolyte-metrics dt{font-size:10.5px}
+@media(max-width:700px){#supplements-app-mount .sl-whey-collection .sl-card-electrolyte-metrics dt{font-size:9.5px}}
+@media(max-width:700px){
+  #supplements-app-mount .sl-whey-collection[data-collection="electrolyte"] .sl-product{grid-column:1/-1}
+  #supplements-app-mount .sl-whey-collection[data-collection="electrolyte"] .sl-product-image{width:calc((100% - 16px)/2);margin-inline:auto}
+}
+/* Compact black whey summaries; All Whey intentionally has no nutrition banner. */
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"]{background:#111;color:#fff;padding-top:2px;padding-bottom:2px}
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] .sl-whey-nutrition-kicker{margin:4px 0 0}
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] .sl-whey-nutrition-item{padding-top:0;padding-bottom:0}
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] .sl-whey-nutrition-caption{margin-bottom:0}
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] dd{font-size:clamp(26px,3.2vw,42px);line-height:1}
+@media(max-width:600px){
+  #supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] dd{font-size:clamp(22px,6vw,28px)}
+}
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] .sl-whey-nutrition-note{margin-top:4px}
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] .sl-whey-nutrition-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 12px;margin-top:4px}
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] .sl-whey-nutrition-footer p{margin:0}
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] .sl-whey-nutrition-caption,
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] .sl-whey-nutrition-kicker,
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] .sl-whey-nutrition-note{color:#d0d0d0}
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] dt{color:#f0f0f0}
+#supplements-app-mount .sl-whey-nutrition[aria-label="isolate nutrition per serving"] .sl-whey-nutrition-item+.sl-whey-nutrition-item{border-color:#555}
+#supplements-app-mount .sl-whey-nutrition.sl-whey-nutrition-compact{background:#111;color:#fff;padding-top:12px;padding-bottom:12px}
+#supplements-app-mount .sl-whey-nutrition.sl-whey-nutrition-compact>p{margin:0;font-size:clamp(17px,2.2vw,24px);line-height:1.35;font-weight:500}
+#supplements-app-mount .sl-whey-nutrition.sl-whey-nutrition-compact .sl-whey-nutrition-value{display:inline;font:inherit;font-weight:700;color:#fff}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-whey-nutrition-compact{padding-block:4px}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-whey-nutrition-compact>p{line-height:1.2}
+
+/* Whey-only category and pack-size controls. Keep the tabs close to the title
+   so the collection starts with a clear, compact choice rather than a blank band. */
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-product-image{
+  height:280px;aspect-ratio:auto;
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-product-image img{scale:1}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-collection-heading{padding-block:10px}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-heading-inner{gap:6px}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-collection-heading h1{font-size:32px}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-product-copy{
+  padding-top:6px;grid-template-rows:54px 32px 31px minmax(52px,auto) 44px;
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-size-options{min-height:32px}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-card-nutrition{min-height:52px}
+@media(max-width:700px){
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-product-image{height:175px}
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="blend"] .sl-collection-heading h1{font-size:28px}
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"][data-collection-filter="all"] .sl-whey-category-button{
+  min-height:40px;
+  padding-block:6px;
+}
+#supplements-app-mount .sl-whey-collection nav.sl-whey-category-buttons{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  width:min(100%,760px);
+  margin:0 auto;
+  padding:0 5.2% 16px;
+  overflow:visible;
+}
+#supplements-app-mount .sl-whey-collection .sl-whey-category-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  min-height:50px;
+  padding:10px 14px;
+  border:2px solid #111;
+  border-radius:3px;
+  background:#fff;
+  color:#111;
+  font-size:16px;
+  font-weight:750;
+  line-height:1.15;
+  text-align:center;
+  text-decoration:none;
+  white-space:normal;
+  cursor:pointer;
+  transition:background-color .16s ease,color .16s ease,border-color .16s ease;
+}
+#supplements-app-mount .sl-whey-collection .sl-whey-category-button.is-active{
+  border-color:#111;
+  background:#111;
+  color:#fff;
+}
+#supplements-app-mount .sl-whey-collection .sl-whey-category-button:focus-visible,
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option:focus-visible{
+  outline:3px solid #111;
+  outline-offset:3px;
+}
+#supplements-app-mount .sl-whey-collection .sl-collection-heading{
+  padding-top:14px;
+  padding-bottom:14px;
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-grouped-card .sl-product-copy{
+  display:grid;
+  grid-template-rows:54px 38px 31px minmax(52px,auto) 44px;
+  align-items:start;
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-grouped-card .sl-product-copy h2{
+  min-height:54px;
+  grid-template-rows:26px 26px;
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-card-name{font-size:18px;font-weight:500}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-card-variant{font-size:21px;font-weight:700;line-height:26px;color:#181818}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .review-quality-claim{font-size:15px;color:#111}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .review-quality-icon{width:36px;height:36px;flex-basis:36px;color:#00a8b8}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-options{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  width:100%;
+  min-height:38px;
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-single-size{font-size:14px;font-weight:400;line-height:1.4;color:#111}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option{
+  flex:0 1 92px;
+  min-width:0;
+  min-height:31px;
+  padding:5px 12px;
+  border:1px solid #111;
+  border-radius:3px;
+  background:#fff;
+  color:#111;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.2;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:background-color .16s ease,color .16s ease,border-color .16s ease;
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option[aria-pressed="true"]{
+  border-color:#111;
+  background:#111;
+  color:#fff;
+}
+@media(hover:hover){
+  #supplements-app-mount .sl-whey-collection .sl-whey-category-button:not(.is-active):hover,
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option:not([aria-pressed="true"]):hover{
+    border-color:#111;background:#fff;color:#111;text-decoration:underline;text-underline-offset:3px;
+  }
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-grouped-card .sl-product-price{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:31px;
+  margin:0;
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-grouped-card .sl-card-nutrition{
+  min-height:52px;
+  margin:0 auto;
+}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-grouped-card .sl-details-button{
+  align-self:end;
+  min-height:44px;
+  margin:0 auto;
+}
+@media(max-width:700px){
+  #supplements-app-mount .sl-whey-collection nav.sl-whey-category-buttons{
+    gap:6px;
+    width:100%;
+    padding:0 16px 14px;
+  }
+  #supplements-app-mount .sl-whey-collection .sl-whey-category-button{
+    min-height:44px;
+    padding:8px 4px;
+    font-size:clamp(11px,3.55vw,14px);
+    letter-spacing:-.02em;
+  }
+  #supplements-app-mount .sl-whey-collection .sl-collection-heading{
+    padding-top:12px;
+  }
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-grouped-card .sl-product-copy{
+    grid-template-rows:52px 37px 28px minmax(48px,auto) 42px;
+  }
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-grouped-card .sl-product-copy h2{
+    min-height:52px;
+    grid-template-rows:28px 24px;
+  }
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-card-name{font-size:16px}
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-card-variant{font-size:18px;line-height:24px}
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .review-quality-claim{font-size:14px}
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .review-quality-icon{width:32px;height:32px;flex-basis:32px}
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-options{min-height:37px;gap:4px}
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option{
+    flex-basis:78px;
+    min-height:30px;
+    padding:5px 8px;
+    font-size:12px;
+  }
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-grouped-card .sl-product-price{min-height:28px}
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-grouped-card .sl-card-nutrition{min-height:48px}
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-grouped-card .sl-details-button{min-height:42px}
+}
+@media(max-width:360px){
+  #supplements-app-mount .sl-whey-collection nav.sl-whey-category-buttons{padding-inline:8px;gap:5px}
+  #supplements-app-mount .sl-whey-collection .sl-whey-category-button{
+    padding-inline:2px;
+    font-size:11px;
+    letter-spacing:-.035em;
+  }
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option{flex-basis:72px;padding-inline:5px}
+}
+#supplements-app-mount .sl-whey-collection:not([data-collection="whey"]) nav.sl-whey-category-buttons{width:min(100%,300px);padding-inline:16px}
+#supplements-app-mount .sl-whey-collection:not([data-collection="whey"]) .sl-whey-nutrition{padding-block:2px}
+#supplements-app-mount .sl-whey-collection[data-collection="supplements"] nav.sl-supplement-category-buttons{width:min(100%,760px);padding-bottom:4px}
+#supplements-app-mount .sl-supplement-category-buttons .sl-whey-category-button{white-space:normal}
+#supplements-app-mount .sl-supplement-filter-footer{text-align:center;padding:0 16px 12px}
+#supplements-app-mount .sl-supplement-filter-reset{border:0;padding:4px 8px;background:none;color:#111;font:inherit;font-size:12px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+#supplements-app-mount .sl-supplement-filter-reset[aria-pressed="true"]{font-weight:700}
+#supplements-app-mount .sl-supplement-filter-footer p{margin:4px 0 0;font-size:12px;line-height:1.5;color:#514c49}
+@media(hover:hover){#supplements-app-mount .sl-whey-collection[data-collection="supplements"] .sl-whey-category-button:hover{background:#111;color:#fff}}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-category-button:not([aria-current="page"]),
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option[aria-pressed="false"]{background:#fff!important;color:#111!important}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-category-button[aria-current="page"],
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option[aria-pressed="true"]{background:#111!important;color:#fff!important}
+@media(forced-colors:active){
+  /* Keep native system colors, but prevent button color substitution from
+     making the selected filter look identical to the other three controls. */
+  #supplements-app-mount .sl-whey-collection[data-collection="supplements"] :is(.sl-whey-category-button,.sl-supplement-filter-reset){
+    forced-color-adjust:none;
+    background:Canvas!important;
+    color:CanvasText!important;
+    border-color:CanvasText!important;
+    transition:none;
+  }
+  #supplements-app-mount .sl-whey-collection[data-collection="supplements"] .sl-whey-category-button[aria-pressed="true"]{
+    background:Highlight!important;
+    color:HighlightText!important;
+  }
+  #supplements-app-mount .sl-whey-collection[data-collection="supplements"] .sl-supplement-filter-reset{
+    font-weight:400!important;
+  }
+  #supplements-app-mount .sl-whey-collection[data-collection="supplements"] .sl-supplement-filter-reset[aria-pressed="true"]{
+    font-weight:700!important;
+  }
+  #supplements-app-mount .sl-whey-collection[data-collection="supplements"] :is(.sl-whey-category-button,.sl-supplement-filter-reset):focus-visible{
+    outline:3px solid Highlight!important;
+    outline-offset:3px;
+  }
+}

@@ -1,0 +1,952 @@
+{
+  "source": "Stellar-Labs-Product-Info-Claims-Outline_1792441095879.pdf",
+  "products": [
+    {
+      "id": "womens-multi",
+      "family": "supplements",
+      "name": "Women’s Daily Multivitamin",
+      "page": 4,
+      "description": "Stellar Labs® Women’s Daily Multivitamin combines essential vitamins, minerals, antioxidants, and supportive nutrients formulated for women’s daily nutritional needs.",
+      "benefits": [
+        "Energy & Metabolism Support*",
+        "Supports Muscle Function*",
+        "Supports Healthy Hair, Skin & Nails*",
+        "Antioxidant Support*"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "Vegetarian Capsules",
+        "Free of Milk, Eggs, Fish, Crustacean Shellfish, Tree Nuts, Peanuts, Wheat, and Soy"
+      ],
+      "support": [
+        {
+          "title": "Energy & Metabolism",
+          "description": "B vitamins and essential nutrients help support normal energy metabolism and everyday vitality.*"
+        },
+        {
+          "title": "Muscle Function",
+          "description": "Key vitamins and minerals help support normal muscle function and overall wellness.*"
+        },
+        {
+          "title": "Hair, Skin & Nails",
+          "description": "Includes biotin and other nutrients that support healthy hair, skin and nails.*"
+        },
+        {
+          "title": "Antioxidant Support",
+          "description": "Antioxidant nutrients help support the body’s defenses against oxidative stress.*"
+        }
+      ],
+      "suggestedUse": "Take two capsules in the morning with a meal, or as directed by your healthcare professional.",
+      "facts": [
+        "60 capsules per bottle",
+        "30-day supply when taken as directed."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "mens-multivitamin",
+      "family": "supplements",
+      "name": "Men’s Daily Multivitamin",
+      "page": 5,
+      "description": "Stellar Labs® Men’s Daily Multivitamin combines essential vitamins, minerals, antioxidants, and supportive nutrients formulated for men’s daily nutritional needs.",
+      "benefits": [
+        "Energy & Metabolism*",
+        "Prostate & Heart Health*",
+        "Muscle Function*",
+        "Antioxidant Support*"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "Vegan Capsules",
+        "Free of Milk, Eggs, Fish, Crustacean Shellfish, Tree Nuts, Peanuts, Wheat, and Soy"
+      ],
+      "support": [
+        {
+          "title": "Energy & Metabolism",
+          "description": "B vitamins and essential nutrients support normal energy production and metabolism.*"
+        },
+        {
+          "title": "Prostate & Heart Health",
+          "description": "Provides nutrients selected to support men’s prostate and heart health.*"
+        },
+        {
+          "title": "Muscle Function",
+          "description": "Essential vitamins and minerals help support normal muscle function.*"
+        },
+        {
+          "title": "Antioxidant Support",
+          "description": "Antioxidant nutrients help support the body’s defenses against oxidative stress.*"
+        }
+      ],
+      "suggestedUse": "Take two capsules in the morning with a meal, or as directed by your healthcare professional.",
+      "facts": [
+        "60 capsules per bottle",
+        "30-day supply when taken as directed."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "probiotic-40",
+      "family": "supplements",
+      "name": "Probiotic 40 Billion CFU",
+      "page": 6,
+      "description": "Stellar Labs® Probiotic combines four probiotic strains: Lactobacillus acidophilus (La-14), Bifidobacterium lactis (Bl-04), Lactobacillus plantarum (Lp-115), and Lactobacillus paracasei (Lpc-37).",
+      "benefits": [
+        "Gut Balance*",
+        "Digestive Health*",
+        "Immune Support*"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "Free of Milk, Eggs, Tree Nuts, Peanuts, Wheat, and Soy"
+      ],
+      "support": [
+        {
+          "title": "Gut Balance",
+          "description": "Multi-strain probiotic support helps promote a balanced intestinal environment.*"
+        },
+        {
+          "title": "Digestive Health",
+          "description": "Selected probiotic strains help support healthy digestive function.*"
+        },
+        {
+          "title": "Immune Support",
+          "description": "Probiotic strains help support normal immune function.*"
+        }
+      ],
+      "suggestedUse": "Follow the dosage and timing on the product label, or use as directed by your healthcare professional.",
+      "facts": [
+        "60 capsules per bottle",
+        "40 billion CFU per two-capsule serving."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "digestive-enzyme",
+      "family": "supplements",
+      "name": "Digestive Enzyme",
+      "page": 7,
+      "description": "Stellar Labs® Digestive Enzyme combines enzymes that help break down proteins, fats, and carbohydrates.*",
+      "benefits": [
+        "Supports Digestion & Nutrient Breakdown*",
+        "Helps Reduce Bloating & Discomfort*",
+        "Enhances Nutrient Absorption*",
+        "Supports Gut Health*"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "Vegan Capsules",
+        "Vegetarian Capsules",
+        "Free of Milk, Eggs, Fish, Crustacean Shellfish, Tree Nuts, Peanuts, Wheat, and Soy"
+      ],
+      "support": [
+        {
+          "title": "Digestion & Nutrient Breakdown",
+          "description": "Digestive enzymes help support the breakdown of proteins, fats, carbohydrates, and sugars.*"
+        },
+        {
+          "title": "Bloating & Digestive Comfort",
+          "description": "Supports efficient digestion and post-meal comfort.*"
+        },
+        {
+          "title": "Nutrient Absorption",
+          "description": "Helps break down foods into forms the body can more readily absorb and use.*"
+        },
+        {
+          "title": "Gut Health",
+          "description": "Supports healthy digestive function and gastrointestinal wellness.*"
+        }
+      ],
+      "suggestedUse": "Take one capsule twice daily, 20-30 minutes before a meal, with an 8-ounce glass of water, or as directed by your healthcare professional.",
+      "facts": [
+        "60 capsules per bottle",
+        "30-day supply when taken as directed."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "omega-3",
+      "family": "supplements",
+      "name": "Omega 3 Fish Oil",
+      "page": 8,
+      "description": "Stellar Labs® Omega 3 Fish Oil provides EPA and DHA from sea-harvested fish oil for everyday omega-3 nutrition.",
+      "benefits": [
+        "Heart Health*",
+        "Brain Health*",
+        "Joint Health*",
+        "Healthy Inflammatory Response*"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "100% Pure Sea-Harvested Pelagic Fish Oil",
+        "Premium EPA & DHA Formula",
+        "Tested for Known Contaminants"
+      ],
+      "support": [
+        {
+          "title": "Heart Health",
+          "description": "EPA and DHA help support cardiovascular health and normal heart function.*"
+        },
+        {
+          "title": "Brain Health",
+          "description": "DHA helps support healthy brain and cognitive function.*"
+        },
+        {
+          "title": "Joint Health",
+          "description": "Omega-3 fatty acids help support joint comfort and mobility.*"
+        },
+        {
+          "title": "Healthy Inflammatory Response",
+          "description": "Omega-3s help support the body’s normal inflammatory response.*"
+        }
+      ],
+      "suggestedUse": "Take one softgel daily with a meal, or as directed by your healthcare professional.",
+      "facts": [
+        "60 softgels per bottle",
+        "60-day supply when taken as directed."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Contains fish.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "magnesium-complex",
+      "family": "supplements",
+      "name": "Magnesium Complex",
+      "page": 9,
+      "description": "Stellar Labs® Magnesium Complex combines multiple forms of magnesium for everyday mineral supplementation.",
+      "benefits": [
+        "Muscle Relaxation*",
+        "Cardiovascular & Bone Health*",
+        "Nervous System Support*",
+        "Digestive Health*"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "Vegan Capsules",
+        "Free of Milk, Eggs, Fish, Crustacean Shellfish, Tree Nuts, Peanuts, Wheat, and Soy",
+        "Multiple Forms of Magnesium"
+      ],
+      "support": [
+        {
+          "title": "Muscle Relaxation",
+          "description": "Magnesium supports normal muscle function and relaxation.*"
+        },
+        {
+          "title": "Cardiovascular & Bone Health",
+          "description": "Magnesium supports normal cardiovascular and bone health.*"
+        },
+        {
+          "title": "Nervous System Support",
+          "description": "Magnesium helps support healthy nervous system function.*"
+        },
+        {
+          "title": "Digestive Health",
+          "description": "Multiple forms of magnesium support healthy digestion and absorption.*"
+        }
+      ],
+      "suggestedUse": "Take one capsule daily before a meal, or two capsules if recommended by your healthcare professional.",
+      "facts": [
+        "60 capsules per bottle",
+        "30-60 servings per bottle, depending on recommended use."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Higher supplemental doses may cause diarrhea or nausea. If these occur, discontinue use and consult your healthcare professional.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "turmeric-w-bioperine",
+      "family": "supplements",
+      "name": "Turmeric Curcumin with BioPerine®",
+      "page": 10,
+      "description": "Stellar Labs® Turmeric Curcumin with BioPerine® combines turmeric curcumin with black pepper extract for daily botanical support.",
+      "benefits": [
+        "Antioxidant Support*",
+        "Supports Healthy Aging*",
+        "Joint & Mobility Support*",
+        "Cellular Health*"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "Vegan Capsules",
+        "Free of Milk, Eggs, Fish, Crustacean Shellfish, Tree Nuts, Peanuts, Wheat, and Soy",
+        "Formulated with BioPerine®"
+      ],
+      "support": [
+        {
+          "title": "Antioxidant Support",
+          "description": "Turmeric provides antioxidant compounds that help support the body’s defenses against oxidative stress.*"
+        },
+        {
+          "title": "Healthy Aging",
+          "description": "Botanical and antioxidant support helps promote overall wellness.*"
+        },
+        {
+          "title": "Joint & Mobility Support",
+          "description": "Turmeric helps support joint comfort and mobility.*"
+        },
+        {
+          "title": "Cellular Health",
+          "description": "Antioxidant compounds help support normal cellular wellness.*"
+        }
+      ],
+      "suggestedUse": "Take two capsules once daily, 20-30 minutes before a meal, with an 8-ounce glass of water, or as directed by your healthcare professional.",
+      "facts": [
+        "60 capsules per bottle",
+        "30-day supply when taken as directed."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "night-time-fat-burn",
+      "family": "supplements",
+      "name": "Night Time Fat Burn",
+      "page": 11,
+      "description": "Stellar Labs® Night Time Fat Burn combines a Night Burn Blend, a Mood and Sleep Blend, and melatonin in a stimulant-free nighttime formula.",
+      "benefits": [
+        "Supports Overnight Metabolism*",
+        "Supports Fat Utilization*",
+        "Promotes Restful Sleep*",
+        "Supports Stress & Relaxation*"
+      ],
+      "quality": [
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Stimulant-Free",
+        "Free of Milk, Eggs, Fish, Crustacean Shellfish, Tree Nuts, Peanuts, Wheat, and Soy"
+      ],
+      "support": [
+        {
+          "title": "Overnight Metabolism",
+          "description": "Ingredients selected to support normal metabolic activity while you rest.*"
+        },
+        {
+          "title": "Fat Utilization",
+          "description": "Provides nutritional support for healthy weight-management goals when combined with diet and exercise.*"
+        },
+        {
+          "title": "Restful Sleep",
+          "description": "Includes ingredients selected to support relaxation and restful sleep.*"
+        },
+        {
+          "title": "Stress & Relaxation",
+          "description": "Supports a calm nighttime routine and healthy stress response.*"
+        }
+      ],
+      "suggestedUse": "Take two capsules before bedtime, or as directed by your healthcare professional.",
+      "facts": [
+        "60 capsules per bottle",
+        "30-day supply when taken as directed.",
+        "Per two capsules: Night Burn Blend 500 mg; Mood and Sleep Blend 340 mg;",
+        "melatonin 4 mg."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Do not exceed the recommended dose. Do not combine with antidepressants or other sleep aids.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."
+      ]
+    },
+    {
+      "id": "ProteinChocolateIsolate",
+      "family": "isolate",
+      "name": "Chocolate 100% Whey Isolate",
+      "page": 13,
+      "description": "Stellar Labs® Chocolate 100% Whey Isolate is made with ultra-filtered whey protein isolate, with most of the fat and lactose removed.",
+      "benefits": [
+        "Protein for Muscle Maintenance & Recovery*",
+        "Convenient Everyday Nutrition",
+        "Easy Mixing"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "No Added Sugars",
+        "rBGH-Free",
+        "Digestive Enzymes: Papain & Protease"
+      ],
+      "support": [
+        {
+          "title": "Muscle Maintenance & Recovery",
+          "description": "Dietary protein supplies amino acids that support muscle maintenance and recovery.*"
+        },
+        {
+          "title": "Essential Amino Acids",
+          "description": "Provides all nine essential amino acids, including BCAAs."
+        }
+      ],
+      "suggestedUse": "Mix one rounded scoop with 6-8 ounces of water, milk, or your preferred non-dairy beverage. Adjust the amount of liquid to taste.",
+      "facts": [
+        "Serving size: 1 rounded scoop (29 g)",
+        "Servings per container: 16",
+        "Calories: 110",
+        "Protein: 25 g",
+        "Total carbohydrate: 2 g",
+        "Total sugars (naturally occurring): 1 g",
+        "Refer to the product label for complete facts and ingredients."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Contains milk and soy. Manufactured on shared equipment that processes milk, eggs, soybeans, wheat, shellfish, fish oil, tree nuts, and peanuts.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "ProteinCappuccino",
+      "family": "isolate",
+      "name": "Cappuccino 100% Whey Isolate",
+      "page": 14,
+      "description": "Stellar Labs® Cappuccino 100% Whey Isolate is made with ultra-filtered whey protein isolate, with most of the fat and lactose removed.",
+      "benefits": [
+        "Protein for Muscle Maintenance & Recovery*",
+        "Convenient Everyday Nutrition",
+        "Easy Mixing"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "No Added Sugars",
+        "rBGH-Free",
+        "Digestive Enzymes: Papain & Protease"
+      ],
+      "support": [
+        {
+          "title": "Muscle Maintenance & Recovery",
+          "description": "Dietary protein supplies amino acids that support muscle maintenance and recovery.*"
+        },
+        {
+          "title": "Essential Amino Acids",
+          "description": "Provides all nine essential amino acids, including BCAAs."
+        }
+      ],
+      "suggestedUse": "Mix one rounded scoop with 6-8 ounces of water, milk, or your preferred non-dairy beverage. Adjust the amount of liquid to taste.",
+      "facts": [
+        "Serving size: 1 rounded scoop (29 g)",
+        "Servings per container: 16",
+        "Calories: 110",
+        "Protein: 25 g",
+        "Total carbohydrate: 2 g",
+        "Total sugars (naturally occurring): 0 g",
+        "Refer to the product label for complete facts and ingredients."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Contains milk and soy. Manufactured on shared equipment that processes milk, eggs, soybeans, wheat, shellfish, fish oil, tree nuts, and peanuts.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "ProteinVanillaIsolate",
+      "family": "isolate",
+      "name": "Vanilla 100% Whey Isolate",
+      "page": 15,
+      "description": "Stellar Labs® Vanilla 100% Whey Isolate is made with ultra-filtered whey protein isolate, with most of the fat and lactose removed.",
+      "benefits": [
+        "Protein for Muscle Maintenance & Recovery*",
+        "Convenient Everyday Nutrition",
+        "Easy Mixing"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "No Added Sugars",
+        "rBGH-Free",
+        "Digestive Enzymes: Papain & Protease"
+      ],
+      "support": [
+        {
+          "title": "Muscle Maintenance & Recovery",
+          "description": "Dietary protein supplies amino acids that support muscle maintenance and recovery.*"
+        },
+        {
+          "title": "Essential Amino Acids",
+          "description": "Provides all nine essential amino acids, including BCAAs."
+        }
+      ],
+      "suggestedUse": "Mix one rounded scoop with 6-8 ounces of water, milk, or your preferred non-dairy beverage. Adjust the amount of liquid to taste.",
+      "facts": [
+        "Serving size: 1 rounded scoop (29 g)",
+        "Servings per container: 16",
+        "Calories: 120",
+        "Protein: 26 g",
+        "Total carbohydrate: 1 g",
+        "Total sugars (naturally occurring): 1 g",
+        "Refer to the product label for complete facts and ingredients."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Contains milk and soy. Manufactured on shared equipment that processes milk, eggs, soybeans, wheat, shellfish, fish oil, tree nuts, and peanuts.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "ProteinUnflavored",
+      "family": "isolate",
+      "name": "Unflavored 100% Whey Isolate",
+      "page": 16,
+      "description": "Stellar Labs® Unflavored 100% Whey Isolate is made with ultra-filtered whey protein isolate, with most of the fat and lactose removed.",
+      "benefits": [
+        "Protein for Muscle Maintenance & Recovery*",
+        "Convenient Everyday Nutrition",
+        "Easy Mixing"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "No Added Sugars",
+        "rBGH-Free",
+        "Digestive Enzymes: Papain & Protease"
+      ],
+      "support": [
+        {
+          "title": "Muscle Maintenance & Recovery",
+          "description": "Dietary protein supplies amino acids that support muscle maintenance and recovery.*"
+        },
+        {
+          "title": "Essential Amino Acids",
+          "description": "Provides all nine essential amino acids, including BCAAs."
+        }
+      ],
+      "suggestedUse": "Mix one rounded scoop with 6-8 ounces of water, milk, or your preferred non-dairy beverage. Adjust the amount of liquid to taste.",
+      "facts": [
+        "Serving size: 1 rounded scoop (29 g)",
+        "Servings per container: 16",
+        "Calories: 110",
+        "Protein: 25 g",
+        "Total carbohydrate: 1 g",
+        "Total sugars (naturally occurring): 0 g",
+        "Refer to the product label for complete facts and ingredients."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Contains milk and soy. Manufactured on shared equipment that processes milk, eggs, soybeans, wheat, shellfish, fish oil, tree nuts, and peanuts.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "ProteinStrawberry",
+      "family": "isolate",
+      "name": "Strawberry 100% Whey Isolate",
+      "page": 17,
+      "description": "Stellar Labs® Strawberry 100% Whey Isolate is made with ultra-filtered whey protein isolate, with most of the fat and lactose removed.",
+      "benefits": [
+        "Protein for Muscle Maintenance & Recovery*",
+        "Convenient Everyday Nutrition",
+        "Easy Mixing"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "No Added Sugars",
+        "rBGH-Free",
+        "Digestive Enzymes: Papain & Protease"
+      ],
+      "support": [
+        {
+          "title": "Muscle Maintenance & Recovery",
+          "description": "Dietary protein supplies amino acids that support muscle maintenance and recovery.*"
+        },
+        {
+          "title": "Essential Amino Acids",
+          "description": "Provides all nine essential amino acids, including BCAAs."
+        }
+      ],
+      "suggestedUse": "Mix one rounded scoop with 6-8 ounces of water, milk, or your preferred non-dairy beverage. Adjust the amount of liquid to taste.",
+      "facts": [
+        "Serving size: 1 rounded scoop (29 g)",
+        "Servings per container: 16",
+        "Calories: 110",
+        "Protein: 25 g",
+        "Total carbohydrate: 1 g",
+        "Total sugars (naturally occurring): 1 g",
+        "Refer to the product label for complete facts and ingredients."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Contains milk and soy. Manufactured on shared equipment that processes milk, eggs, soybeans, wheat, shellfish, fish oil, tree nuts, and peanuts.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "ProteinChocolateBlend",
+      "family": "blend",
+      "name": "Chocolate Whey Blend",
+      "page": 19,
+      "description": "Stellar Labs® Chocolate Whey Protein Blend combines whey protein concentrate and whey protein isolate in a smooth shake for everyday protein nutrition.",
+      "benefits": [
+        "Protein for Muscle Maintenance & Recovery*",
+        "Convenient Everyday Nutrition",
+        "Easy Mixing"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "No Added Sugars",
+        "rBGH-Free",
+        "Digestive Enzymes: Papain & Protease"
+      ],
+      "support": [
+        {
+          "title": "Muscle Maintenance & Recovery",
+          "description": "Dietary protein supplies amino acids that support muscle maintenance and recovery.*"
+        },
+        {
+          "title": "Essential Amino Acids",
+          "description": "Provides all nine essential amino acids, including BCAAs."
+        }
+      ],
+      "suggestedUse": "Mix one rounded scoop with 6-8 ounces of water, milk, or your preferred non-dairy beverage. Adjust the amount of liquid to taste.",
+      "facts": [
+        "Serving size: 1 rounded scoop",
+        "Servings per container: 28",
+        "Calories: 130",
+        "Protein: 24 g",
+        "Total carbohydrate: 4 g",
+        "Total sugars: 2 g",
+        "Refer to the product label for complete facts and ingredients."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Contains milk and soy. Manufactured on shared equipment that processes milk, eggs, soybeans, wheat, shellfish, fish oil, tree nuts, and peanuts.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "ProteinVanillaBlend",
+      "family": "blend",
+      "name": "Vanilla Whey Blend",
+      "page": 20,
+      "description": "Stellar Labs® Vanilla Whey Protein Blend combines whey protein concentrate and whey protein isolate in a smooth shake for everyday protein nutrition.",
+      "benefits": [
+        "Protein for Muscle Maintenance & Recovery*",
+        "Convenient Everyday Nutrition",
+        "Easy Mixing"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "No Added Sugars",
+        "rBGH-Free",
+        "Digestive Enzymes: Papain & Protease"
+      ],
+      "support": [
+        {
+          "title": "Muscle Maintenance & Recovery",
+          "description": "Dietary protein supplies amino acids that support muscle maintenance and recovery.*"
+        },
+        {
+          "title": "Essential Amino Acids",
+          "description": "Provides all nine essential amino acids, including BCAAs."
+        }
+      ],
+      "suggestedUse": "Mix one rounded scoop with 6-8 ounces of water, milk, or your preferred non-dairy beverage. Adjust the amount of liquid to taste.",
+      "facts": [
+        "Serving size: 1 rounded scoop",
+        "Servings per container: 28",
+        "Calories: 130",
+        "Protein: 24 g",
+        "Total carbohydrate: 3 g",
+        "Total sugars: 2 g",
+        "Refer to the product label for complete facts and ingredients."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Contains milk and soy. Manufactured on shared equipment that processes milk, eggs, soybeans, wheat, shellfish, fish oil, tree nuts, and peanuts.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "ProteinCaramelBlend",
+      "family": "blend",
+      "name": "Salted Caramel Whey Blend",
+      "page": 21,
+      "description": "Stellar Labs® Salted Caramel Whey Protein Blend combines whey protein concentrate and whey protein isolate in a smooth shake for everyday protein nutrition.",
+      "benefits": [
+        "Protein for Muscle Maintenance & Recovery*",
+        "Convenient Everyday Nutrition",
+        "Easy Mixing"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "No Added Sugars",
+        "rBGH-Free",
+        "Digestive Enzymes: Papain & Protease"
+      ],
+      "support": [
+        {
+          "title": "Muscle Maintenance & Recovery",
+          "description": "Dietary protein supplies amino acids that support muscle maintenance and recovery.*"
+        },
+        {
+          "title": "Essential Amino Acids",
+          "description": "Provides all nine essential amino acids, including BCAAs."
+        }
+      ],
+      "suggestedUse": "Mix one rounded scoop with 6-8 ounces of water, milk, or your preferred non-dairy beverage. Adjust the amount of liquid to taste.",
+      "facts": [
+        "Serving size: 1 rounded scoop",
+        "Servings per container: 28",
+        "Calories: 130",
+        "Protein: 24 g",
+        "Total carbohydrate: 3 g",
+        "Total sugars: 2 g",
+        "Refer to the product label for complete facts and ingredients."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Contains milk and soy. Manufactured on shared equipment that processes milk, eggs, soybeans, wheat, shellfish, fish oil, tree nuts, and peanuts.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "VeganChocolate",
+      "family": "vegan",
+      "name": "Chocolate Vegan Protein",
+      "page": 23,
+      "description": "Stellar Labs® Chocolate Vegan Plant Protein Shake blends pea protein isolate, brown rice powder, and quinoa for convenient everyday plant-based nutrition.",
+      "benefits": [
+        "Protein for Muscle Maintenance & Recovery*",
+        "Convenient Everyday Nutrition",
+        "Easy Mixing"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "Vegan",
+        "Sweetened with Stevia"
+      ],
+      "support": [
+        {
+          "title": "Muscle Maintenance & Recovery",
+          "description": "Dietary protein supplies amino acids that support muscle maintenance and recovery.*"
+        },
+        {
+          "title": "Three Plant Sources",
+          "description": "Combines protein ingredients from peas, brown rice, and quinoa."
+        }
+      ],
+      "suggestedUse": "Mix one rounded scoop with 6-8 ounces of water, milk, or your preferred non-dairy beverage. Adjust the amount of liquid to taste.",
+      "facts": [
+        "Serving size: 1 rounded scoop (32 g)",
+        "Servings per container: 28",
+        "Protein: 20 g per serving",
+        "Refer to the product label for complete facts and ingredients."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Manufactured on shared equipment that processes milk, eggs, soybeans, wheat, shellfish, fish oil, tree nuts, and peanuts.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "VeganVanilla",
+      "family": "vegan",
+      "name": "Vanilla Vegan Protein",
+      "page": 24,
+      "description": "Stellar Labs® Vanilla Vegan Plant Protein Shake blends pea protein isolate, brown rice powder, and quinoa for convenient everyday plant-based nutrition.",
+      "benefits": [
+        "Protein for Muscle Maintenance & Recovery*",
+        "Convenient Everyday Nutrition",
+        "Easy Mixing"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "Vegan",
+        "Sweetened with Stevia"
+      ],
+      "support": [
+        {
+          "title": "Muscle Maintenance & Recovery",
+          "description": "Dietary protein supplies amino acids that support muscle maintenance and recovery.*"
+        },
+        {
+          "title": "Three Plant Sources",
+          "description": "Combines protein ingredients from peas, brown rice, and quinoa."
+        }
+      ],
+      "suggestedUse": "Mix one rounded scoop with 6-8 ounces of water, milk, or your preferred non-dairy beverage. Adjust the amount of liquid to taste.",
+      "facts": [
+        "Serving size: 1 rounded scoop (32 g)",
+        "Servings per container: 28",
+        "Protein: 20 g per serving",
+        "Refer to the product label for complete facts and ingredients."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Manufactured on shared equipment that processes milk, eggs, soybeans, wheat, shellfish, fish oil, tree nuts, and peanuts.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "ElectrolyteLemonLime",
+      "family": "electrolyte",
+      "name": "Lemon Lime Electrolytes",
+      "page": 26,
+      "description": "Stellar Labs® Lemon Lime Electrolyte Powder is an easy-to-mix option for everyday hydration and replenishment after sweating or exercise.",
+      "benefits": [
+        "Fluid & Electrolyte Balance*",
+        "Normal Muscle & Nerve Function*"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Made with Low-FODMAP Ingredients†",
+        "Vegan",
+        "No Added Sugars"
+      ],
+      "support": [
+        {
+          "title": "Five Essential Electrolytes",
+          "description": "Sodium, potassium, chloride, magnesium, and calcium help support fluid and electrolyte balance.*"
+        },
+        {
+          "title": "Hydration & Replenishment",
+          "description": "Helps replace electrolytes lost through sweating and exercise.*"
+        },
+        {
+          "title": "Muscle & Nerve Function",
+          "description": "Magnesium and potassium support normal muscle and nerve function.*"
+        }
+      ],
+      "suggestedUse": "Mix one scoop (4.5 g) with 12-16 ounces of water.",
+      "facts": [
+        "Serving size: 1 scoop (4.5 g)",
+        "Servings per container: 30",
+        "Calories: 5",
+        "Total carbohydrate: 2 g",
+        "Dietary fiber: less than 1 g",
+        "Sodium: 80 mg",
+        "Potassium: 280 mg",
+        "Magnesium: 51 mg",
+        "Calcium: 47 mg",
+        "Chloride: amount not separately declared on the product label."
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Manufactured in a facility that also processes milk, eggs, soybeans, wheat, fish oil, and tree nuts. Store at room temperature.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+        "†Based on the labeled serving size. Larger servings may increase FODMAP intake. Individual tolerance varies. This product is not certified low-FODMAP."
+      ]
+    },
+    {
+      "id": "ElectrolyteStrawberry",
+      "family": "electrolyte",
+      "name": "Strawberry Electrolytes",
+      "page": 27,
+      "description": "Stellar Labs® Strawberry Electrolyte Powder is an easy-to-mix option for everyday hydration and replenishment after sweating or exercise.",
+      "benefits": [
+        "Fluid & Electrolyte Balance*",
+        "Normal Muscle & Nerve Function*",
+        "Energy Metabolism & Immune Support*"
+      ],
+      "quality": [
+        "Certified Gluten-Free",
+        "Non-GMO",
+        "Manufactured in the USA in an NSF GMP-certified facility.",
+        "Vegan",
+        "No Added Sugars"
+      ],
+      "support": [
+        {
+          "title": "Five Essential Electrolytes",
+          "description": "Sodium, potassium, chloride, magnesium, and calcium help support fluid and electrolyte balance.*"
+        },
+        {
+          "title": "Hydration & Replenishment",
+          "description": "Helps replace electrolytes lost through sweating and exercise.*"
+        },
+        {
+          "title": "Muscle & Nerve Function",
+          "description": "Magnesium and potassium support normal muscle and nerve function.*"
+        },
+        {
+          "title": "Vitamins B6 & C",
+          "description": "Vitamin B6 supports normal energy metabolism, and vitamin C supports normal immune function.*"
+        }
+      ],
+      "suggestedUse": "Mix with water according to the product label directions.",
+      "facts": [
+        "Serving size: 1 scoop (6.5 g)",
+        "Servings per container: 40",
+        "Calories: 10",
+        "Total carbohydrate: 2 g",
+        "Sodium: 500 mg",
+        "Potassium: 340 mg",
+        "Magnesium: 40 mg",
+        "Calcium: 50 mg",
+        "Chloride: amount not separately declared on the product label.",
+        "Vitamin C: 95 mg",
+        "Vitamin B6: 1.7 mg"
+      ],
+      "warnings": [
+        "If you have a health condition, are pregnant or breastfeeding, or take medication, consult your healthcare professional before use. Keep out of reach of children. Always read and follow the complete product label. Manufactured in a facility that also processes milk, eggs, soybeans, wheat, fish oil, and tree nuts. Store at room temperature.",
+        "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."
+      ]
+    }
+  ]
+}

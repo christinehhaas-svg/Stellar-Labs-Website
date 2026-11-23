@@ -1,0 +1,12 @@
+{
+  "handle": "100-isolate-whey-protein-shake-cappuccino",
+  "title": "100% Isolate Whey Protein Shake Cappuccino 1lb",
+  "price": 4695,
+  "available": true,
+  "variants": [{ "id": 47670466904238 }],
+  "images": [
+    "//cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_2LB_Chocolate-Front_1024x1024_e6bfba9a-89ac-45bd-993d-1a49fc4a4d85.png?v=1774721615",
+    "//cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_Cappuccino-Left.png?v=1774721615",
+    "//cdn.shopify.com/s/files/1/1409/0320/files/SL_WheyIsolateShake_1LB_Cappuccino-Right.png?v=1774721615"
+  ]
+}

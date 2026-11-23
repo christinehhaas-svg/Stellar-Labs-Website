@@ -1,0 +1,41 @@
+.stellar-current-claims .claims-facts-page{display:flex;flex-direction:column}
+.claims-facts-header{margin-bottom:20px}
+.claims-facts-header h1{font-size:25px;line-height:1.15;letter-spacing:-.6px;margin:0 0 8px}
+.claims-facts-header>p:last-child{font-size:11px;color:#514c49;margin:0}
+.claims-facts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-content:start}
+.claims-facts-card{border:1px solid #c9c7c4;padding:16px;break-inside:avoid;min-width:0}
+.claims-facts-card[data-metric-count="5"]{grid-column:1/-1}
+.claims-facts-card[data-metric-count="5"] .claims-facts-metrics{max-width:540px}
+.claims-facts-card h2{font-size:16px;line-height:1.3;margin:0 0 12px;color:#171717}
+.claims-facts-serving{border-top:2px solid #23201f;padding-top:8px}
+.claims-facts-serving p{font-size:11px;line-height:1.5;margin:0 0 3px}
+.claims-facts-metrics{display:grid;gap:7px;margin:16px 0 5px}
+.claims-facts-metrics>div{display:flex;flex-direction:column;min-width:0}
+.claims-facts-metrics dt{font-size:10px;line-height:1.4;color:#393939}
+.claims-facts-metrics dd{order:-1;margin:0 0 3px;font-size:19px;line-height:1.3;font-weight:700;color:#171717;white-space:nowrap}
+.claims-facts-basis{font-size:10px;line-height:1.45;color:#514c49;margin:6px 0 12px}
+.claims-facts-list{margin:12px 0;padding-left:16px;font-size:11px;line-height:1.55;color:#23201f}
+.claims-facts-list li{margin:0 0 6px}
+.claims-facts-claims{margin-top:12px;padding-top:10px;border-top:1px solid #d9d5d1}
+.claims-facts-claims h3{font-size:10px;letter-spacing:.5px;text-transform:uppercase;margin:0 0 5px}
+.claims-facts-claims p{font-size:10px;line-height:1.55;margin:0;color:#23201f}
+.claims-facts-disclaimer{font-size:9px;line-height:1.55;margin:12px 0 0;color:#514c49}
+.claims-facts-ingredients{margin:12px 0;padding-top:8px;border-top:1px solid #d9d5d1}
+.claims-facts-ingredients p{font-size:11px;line-height:1.5;margin:6px 0;color:#23201f}
+.claims-facts-ingredients .claims-facts-upc{font-size:12px}
+.claims-facts-ingredients .claims-facts-upc-note{color:#704516}
+.stellar-current-claims .claims-facts-footer{margin-top:auto}
+.claims-facts-footer p{margin:6px 0}
+.claims-supplement-facts-page .claims-facts-grid{grid-template-columns:1fr}
+.claims-supplement-facts-page .claims-facts-card{padding:16px 20px}
+.claims-supplement-facts-page .claims-facts-list{font-size:12px}
+.claims-product-page{display:flex;flex-direction:column}
+.claims-product-copy{font-size:12px;line-height:1.5;color:#23201f}
+.claims-product-copy h2,.claims-label-artwork h2{font-size:15px;margin:14px 0 7px;font-weight:700}
+.claims-product-copy p{margin:6px 0}
+.claims-product-copy ul{padding-left:18px;margin:6px 0}
+.claims-product-copy li{margin:3px 0}
+.claims-product-price{font-size:18px;font-weight:700}
+.claims-label-artwork{min-height:0;flex:1;display:flex;flex-direction:column}
+.claims-label-artwork img{display:block;max-width:100%;width:100%;min-height:0;flex:1;object-fit:contain;object-position:center}
+.claims-product-page .handoff-footer{margin-top:auto}

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Stellar Labs Review Website"
+description = "A separate, publishable website for reviewing the existing Stellar Labs homepage, supplement descriptions, eight whey protein product pages and two electrolyte pages. Preserves approved designs and copy; cannot contact the live Shopify cart or place orders."
+version = "1.0.0"
+id = "artifacts/stellar-review"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22179
+
+[services.development]
+run = "pnpm --filter @workspace/stellar-review run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/stellar-review", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/stellar-review/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22179"
+BASE_PATH = "/"

@@ -1,0 +1,22 @@
+.sl-whey-nutrition{background:#111;color:#f8f8f6;padding:2px max(5.2%,calc((100% - 1328px)/2));text-align:center}
+.sl-whey-nutrition-kicker{margin:0 0 8px;color:#d0d0cd;font-size:8px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.sl-whey-nutrition-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:960px;margin:0 auto}
+.sl-whey-nutrition-item{display:flex;flex-direction:column-reverse;justify-content:center;gap:2px;padding:0 12px}
+.sl-whey-nutrition-item+.sl-whey-nutrition-item{border-left:1px solid #676866}
+.sl-whey-nutrition-item dd{margin:0;font-size:clamp(26px,3.2vw,42px);font-weight:300;letter-spacing:-.035em;line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.sl-whey-nutrition-caption{display:block;margin-bottom:0;font-size:11px;line-height:1.4;font-weight:500;letter-spacing:.025em;color:#d0d0cd}
+.sl-whey-nutrition-value{display:block;white-space:nowrap}
+.sl-whey-nutrition-bound{font-size:.42em;letter-spacing:0}
+@media(max-width:600px){.sl-whey-nutrition-caption{font-size:10px}}
+.sl-whey-nutrition-item dt{color:#55c5c5;font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+.sl-whey-nutrition[aria-label="electrolyte nutrition per serving"] dd{font-size:clamp(18px,3.3vw,44px)}
+.sl-whey-nutrition-note{max-width:1040px;margin:16px auto 0;color:#bbb;font-size:12px;line-height:1.5}
+.sl-whey-nutrition-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 12px;margin-top:4px}
+.sl-whey-nutrition-footer p{margin:0}
+.sl-whey-nutrition-band .review-quality-strip{background:#111;padding-top:16px;padding-bottom:20px}
+.sl-whey-nutrition-band .review-quality-strip .review-quality-row{display:flex;flex-flow:row nowrap;justify-content:safe center;gap:16px;border-top:1px solid #555;padding-top:16px}
+.sl-whey-nutrition-band .review-quality-strip .review-quality-claim{font-size:12px;gap:7px}
+.sl-whey-nutrition-band .review-quality-strip .review-quality-icon{width:25px;height:25px;flex:0 0 25px}
+.sl-whey-nutrition-band .review-quality-strip>p{font-size:12px;line-height:1.5;margin-top:16px}
+@media(max-width:600px){.sl-whey-nutrition{padding:2px 12px}.sl-whey-nutrition-item{padding:0 4px}.sl-whey-nutrition-item dd{font-size:clamp(22px,6vw,28px)}.sl-whey-nutrition-item dt{font-size:8px;letter-spacing:.16em}.sl-whey-nutrition-note{font-size:11px}.sl-whey-nutrition-band .review-quality-strip .review-quality-row{gap:16px}}
+@media(max-width:600px){.sl-whey-nutrition[aria-label="electrolyte nutrition per serving"] dd{font-size:clamp(13px,3.8vw,22px);letter-spacing:-.04em}.sl-whey-nutrition[aria-label="electrolyte nutrition per serving"] dt{font-size:8px;letter-spacing:.04em}}

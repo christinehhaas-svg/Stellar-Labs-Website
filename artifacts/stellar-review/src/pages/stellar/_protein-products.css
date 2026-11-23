@@ -1,0 +1,119 @@
+.stellar-protein-product-shell{width:100%;height:100dvh;min-height:100dvh;overflow:auto;background:#fff}
+#protein-product-mount .sl-protein-section.sl-nutrition-summary{padding:20px;margin:20px 0;border:1px solid #b6cecc;background:#f3f8f7;border-radius:4px}
+#protein-product-mount .sl-nutrition-summary h2{font-size:18px;margin:0 0 12px;letter-spacing:0;text-transform:none}
+#protein-product-mount .sl-nutrition-summary .sl-protein-quality{columns:1;list-style:none;padding:0;font-size:16px;line-height:1.7;color:#23201f}
+#protein-product-mount .sl-nutrition-summary a{display:inline-block;margin-top:12px;font-size:14px;color:#087e91;text-decoration:underline}
+#protein-product-mount #product-facts-label{scroll-margin-top:20px}
+.stellar-protein-product-frame{display:block;width:100%;height:100dvh;min-height:100dvh;border:0;background:#fff}
+#protein-product-mount{font-family:Inter,Arial,sans-serif;color:#23201f;background:#fff}
+#protein-product-mount *{box-sizing:border-box}
+#protein-product-mount button,#protein-product-mount a{font:inherit}
+#protein-product-mount button:focus-visible,#protein-product-mount a:focus-visible{outline:2px solid #00b7d3;outline-offset:3px}
+#protein-product-mount img{display:block;max-width:100%}
+#protein-product-mount .sl-protein-page{background:#fff;color:#23201f;font-family:Inter,Arial,sans-serif}
+#protein-product-mount .sl-protein-hero{max-width:1328px;margin:0 auto;padding:36px 5.2% 6px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.88fr);align-items:center;gap:7.5%}
+#protein-product-mount .sl-protein-hero-image{background:#f6f6f5;display:flex;justify-content:center;align-items:center;min-height:470px}
+#protein-product-mount .sl-protein-hero-image img{width:100%;height:470px;object-fit:contain;mix-blend-mode:multiply}
+#protein-product-mount .sl-protein-purchase{max-width:500px}
+#protein-product-mount .sl-protein-eyebrow{margin:0 0 10px;color:#77716e;font-size:10px;font-weight:600;letter-spacing:.075em;text-transform:uppercase}
+#protein-product-mount .sl-protein-purchase h1{margin:0;color:#23201f;font-size:30px;line-height:1.2;font-weight:700!important;font-variation-settings:"wght" 700;letter-spacing:-.025em}
+#protein-product-mount .sl-protein-meta{margin:10px 0 17px;color:#716b68;font-size:12px}
+#protein-product-mount .sl-protein-meta span{padding:0 5px;color:#aaa4a1}
+#protein-product-mount .sl-protein-price{margin:0 0 23px;color:#23201f;font-size:21px;font-weight:600}
+#protein-product-mount .sl-protein-flavor-label{display:block;margin-bottom:9px;font-size:11px;font-weight:650}
+#protein-product-mount .sl-protein-flavors{display:flex;flex-wrap:wrap;gap:8px}
+#protein-product-mount .sl-protein-flavors a{border:1px solid #777;padding:8px 12px;color:#222;text-decoration:none;font-size:11px;transition:background .18s ease,color .18s ease,border-color .18s ease}
+#protein-product-mount .sl-protein-flavors a.is-selected{border-color:#23201f;background:#23201f;color:#fff}
+@media(hover:hover){#protein-product-mount .sl-protein-flavors a:not(.is-selected):hover{border-color:#23201f;background:#fff;color:#222;text-decoration:underline;text-underline-offset:3px}}
+#protein-product-mount .sl-protein-flavors a:not(.is-selected){background:#fff!important;color:#222!important}
+#protein-product-mount .sl-protein-flavors a.is-selected{background:#23201f!important;color:#fff!important}
+#protein-product-mount .sl-protein-flavors a:focus-visible{outline:2px solid #111;outline-offset:3px}
+#protein-product-mount .sl-protein-buy-row{display:flex;gap:10px;margin-top:22px}
+#protein-product-mount .sl-protein-quantity{height:44px;display:flex;align-items:center;border:1px solid #d7d4d2}
+#protein-product-mount .sl-protein-quantity button{width:39px;height:42px;border:0;background:transparent;color:#23201f;font-size:19px;cursor:pointer}
+#protein-product-mount .sl-protein-quantity output{min-width:27px;text-align:center;font-size:12px}
+#protein-product-mount .sl-protein-cart{flex:1;min-height:44px;border:0;background:#00b7d3;color:#fff;font-size:11px;font-weight:700;cursor:pointer;transition:background .18s ease}
+@media(hover:hover){#protein-product-mount .sl-protein-cart:hover{background:#111;color:#fff}}
+.stellar-product-compact-header .announcement-bar__text{font-size:13px!important;line-height:1.3!important;padding-block:5px!important}
+.stellar-product-compact-header #header-component .header__row--top{min-height:48px!important;padding-block:0!important}
+.stellar-product-compact-header #header-component .header__row--top .header__columns{height:48px!important;min-height:48px!important;padding-block:0!important;box-sizing:border-box}
+.stellar-product-compact-header #header-component .header-logo{padding-block:0!important;height:auto!important}
+.stellar-product-compact-header #header-component .header-logo__image{max-height:28px!important;width:auto!important}
+@media(min-width:768px){
+  .stellar-product-compact-header #header-component .header__row--top{min-height:64px!important}
+  .stellar-product-compact-header #header-component .header__row--top .header__columns{height:auto!important;min-height:64px!important;padding-block:6px!important}
+  @layer stellar-navigation-and-boxes{
+    .stellar-product-compact-header #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links{column-gap:clamp(8px,1vw,16px)!important}
+    .stellar-product-compact-header #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a{line-height:1.2!important}
+    .stellar-product-compact-header #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a:not(.stellar-lean-navigation){font-size:clamp(13px,1.2vw,18px)!important}
+    .stellar-product-compact-header #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a.stellar-lean-navigation{font-size:clamp(17px,1.4vw,20px)!important}
+  }
+}
+#protein-product-mount .sl-protein-preview-note{min-height:30px;margin:12px 0 0;color:#77716e;font-size:10px;line-height:1.55}
+#protein-product-mount .sl-protein-details{max-width:920px;margin:0 auto;padding:0 42px 30px}
+#protein-product-mount .sl-isolate-purchase-page .sl-protein-details{max-width:1328px;padding-inline:5.2%;box-sizing:border-box}
+#protein-product-mount .sl-isolate-benefits .sl-protein-benefits{font-weight:400;text-align:left}
+#protein-product-mount .sl-isolate-benefits h2{margin-top:4px}
+@media(max-width:700px){#protein-product-mount .sl-isolate-purchase-page .sl-protein-details{padding-inline:16px}}
+#protein-product-mount .sl-protein-section{padding:0 0 0}
+#protein-product-mount .sl-protein-section h2{margin:14px 0 7px;color:#23201f;font-size:11px;line-height:1.4;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+#protein-product-mount .sl-protein-purchase>.sl-protein-section h2{margin-top:4px}
+#protein-product-mount .sl-protein-section>p{margin:0;color:#4e4946;font-size:12px;line-height:1.65;max-width:900px}
+#protein-product-mount .sl-protein-benefits,#protein-product-mount .sl-protein-quality{padding:0 0 0 17px;margin:0;list-style:disc;color:#4e4946;font-size:11px;line-height:1.65}
+#protein-product-mount .sl-protein-benefits li,#protein-product-mount .sl-protein-quality li{padding-left:1px}
+#protein-product-mount .sl-protein-quality{columns:1}
+#protein-product-mount .sl-protein-quality li{break-inside:avoid}
+#protein-product-mount .sl-protein-support{margin:0;color:#4e4946;font-size:12px;line-height:1.5}
+#protein-product-mount .sl-protein-support>div{margin:0 0 9px}
+#protein-product-mount .sl-protein-support dt{display:inline;font-weight:650}
+#protein-product-mount .sl-protein-support dt::after{content:" – "}
+#protein-product-mount .sl-protein-support dd{display:inline;margin:0}
+#protein-product-mount .sl-protein-labels{padding-bottom:23px}
+#protein-product-mount .sl-protein-labels>p{margin-bottom:15px}
+#protein-product-mount .sl-protein-label-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+#protein-product-mount .sl-protein-label-grid figure{margin:0;background:#f6f6f5;padding:14px 18px 10px;display:flex;flex-direction:column;align-items:center}
+#protein-product-mount .sl-protein-label-grid img{width:100%;height:490px;object-fit:contain;mix-blend-mode:multiply}
+#protein-product-mount .sl-protein-label-grid figcaption{padding-top:8px;color:#77716e;font-size:9px}
+#protein-product-mount .sl-protein-allergen{padding-bottom:18px}
+#protein-product-mount .sl-protein-label-note{margin:0;padding:15px 0 0;border-top:1px solid #e7e5e4;color:#77716e;font-size:10px;line-height:1.55}
+#protein-product-mount .sl-protein-warnings{padding-left:17px;margin:0;color:#653e34;font-size:11px;line-height:1.65}
+#protein-product-mount .sl-protein-full-label{margin-top:12px}
+#protein-product-mount .sl-protein-full-label summary{font-size:11px;color:#514c49;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#protein-product-mount .sl-protein-full-label summary:focus-visible{outline:2px solid #00b7d3;outline-offset:4px}
+#protein-product-mount .sl-protein-full-label[open] .sl-protein-label-grid{margin-top:15px}
+@media(max-width:900px){#protein-product-mount .sl-protein-hero{grid-template-columns:minmax(0,1fr) minmax(290px,.9fr);gap:5%}#protein-product-mount .sl-protein-hero-image,#protein-product-mount .sl-protein-hero-image img{min-height:380px;height:380px}#protein-product-mount .sl-protein-purchase h1{font-size:26px}}
+@media(max-width:700px){#protein-product-mount .sl-protein-hero{padding:20px 16px 28px;grid-template-columns:1fr;gap:24px}#protein-product-mount .sl-protein-hero-image,#protein-product-mount .sl-protein-hero-image img{min-height:320px;height:320px}#protein-product-mount .sl-protein-purchase{max-width:none}#protein-product-mount .sl-protein-purchase h1{font-size:24px}#protein-product-mount .sl-protein-price{margin-bottom:19px}#protein-product-mount .sl-protein-details{padding:0 18px 34px}#protein-product-mount .sl-protein-section{padding:17px 0}#protein-product-mount .sl-protein-section>p{font-size:12px}#protein-product-mount .sl-protein-quality{columns:1}#protein-product-mount .sl-protein-label-grid{grid-template-columns:1fr;gap:12px}#protein-product-mount .sl-protein-label-grid img{height:440px}#protein-product-mount .sl-protein-buy-row{margin-top:18px}}
+@media(max-width:390px){#protein-product-mount .sl-protein-hero-image,#protein-product-mount .sl-protein-hero-image img{min-height:280px;height:280px}#protein-product-mount .sl-protein-flavors{gap:6px}#protein-product-mount .sl-protein-flavors a{padding:7px 9px}}
+@media(max-width:700px){#protein-product-mount .sl-protein-details{padding:0 24px 26px}#protein-product-mount .sl-protein-section{padding:0}}
+#protein-product-mount .sl-protein-jump-links{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+#protein-product-mount .sl-protein-purchase .sl-protein-price{margin-bottom:10px}
+#protein-product-mount .sl-protein-purchase .sl-detail-nutrition{margin-bottom:18px}
+#protein-product-mount .sl-protein-selection-status{margin:10px 0;font-size:12px;color:#514c49}
+#protein-product-mount .sl-protein-buy-row+.sl-protein-jump-links{margin-top:16px}
+#protein-product-mount .sl-protein-mobile-title,#protein-product-mount .sl-protein-mobile-meta{display:none}
+#protein-product-mount .sl-protein-jump-links a{display:inline-flex;align-items:center;min-height:38px;padding:7px 12px;border:1px solid #c8d7d5;border-radius:3px;color:#28545a;background:#f5f9f8;font-size:12px;font-weight:600;text-decoration:none}
+#protein-product-mount .sl-protein-jump-links a:hover{background:#eaf3f1}
+#protein-product-mount .sl-protein-jump-links a:focus-visible{outline:2px solid #087e91;outline-offset:3px}
+#protein-product-mount .sl-protein-size-label{margin-top:16px}
+#protein-product-mount .sl-protein-purchase-options{padding:0;border:0;margin:18px 0 0;display:grid;gap:10px;font-size:12px}
+#protein-product-mount .sl-protein-purchase-options legend{font-size:11px;font-weight:650;margin-bottom:10px}
+#protein-product-mount .sl-protein-purchase-options legend span{margin-left:8px;color:#716b68;font-weight:400}
+#protein-product-mount .sl-protein-purchase-options label{display:flex;align-items:center;gap:8px;min-height:28px;cursor:pointer}
+#protein-product-mount .sl-protein-purchase-options input{accent-color:#007a9e;margin:0}
+#protein-product-mount .sl-protein-sizes a{min-width:76px;text-align:center}
+#protein-product-mount #product-details,#protein-product-mount #product-facts-label{scroll-margin-top:18px}
+@media(max-width:767px){
+  #protein-product-mount .sl-protein-desktop-title,#protein-product-mount .sl-protein-desktop-meta{display:none}
+  #protein-product-mount .sl-protein-mobile-title,#protein-product-mount .sl-protein-mobile-meta{display:inline}
+}
+@media(max-width:700px){
+  #protein-product-mount .sl-protein-hero{padding-top:15px;padding-bottom:6px;gap:18px}
+  #protein-product-mount .sl-protein-hero-image,#protein-product-mount .sl-protein-hero-image img{min-height:280px;height:280px}
+  #protein-product-mount .sl-protein-purchase h1{font-size:23px;line-height:1.18}
+  #protein-product-mount .sl-protein-meta{margin:7px 0 12px}
+  #protein-product-mount .sl-protein-price{margin-bottom:13px}
+  #protein-product-mount .sl-protein-jump-links{margin-bottom:0}
+}
+@media(max-width:390px){
+  #protein-product-mount .sl-protein-hero-image,#protein-product-mount .sl-protein-hero-image img{min-height:255px;height:255px}
+}
