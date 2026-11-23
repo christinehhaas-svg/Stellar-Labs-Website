@@ -83,18 +83,20 @@ for (const directory of directories) {
         const copy = getPowderCopy(product);
         assert.equal(product.size, "1lb");
         assert.equal(copy.servings, 16);
-        assert.equal(copy.facts[0], "Serving size: 29g (1 scoop)");
-        assert.equal(copy.facts[1], "Servings per container: 16");
+        assert.equal(copy.facts[0], "Calories: 110 per serving");
+        assert.equal(copy.facts[1], "Protein: 25g per serving");
+        assert.ok(copy.facts.includes("Serving size: 29g (1 scoop)"));
+        assert.ok(copy.facts.includes("Servings per container: 16"));
         assert.match(copy.sourceNote, /merchant-supplied photographs/);
         assert.match(copy.sourceNote, /UPC replacing the barcode in place/);
         continue;
       }
       const [grams, servings, protein] = approved[product.component];
       const copy = getPowderCopy(product);
-      assert.equal(copy.facts[0], `Serving size: 1 ${product.formula === "electrolyte" ? "" : "rounded "}scoop (${grams}g)`);
-      assert.equal(copy.facts[1], `${servings} servings per container`);
+      assert.ok(copy.facts.includes(`Serving size: 1 ${product.formula === "electrolyte" ? "" : "rounded "}scoop (${grams}g)`));
+      assert.ok(copy.facts.includes(`${servings} servings per container`));
       assert.equal(copy.servings, servings);
-      if (protein !== undefined) assert.equal(copy.facts[2], `Protein: ${protein}g per serving`);
+      if (protein !== undefined) assert.ok(copy.facts.includes(`Protein: ${protein}g per serving`), `${product.component} retains its exact protein amount`);
     }
     const cappuccino = servingDecisions.ProteinCappuccino;
     assert.ok(cappuccino.packageFacts.includes("Serving size: 1 rounded scoop (30g)"));
@@ -153,9 +155,16 @@ for (const directory of directories) {
 test("review and Canvas keep identical package validation and serving decisions", () => {
   for (const file of ["powder-copy.ts", "serving-decisions.ts"]) {
     assert.equal(fs.readFileSync(path.join(directories[0], file), "utf8"),
-      fs.readFileSync(path.join(directories[1], file), "utf8").replace(
-        'from "../../../../../../stellar-review/src/pages/stellar/_shared/website-copy"',
-        'from "./website-copy"',
-      ), `${file} drifted`);
+      fs.readFileSync(path.join(directories[1], file), "utf8").replace(/from "([^"]+)"/g, (statement, specifier) => {
+        const resolved = path.resolve(path.dirname(path.join(directories[1], file)), specifier);
+        for (const helper of ["website-copy", "nutrition-order"]) {
+          const owner = path.resolve(directories[0], helper);
+          if (resolved === owner) {
+            assert.ok(fs.existsSync(`${owner}.ts`), `Missing shared ${helper}`);
+            return `from "./${helper}"`;
+          }
+        }
+        return statement;
+      }), `${file} drifted`);
   }
 });

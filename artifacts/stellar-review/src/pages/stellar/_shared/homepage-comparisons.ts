@@ -90,7 +90,8 @@ export function initializeHomepageComparisons(doc: Document, localUrl: (path: st
   if (!readMore) return;
   const section = readMore.closest<HTMLElement>('[id^="shopify-section-"]');
   if (!section) return;
-  readMore.href = localUrl("/compare");
+  readMore.textContent = "FAQs";
+  readMore.href = localUrl("/faqs");
   // A snapshot inside a Canvas preview cannot navigate its sandboxed ancestors.
   // Handle the click in the host app so it navigates its own frame instead.
   readMore.target = "_parent";
@@ -98,7 +99,7 @@ export function initializeHomepageComparisons(doc: Document, localUrl: (path: st
     readMore.setAttribute("data-stellar-comparison-link", "");
     readMore.addEventListener("click", (event) => {
       event.preventDefault();
-      window.location.assign(localUrl("/compare"));
+      window.location.assign(localUrl("/faqs"));
     });
   }
   if (!comparisonPage) return;

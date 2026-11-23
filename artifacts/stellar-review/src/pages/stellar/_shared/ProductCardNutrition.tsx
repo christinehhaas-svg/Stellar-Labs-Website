@@ -2,6 +2,8 @@
  * The 1 lb Vanilla/Chocolate values follow their own supplied package photos,
  * independently of the 2 lb versions.
  */
+import { orderNutrition } from "./nutrition-order";
+
 export const shakeCardNutrition: Record<string, {
   protein: string; calories: string; carbs: string; sugar: string; fat: string;
 }> = {
@@ -36,16 +38,16 @@ export function powderNutritionMetrics(component: string) {
   const values = electrolyte
     ? [electrolyte[4], ...electrolyte.slice(0, 4)]
     : [shake.calories, shake.protein, shake.carbs, shake.sugar];
-  return { electrolyte: Boolean(electrolyte), metrics: labels.map((label, index) => ({ label, value: values[index] })) };
+  return { electrolyte: Boolean(electrolyte), metrics: orderNutrition(labels.map((label, index) => ({ label, value: values[index] }))) };
 }
 
-export function ProductCardNutrition({ component }: { component: string }) {
+export function ProductCardNutrition({ component, omitMetrics = [] }: { component: string; omitMetrics?: readonly string[] }) {
   const { electrolyte, metrics } = powderNutritionMetrics(component);
   return (
     <div className="sl-card-nutrition">
       <dl className={`sl-card-nutrition-row ${electrolyte ? "sl-card-electrolyte-metrics" : "sl-card-shake-metrics"}`} aria-label="Nutrition per serving" style={{ maxWidth: electrolyte ? 320 : 210 }}>
-        {metrics.map(({ label, value }) => <div key={label}>
-          <dt style={label === "Natural sugar" ? { whiteSpace: "normal" } : undefined}>{label}</dt>
+        {metrics.filter(({ label }) => !omitMetrics.includes(label)).map(({ label, value }) => <div key={label}>
+          <dt>{label === "Natural sugar" ? "Sugar" : label}</dt>
           <dd>{value}</dd>
         </div>)}
       </dl>

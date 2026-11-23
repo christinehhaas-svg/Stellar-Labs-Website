@@ -101,12 +101,13 @@ for (const directory of directories) {
       assert.equal(copy.servings, 16);
       // Independent transcription of the merchant's matching 1 lb photographs.
       assert.deepEqual(Array.from(copy.facts), [
-        "Serving size: 29g (1 scoop)", "Servings per container: 16",
-        `Protein: ${protein}g per serving`, `Calories: ${calories} per serving`,
+        `Calories: ${calories} per serving`, `Protein: ${protein}g per serving`,
         `Total carbohydrate: ${carbs}g per serving`,
+        flavor === "Chocolate" ? "Total sugars: <1g per serving" : "Total sugars: 0g per serving",
+        "Serving size: 29g (1 scoop)", "Servings per container: 16",
         ...(flavor === "Chocolate"
-          ? ["Total sugars: <1g per serving", "Total fat: 1g per serving", "Calcium: 118mg", "Chromium: 2mcg", "Sodium: 65mg", "Potassium: 170mg"]
-          : ["Total sugars: 0g per serving", "Total fat: 0.5g per serving", "Niacin: 4mg", "Calcium: 120mg", "Phosphorus: 135mg", "Sodium: 65mg", "Potassium: 135mg"]),
+          ? ["Total fat: 1g per serving", "Calcium: 118mg", "Chromium: 2mcg", "Sodium: 65mg", "Potassium: 170mg"]
+          : ["Total fat: 0.5g per serving", "Niacin: 4mg", "Calcium: 120mg", "Phosphorus: 135mg", "Sodium: 65mg", "Potassium: 135mg"]),
       ]);
       assert.match(copy.sourceNote, /merchant-supplied photographs/);
       assert.match(copy.sourceNote, /UPC replacing the barcode in place/);
@@ -133,7 +134,7 @@ test("review and Canvas keep isolate data, nutrition copy and detail presentatio
     const normalizedCanvas = file.endsWith(".tsx") || file.endsWith(".ts")
       ? canvas.replace(/from "([^"]+)"/g, (statement, specifier) => {
         const resolved = path.resolve(path.dirname(path.join(directories[1], file)), specifier);
-        for (const helper of ["ProductNutritionSummary", "ProductQualityList", "product-servings", "powder-page-notes", "website-copy"]) {
+        for (const helper of ["ProductNutritionSummary", "ProductQualityList", "product-servings", "powder-page-notes", "website-copy", "nutrition-order", "HeavyMetalsBadge", "heavy-metals-testing"]) {
           const owner = path.resolve(directories[0], "_shared", helper);
           if (resolved === owner) {
             assert.ok(fs.existsSync(`${owner}.tsx`) || fs.existsSync(`${owner}.ts`));

@@ -14,6 +14,7 @@ export const supplementQuality = [
 export const supplementCollectionQuality = [
   ...commonProductQuality,
   "Certified Gluten-Free",
+  "Easy-to-Digest Ingredients",
 ];
 export const proteinQuality = ["Certified Gluten-Free", ...commonProductQuality, "Easy-to-Digest Ingredients", "No Added Sugars"];
 export const electrolyteQuality = ["Certified Gluten-Free", ...commonProductQuality, "Vegan", "No Added Sugars"];

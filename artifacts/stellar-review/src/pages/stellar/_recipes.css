@@ -88,6 +88,15 @@
   min-width: 0;
 }
 
+.sl-books { margin-top: 64px; }
+.sl-books h2, #recipe-collection { scroll-margin-top: 160px; }
+.sl-book-card .sl-recipe-card__image { object-fit: contain; padding: 16px; }
+.sl-book-summary { white-space: pre-line; margin: 0; line-height: 1.5; color: var(--recipe-muted); }
+.sl-book-price { font-weight: 700; margin: 12px 0 0; }
+.sl-faqs { max-width: 960px; }
+.sl-faq-questions { margin: 0; padding-left: 28px; }
+.sl-faq-questions li { padding: 18px 0 18px 8px; border-bottom: 1px solid var(--recipe-line); font-size: 18px; line-height: 1.5; }
+
 .sl-recipe-card__link {
   display: flex;
   height: 100%;

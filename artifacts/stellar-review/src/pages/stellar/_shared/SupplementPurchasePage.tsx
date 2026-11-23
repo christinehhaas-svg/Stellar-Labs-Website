@@ -4,7 +4,9 @@ import type { Supplement } from "./supplements-data";
 import { getSupplementQuality, labelDisclaimer } from "./supplements-data";
 import { supplementServingInfo } from "./product-servings";
 import { SupplementNutritionSummary } from "./ProductNutritionSummary";
+import { orderNutritionFacts } from "./nutrition-order";
 import { ProductPurchaseControls } from "./ProductPurchaseControls";
+import { heavyMetalsTestingStatement } from "./heavy-metals-testing";
 import { initializeReviewLinks, reviewAsset, reviewUrl } from "../review-links";
 import { initializeSnapshot } from "./ProteinProductPage";
 import { useProductSnapshot } from "./useProductSnapshot";
@@ -119,6 +121,7 @@ function SupplementDetail({ supplements, localUrl = reviewUrl }: SupplementPageP
       <section className="sl-protein-section">
         <h2 id="product-claims" className="sl-product-claims-heading" tabIndex={-1}>Product details</h2>
         <ProductQualityList claims={getSupplementQuality(selected)} />
+        <p data-heavy-metals-statement>{heavyMetalsTestingStatement}</p>
       </section>
         <div className="sl-product-safety-notes">
           <ul className="sl-protein-quality">{warnings.filter(item => !/These statements have not been evaluated/i.test(item)).map(item => <li key={item}>{item}</li>)}</ul>
@@ -130,7 +133,7 @@ function SupplementDetail({ supplements, localUrl = reviewUrl }: SupplementPageP
       </section>
       <section id="supplement-nutrition-facts" className="sl-protein-section" tabIndex={-1}>
         <h2>{probiotic ? "Supplement Facts" : "Complete nutrition / supplement facts"}</h2>
-        <ul className="sl-protein-quality">{displayedFacts.map(item => <li key={item}>{item}</li>)}</ul>
+        <ul className="sl-protein-quality">{orderNutritionFacts(displayedFacts).map(item => <li key={item}>{item}</li>)}</ul>
         <a href={selected.label} target="_blank" rel="noreferrer">
           <img className="sl-original-label" src={selected.label} alt={`${selected.name} complete original label, facts and ingredients`} loading="lazy" />
         </a>

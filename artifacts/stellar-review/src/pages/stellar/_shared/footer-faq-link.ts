@@ -9,7 +9,7 @@ export function ensureFaqFooterLink(doc: Document) {
   link.removeAttribute("id");
   link.removeAttribute("aria-label");
   link.textContent = "FAQs";
-  link.href = "/pages/faqs";
+  link.href = "/faqs";
   if (contact?.parentElement?.tagName === "LI") {
     const item = contact.parentElement.cloneNode(false) as HTMLElement;
     item.removeAttribute("id");

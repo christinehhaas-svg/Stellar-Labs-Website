@@ -81,7 +81,9 @@ for (const family of ["protein", "vegan", "electrolyte"]) {
     if (product.component !== "ProteinMixedBerry") assert(copy.sourceNote, `${product.component}: provenance`);
     const decision = servingDecisions[product.component];
     if (decision) {
-      assert.equal(JSON.stringify(copy.facts.slice(0, 2)), JSON.stringify(decision.approvedFacts));
+      for (const fact of decision.approvedFacts) {
+        assert(copy.facts.includes(fact), `${product.component}: approved serving fact: ${fact}`);
+      }
       assert.equal(copy.servings, decision.servings, `${product.component}: corrected serving count`);
       assert(copy.sourceNote.includes("Unchanged printed label:"), `${product.component}: printed values distinguished`);
       assert(copy.sourceNote.includes("Merchant-confirmed review copy"), `${product.component}: merchant correction`);
@@ -89,7 +91,7 @@ for (const family of ["protein", "vegan", "electrolyte"]) {
     assert.equal(JSON.stringify(nutritionDescriptions[product.handle].facts), JSON.stringify(copy.facts), `${product.component}: homepage facts`);
     if (product.size === "2lb") {
       const grams = product.component === "ProteinCaramelBlend" ? 32 : { isolate: 31, blend: 33, vegan: 32 }[product.formula];
-      assert.equal(copy.facts[0], `Serving size: 1 rounded scoop (${grams}g)`, `${product.component}: label-specific 2 lb serving weight`);
+      assert(copy.facts.includes(`Serving size: 1 rounded scoop (${grams}g)`), `${product.component}: label-specific 2 lb serving weight`);
       if (product.formula === "isolate") assert.equal(copy.servings, 29);
       if (product.formula === "blend" || product.formula === "vegan") assert.equal(copy.servings, 28);
     } else if (product.size === "1lb" && product.formula === "isolate") {
@@ -98,7 +100,7 @@ for (const family of ["protein", "vegan", "electrolyte"]) {
       const expected = suppliedOnePoundLabel
         ? "Serving size: 29g (1 scoop)"
         : `Serving size: 1 rounded scoop (${grams}g)`;
-      assert.equal(copy.facts[0].replace(/\s+(?=g\))/g, ""), expected, `${product.component}: label-specific 1 lb serving weight`);
+      assert.equal(copy.facts.find(fact => fact.startsWith("Serving size:"))?.replace(/\s+(?=g\))/g, ""), expected, `${product.component}: label-specific 1 lb serving weight`);
       assert.equal(copy.servings, 16);
     }
     if (product.formula === "isolate" || product.formula === "blend") {

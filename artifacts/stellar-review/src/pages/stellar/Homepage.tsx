@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { initializeHomepageProducts } from "./_homepageProducts";
 import { initializeHomepageTypography } from "./_shared/homepage-typography";
 import { initializeOutlineHomepage } from "./_shared/outline-homepage";
+import { addHomepageTestingBadge } from "./_shared/heavy-metals-testing";
 import { initializeHomepageComparisons } from "./_shared/homepage-comparisons";
 import { initializeHomepageFeaturedProducts } from "./_shared/homepage-featured-products";
 import "./_group.css";
@@ -48,6 +49,7 @@ export function initializeSnapshot(frame: HTMLIFrameElement, comparisonPage = fa
   if (frame.contentDocument) initializeHomepageProducts(frame.contentDocument);
   if (doc) initializeReviewLinks(doc);
   if (doc) initializeOutlineHomepage(doc, reviewUrl);
+  if (doc && !comparisonPage && !fullCatalog) addHomepageTestingBadge(doc);
   if (doc) initializeHomepageComparisons(doc, reviewUrl, comparisonPage);
   if (doc && !comparisonPage) initializeHomepageFeaturedProducts(doc, reviewUrl, fullCatalog);
 }

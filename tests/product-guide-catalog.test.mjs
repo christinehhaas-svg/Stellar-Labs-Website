@@ -123,15 +123,15 @@ test("the guide includes current packages except the explicitly deferred Classic
 
 test("all seven isolate packages expose the same highlighted metrics as the category cards", () => {
   for (const product of guide.isolate) {
-    assert.deepEqual(Array.from(product.metrics, metric => metric.label), ["Protein", "Calories", "Carbs", "Sugar"]);
+    assert.deepEqual(Array.from(product.metrics, metric => metric.label), ["Calories", "Protein", "Carbs", "Sugar"]);
   }
   const vanilla = guide.isolate.find(product => product.name.includes("Vanilla · 1 lb"));
   const chocolate = guide.isolate.find(product => product.name.includes("Chocolate · 1 lb"));
-  assert.deepEqual(Array.from(vanilla.metrics, metric => metric.value), ["25g", "110", "1g", "0g"]);
-  assert.deepEqual(Array.from(chocolate.metrics, metric => metric.value), ["25g", "110", "1g", "<1g"]);
+  assert.deepEqual(Array.from(vanilla.metrics, metric => metric.value), ["110", "25g", "1g", "0g"]);
+  assert.deepEqual(Array.from(chocolate.metrics, metric => metric.value), ["110", "25g", "1g", "<1g"]);
   assert.equal(vanilla.serving, "Per 29 g serving · 16 servings per container");
   const large = guide.isolate.find(product => product.name.includes("Vanilla · 2 lb"));
-  assert.deepEqual(Array.from(large.metrics, metric => metric.value), ["26g", "120", "1g", "1g"]);
+  assert.deepEqual(Array.from(large.metrics, metric => metric.value), ["120", "26g", "1g", "1g"]);
 });
 
 test("Natural blends identify naturally occurring sugar without changing the amounts or other categories", () => {
@@ -146,8 +146,8 @@ test("Natural blends identify naturally occurring sugar without changing the amo
 });
 
 test("category-specific values remain correct and Classic is temporarily withdrawn everywhere", () => {
-  assert.deepEqual(Array.from(guide.electrolyte[0].metrics, metric => metric.value), ["280mg", "51mg", "47mg", "80mg", "5"]);
-  assert.deepEqual(Array.from(guide.vegan, product => product.metrics[0].value), ["20g", "20g"]);
+  assert.deepEqual(Array.from(guide.electrolyte[0].metrics, metric => metric.value), ["5", "280mg", "51mg", "80mg", "47mg"]);
+  assert.deepEqual(Array.from(guide.vegan, product => product.metrics.find(metric => metric.label === "Protein").value), ["20g", "20g"]);
   const classic = guide.blend.filter(product => product.name.includes("Classic"));
   assert.equal(classic.length, 0);
   const { classicWheyProducts } = load(path.join(root, "classic-whey-products.ts"));

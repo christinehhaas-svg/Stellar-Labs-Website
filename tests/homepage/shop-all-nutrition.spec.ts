@@ -5,6 +5,39 @@ import vegans from "../../artifacts/stellar-review/src/pages/stellar/_shared/veg
 import electrolytes from "../../artifacts/stellar-review/src/pages/stellar/_shared/electrolyte-products.json";
 
 for (const width of [1440, 390, 320]) {
+  test(`Shop All book typography matches products with two-line descriptions at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto("/shop", { waitUntil: "domcontentloaded" });
+    const frame = page.frameLocator("iframe").first();
+    const books = frame.locator("[data-catalog-book]");
+    await expect(books).toHaveCount(5);
+    const typography = (element: Element) => {
+      const style = getComputedStyle(element);
+      return { family: style.fontFamily, size: style.fontSize, weight: style.fontWeight };
+    };
+    const reference = await frame.locator(".sl-catalog-copy:not(.sl-book-copy) .sl-card-name").first().evaluate(typography);
+    for (const book of await books.all()) {
+      await expect(book.locator('[ref="productTitleLink"]')).toHaveAttribute("target", "_blank");
+      expect(await book.locator('[ref="productTitleLink"] h2').evaluate(typography)).toEqual(reference);
+      const description = book.locator(".sl-book-description");
+      expect((await description.innerText()).split("\n")).toHaveLength(2);
+      const lines = await description.evaluate(element => {
+        const node = element.firstChild!;
+        const text = node.textContent!;
+        const split = text.indexOf("\n");
+        return [[0, split], [split + 1, text.length]].map(([start, end]) => {
+          const range = element.ownerDocument.createRange();
+          range.setStart(node, start);
+          range.setEnd(node, end);
+          return [...range.getClientRects()].filter(rect => rect.width > 0).length;
+        });
+      });
+      expect(lines, "Each short description line must fit without wrapping").toEqual([1, 1]);
+      await expect(book.locator("product-price")).toContainText("$");
+      await expect(book.locator(".stellar-product-store-link")).toHaveAttribute("target", "_blank");
+    }
+  });
+
   test(`Shop All uses category facts and compact cards at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto("/shop", { waitUntil: "domcontentloaded" });
@@ -19,9 +52,11 @@ for (const width of [1440, 390, 320]) {
       const card = section.locator(`[data-catalog-component="${product.component}"]`);
       await expect(card).toHaveCount(1);
       await expect(card.locator("dt")).toHaveText(product.formula === "electrolyte"
-        ? ["Calories", "Potassium", "Magnesium", "Calcium", "Sodium"]
-        : ["Calories", "Protein", "Carbs", product.formula === "blend" ? "Natural sugar" : "Sugar"]);
-      await expect(card.locator("dd")).toHaveText(expectedCardNutrition[product.component]);
+        ? ["Calories", "Potassium", "Magnesium", "Sodium"]
+        : ["Calories", "Protein", "Carbs", "Sugar"]);
+      await expect(card.locator("dd")).toHaveText(product.formula === "electrolyte"
+        ? expectedCardNutrition[product.component].slice(0, 4)
+        : expectedCardNutrition[product.component]);
       await expect(card.locator(".sl-card-per-serving")).toHaveText("Per serving");
       await expect(card.locator(".sl-product-price")).toHaveText(`$${(product.price / 100).toFixed(2)}`);
       await expect(card.locator(".sl-catalog-view-product")).toHaveAttribute("href", `/products/${product.handle}`);

@@ -2,6 +2,7 @@ import { commonProductQuality } from "./quality-claims";
 
 /** Collection-level wording must not imply every claim applies to every SKU. */
 export function initializeOutlineHomepage(doc: Document, localUrl: (path: string) => string) {
+  doc.querySelectorAll('[data-heavy-metals-badge="homepage"]').forEach(badge => badge.remove());
   // Captured SVGs and the cow PNG use different source colors. Recolor only
   // their opaque artwork, preserving transparency and the original shapes.
   if (!doc.getElementById("stellar-homepage-claim-color")) {

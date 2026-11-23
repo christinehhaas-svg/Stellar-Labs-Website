@@ -1,4 +1,5 @@
 import { electrolyteCopy } from "./electrolyte-copy";
+import { orderNutritionFacts } from "../../../../../../stellar-review/src/pages/stellar/_shared/nutrition-order";
 import { wheyLines } from "./whey-lines";
 import { assertPowderPackageIdentity, getPowderServingDecision, servingDecisionNote, type PowderPackageIdentity } from "./serving-decisions";
 import { getOutlineProduct, milkDisclaimer, powderNutritionDisclaimer, outlineSourceNote } from "./outline-copy";
@@ -123,6 +124,7 @@ export function getPowderCopy(product: PowderPackageIdentity): PowderCopy {
   const copy = getFormulaCopy(product);
   return {
     ...copy,
+    facts: orderNutritionFacts(copy.facts),
     ...(product.formula === "isolate" ? {
       benefits: ["Convenient Everyday Nutrition", "Easy Mixing"],
       support: [

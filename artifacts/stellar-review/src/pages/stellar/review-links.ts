@@ -37,8 +37,8 @@ export function initializeReviewLinks(doc: Document) {
     "Store Locator": "/pages/store-locator",
     "About": "/pages/about-us",
     "Contact Us": "/pages/contact",
-    "FAQs": "/pages/faqs",
-    "FAQ": "/pages/faqs",
+    "FAQs": "/faqs",
+    "FAQ": "/faqs",
     "Shipping & Policies": "/pages/shipping-information",
     "Refund policy": "/pages/shipping-information",
     "Shipping policy": "/pages/shipping-information",
@@ -49,6 +49,7 @@ export function initializeReviewLinks(doc: Document) {
     "Electrolytes": "/?category=electrolyte",
     "Supplements": "/supplements",
     "Recipes": "/recipes",
+    "Recipes & Books": "/recipes",
     "Shop All": "/shop",
   };
   const footerPages: Record<string, string> = {
@@ -114,7 +115,7 @@ function restoreCategoryNavigation(doc: Document) {
   const links = nav.querySelector(".stellar-shop-navigation__links");
   if (links) {
     const anchors = Array.from(links.querySelectorAll("a"));
-    const recipes = anchors.find(link => link.textContent?.trim().toLowerCase() === "recipes");
+    const recipes = anchors.find(link => /^(recipes|recipes & books)$/i.test(link.textContent?.trim() ?? ""));
     let shopAll = anchors.find(link => link.textContent?.trim().toLowerCase() === "shop all");
     if (!shopAll) {
       shopAll = doc.createElement("a");

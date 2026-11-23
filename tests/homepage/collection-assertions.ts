@@ -58,8 +58,8 @@ export async function assertCompactCards(page: Page, products: readonly Product[
       alt: `${product.title} — ${product.component.endsWith("Isolate1lb") ? "illustrative bottle mockup" : "original package front"}`,
     }],
     perServing: "Per serving",
-    labels: product.formula === "electrolyte" ? ["Calories", "Potassium", "Magnesium", "Calcium", "Sodium"]
-      : ["Calories", "Protein", "Carbs", product.formula === "blend" ? "Natural sugar" : "Sugar"],
+    labels: product.formula === "electrolyte" ? ["Calories", "Potassium", "Magnesium", "Sodium", "Calcium"]
+      : ["Calories", "Protein", "Carbs", "Sugar"],
     values: expectedCardNutrition[product.component],
     retiredNodes: 0, retiredCopy: false,
   })));

@@ -7,6 +7,7 @@ import { powderNutritionMetrics } from "./ProductCardNutrition";
 import { powderServingSize, supplementServingSummary } from "./product-servings";
 import { supplements, getSupplementQuality } from "./supplements-data";
 import { powderDisplayName } from "./whey-lines";
+import { orderNutritionFacts } from "./nutrition-order";
 
 export type GuideProduct = {
   name: string;
@@ -68,7 +69,7 @@ const supplementEntries: GuideProduct[] = supplements
     support: product.detailCopy?.support ?? [],
     suggestedUse: product.use,
     warnings: product.warnings,
-    facts: product.facts.join(" · "),
+    facts: orderNutritionFacts(product.facts).join(" · "),
     metrics: [],
     serving: supplementServingSummary(product.id),
     href: product.storePath ?? `/supplements#${product.id}`,

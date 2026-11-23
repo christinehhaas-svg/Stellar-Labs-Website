@@ -2,7 +2,7 @@
 // Change these expectations only when the merchant approves new homepage copy.
 export const approvedCopy = {
   announcement: "Subscribe & save 10%",
-  navigation: ["Whey Protein", "Vegan Protein", "Electrolytes", "Supplements", "Recipes"],
+  navigation: ["Whey Protein", "Vegan Protein", "Electrolytes", "Supplements", "Recipes & Books"],
   heading: "LEAN NUTRITION",
   tagline: "Make Every Calorie Count",
   formulaNote: "New Look, Same Formula",
@@ -15,5 +15,5 @@ export const approvedCopy = {
 // Keep the homepage-only Shopify handoff fixture above independent.
 export const approvedReviewNavigation = [
   "Shop Lean Nutrition", "Whey Protein", "Vegan Protein", "Electrolytes",
-  "Supplements", "Recipes", "Shop All",
+  "Supplements", "Recipes & Books", "Shop All",
 ];

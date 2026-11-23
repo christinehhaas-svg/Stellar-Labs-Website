@@ -2,6 +2,9 @@ import styles from "./navigation-and-controls.css?inline";
 
 /** Shared presentation; each preview continues to supply its own local routes. */
 export function initializeTopNavigation(doc: Document, localUrl: (path: string) => string) {
+  for (const link of doc.querySelectorAll<HTMLAnchorElement>("a")) {
+    if (link.textContent?.replace(/\s+/g, " ").trim() === "Recipes") link.textContent = "Recipes & Books";
+  }
   const header = doc.querySelector<HTMLElement>("#header-component");
   const nav = header?.querySelector<HTMLElement>(".stellar-shop-navigation");
   const links = nav?.querySelector<HTMLElement>(".stellar-shop-navigation__links");

@@ -39,6 +39,12 @@
     #header-component[data-stellar-supplement-nav] .stellar-shop-navigation :is(a, summary) {
       scroll-margin-block: 8px;
     }
+    /* Use the available width in both mobile orientations. Longer labels
+       must not push the final menu rows below the portrait viewport either. */
+    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation__links {
+      width: calc(100vw - 28px) !important;
+      box-sizing: border-box;
+    }
     #header-component[data-stellar-lean-nav] .stellar-shop-navigation__links a {
       font-size: 16px !important;
     }
@@ -50,13 +56,9 @@
     }
   }
   @media (max-width: 767px) and (orientation: landscape) {
-    /* Use the available width on short supplement viewports so enlarged
-       labels and their rings remain exposed when rotating an open menu.
+    /* Compact short supplement viewports so enlarged labels and their
+       rings remain exposed when rotating an open menu.
        No resize-time scrolling or disclosure/focus changes are needed. */
-    #header-component[data-stellar-supplement-nav] .stellar-shop-navigation__links {
-      width: calc(100vw - 28px) !important;
-      box-sizing: border-box;
-    }
     #header-component[data-stellar-supplement-nav] .stellar-shop-navigation__links a {
       padding-block: 4px !important;
     }

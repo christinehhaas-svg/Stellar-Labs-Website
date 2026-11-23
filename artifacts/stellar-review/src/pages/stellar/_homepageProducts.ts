@@ -248,6 +248,9 @@ export function initializeHomepageProducts(document: Document) {
   }
 
   const filters = document.querySelectorAll<HTMLButtonElement>(".product-tag-filter");
+  for (const filter of filters) {
+    if (filter.dataset.filterTag === "electrolyte") filter.textContent = "Electrolytes";
+  }
   const items = document.querySelectorAll<HTMLElement>(".resource-list__item[data-product-tags]");
   const selectFilter = (selected: HTMLButtonElement) => {
     const tag = selected.dataset.filterTag;

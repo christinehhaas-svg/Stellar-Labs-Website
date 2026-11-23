@@ -94,16 +94,38 @@ export function initializeShopAllCards(doc: Document, section: HTMLElement, loca
     if (bookDescription) {
       const title = card.querySelector('a[ref="productTitleLink"], a.user-select-text');
       if (title) {
+        card.dataset.catalogBook = handle;
         card.querySelector(".sl-book-description")?.remove();
         const description = doc.createElement("p");
         description.className = "sl-book-description";
         description.textContent = bookDescription;
-        title.after(description);
+        const copy = doc.createElement("div");
+        copy.className = "sl-catalog-copy sl-book-copy";
+        title.classList.add("sl-card-name");
+        const heading = doc.createElement("h2");
+        heading.className = "sl-card-name";
+        heading.textContent = title.textContent?.trim() ?? "";
+        title.replaceChildren(heading);
+        copy.append(title, description);
+        const price = card.querySelector("product-price");
+        if (price) {
+          price.classList.add("sl-product-price");
+          copy.append(price);
+        }
+        const action = card.querySelector(".stellar-product-store-link");
+        if (action) copy.append(action);
+        const content = card.querySelector(".product-card__content");
+        if (content) {
+          for (const child of [...content.children]) {
+            if (!child.classList.contains("card-gallery")) child.remove();
+          }
+          content.append(copy);
+        }
       }
     }
     if (handle === "the-low-lean-lose-fat-high-protein-no-bloat-diet") {
       const title = "E-book: The Low and Lean Eating System";
-      card.querySelectorAll<HTMLElement>('h3, [role="heading"]').forEach(heading => {
+      card.querySelectorAll<HTMLElement>('h2, h3, [role="heading"]').forEach(heading => {
         heading.textContent = title;
       });
       card.querySelectorAll<HTMLElement>("[aria-label], img[alt]").forEach(element => {
@@ -135,11 +157,11 @@ export function initializeShopAllCards(doc: Document, section: HTMLElement, loca
     copy.className = "sl-catalog-copy";
     if (powder) {
       const name = powder.formula === "electrolyte" ? "Electrolyte Hydration" : powderDisplayName(powder.formula);
-      const size = powder.formula === "electrolyte" ? "4.76 oz (135 g)" : powder.size.replace(/(\d)\s*lb/, "$1 lb");
+      const size = powder.formula === "electrolyte" ? null : powder.size.replace(/(\d)\s*lb/, "$1 lb");
       copy.innerHTML = renderToStaticMarkup(<>
-        <h2><span className="sl-card-name">{powder.flavor} {name}</span><span className="sl-card-variant">{size}</span></h2>
+        <h2><span className="sl-card-name">{powder.flavor} {name}</span>{size && <span className="sl-card-variant">{size}</span>}</h2>
         <p className="sl-product-price">{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(powder.price / 100)}</p>
-        <ProductCardNutrition component={powder.component} />
+        <ProductCardNutrition component={powder.component} omitMetrics={powder.formula === "electrolyte" ? ["Calcium"] : []} />
       </>);
       card.dataset.catalogComponent = powder.component;
     } else {

@@ -5,7 +5,7 @@ const canvas = "/__mockup/preview/stellar-labs";
 
 for (const surface of ["review", "Canvas"] as const) {
   for (const width of [390, 1280]) {
-    test(`${surface} ${width}px: footer opens FAQs and testing information stays plain text`, async ({ page }) => {
+    test(`${surface} ${width}px: footer opens current FAQs and preserves approved testing information`, async ({ page }) => {
       test.setTimeout(120_000);
       await page.setViewportSize({ width, height: 1000 });
       const home = surface === "review" ? "/" : `${canvas}/Homepage`;
@@ -14,33 +14,26 @@ for (const surface of ["review", "Canvas"] as const) {
       const callouts = homepage.locator(".stellar-callout-row");
       const tested = callouts.locator(".stellar-callout").filter({ hasText: claim });
       await expect(tested).toHaveCount(0);
-      await expect(callouts.locator('svg[data-stellar-icon="heavy-metals"]')).toHaveCount(0);
-      // Removing the testing badge must not shift the existing meaning-based
-      // icons into the retired facility slot.
+       await expect(callouts.locator('[data-heavy-metals-badge="homepage"]')).toHaveCount(1);
+       await expect(callouts.locator('svg[data-stellar-icon="heavy-metals-testing"]')).toHaveCount(1);
+       // The newer approved testing badge must not replace existing claim icons.
       await expect(callouts.locator('[data-stellar-icon="corn"]')).toHaveCount(1);
       await expect(callouts.locator('[data-stellar-icon="gluten-free"]')).toHaveCount(1);
       await expect(callouts.locator('[data-stellar-icon="stomach"]')).toHaveCount(1);
       const faqLink = homepage.locator("footer").getByRole("link", { name: "FAQs", exact: true });
       await expect(faqLink).toHaveCount(1);
-      await expect(faqLink).toHaveAttribute("href", "/pages/faqs");
+       await expect(faqLink).toHaveAttribute("href", "/faqs");
       await expect(faqLink).toHaveAttribute("target", "_parent");
       await faqLink.click();
-      await expect(page).toHaveURL(/\/pages\/faqs$/);
+       await expect(page).toHaveURL(/\/faqs$/);
       const faqs = page.frameLocator('iframe[title="Stellar Labs frequently asked questions"]');
-      await expect(faqs.getByRole("heading", { name: "Frequently Asked Questions", exact: true })).toBeVisible();
-      const heavy = faqs.getByTestId("faq-heavy-metals");
-      await expect(heavy).toHaveAttribute("open", "");
-      await expect(heavy.locator(".sl-faq-answer")).toHaveText("Yes. All Stellar Labs products have passed heavy-metal testing.");
+       await expect(faqs.getByRole("heading", { name: "FAQs", exact: true })).toBeVisible();
+       const heavy = faqs.locator("#heavy-metals");
+       await expect(heavy).toContainText("Are Stellar Labs Nutrition products tested for heavy metals?");
+       await expect(heavy.locator("p")).toHaveText("Yes. An independent laboratory tested all Stellar Labs Nutrition products for lead, cadmium, arsenic, and mercury. All products met the testing limits for each metal.");
       await expect(heavy.locator("svg,img")).toHaveCount(0);
-      await heavy.locator("summary").click();
-      await expect(heavy).not.toHaveAttribute("open");
-      await heavy.locator("summary").press("Enter");
-      await expect(heavy).toHaveAttribute("open", "");
-      await expect(faqs.locator(".sl-faqs-list details")).toHaveCount(8);
+       await expect(faqs.locator(".sl-faq-questions > li")).toHaveCount(11);
       expect(await faqs.locator("html").evaluate(node => node.scrollWidth <= node.clientWidth + 1)).toBe(true);
-      await faqs.getByTestId("faq-shipping").locator("summary").click();
-      await expect(faqs.getByRole("link", { name: "Shipping & Returns Policy", exact: true }))
-        .toHaveAttribute("href", "/pages/shipping-information");
       await expect(page.locator("iframe")).not.toHaveAttribute("sandbox", /allow-scripts/);
       const pairs = [
         ["/?category=100-isolate-whey-protein", `${canvas}/Homepage?category=100-isolate-whey-protein`],

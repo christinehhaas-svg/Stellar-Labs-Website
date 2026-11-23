@@ -35,6 +35,12 @@ export function qualityCallouts(statements: string[]): QualityCallout[] {
 }
 
 export function QualityIcon({ item }: { item: QualityCallout }) {
+  if (item.symbol === "hydration") return (
+    <svg className="review-quality-icon" data-claim-icon="hydration" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+      <path d="M15 3C12 7 5 15 5 21a10 10 0 0 0 20 0c0-6-7-14-10-18Z" />
+      <path d="m18 12-7 10h5l-2 7 8-11h-6l2-6Z" />
+    </svg>
+  );
   const Icon = /^GLP-1 Friendly/i.test(item.label) ? PersonStanding : item.symbol === "leaf" ? Leaf : item.symbol === "testing" ? FlaskConical
     : item.symbol === "sugar" ? CandyOff : CheckCircle2;
   return item.image

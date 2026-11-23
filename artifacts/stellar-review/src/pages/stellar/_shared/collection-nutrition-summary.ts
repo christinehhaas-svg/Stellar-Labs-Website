@@ -2,6 +2,7 @@ import proteinProducts from "./protein-products.json";
 import veganProducts from "./vegan-products.json";
 import { shakeCardNutrition } from "./ProductCardNutrition";
 import { getOutlineProduct } from "./outline-copy";
+import { orderNutrition } from "./nutrition-order";
 
 export type CollectionNutritionMetric = {
   label: string;
@@ -14,12 +15,12 @@ export type CollectionNutritionMetric = {
  * into an unsupported "as low as" statement. Individual facts stay unchanged. */
 export function collectionNutritionSummary(formula: "isolate" | "blend" | "vegan" | "electrolyte"): CollectionNutritionMetric[] {
   if (formula === "electrolyte") {
-    return ["Calories", "Potassium", "Magnesium", "Calcium", "Sodium"].map(label => {
+    return orderNutrition(["Calories", "Potassium", "Magnesium", "Calcium", "Sodium"].map(label => {
       const fact = getOutlineProduct("ElectrolyteLemonLime").facts.find(fact => fact.startsWith(`${label}:`));
       const amount = fact?.match(/:\s*(\d+)/)?.[1];
       if (!amount) throw new Error(`Missing or invalid Lemon Lime ${label}`);
       return { label, value: `${amount}${label === "Calories" ? "" : "mg"}` };
-    });
+    }));
   }
   const facts = [...proteinProducts, ...veganProducts].filter(product => product.formula === formula).map(product => {
     const nutrition = shakeCardNutrition[product.component];
@@ -41,6 +42,6 @@ export function collectionNutritionSummary(formula: "isolate" | "blend" | "vegan
     };
   };
   return formula === "isolate"
-    ? [highlight("calories", "Calories"), highlight("protein", "Protein", true), highlight("carbs", "Carbs"), highlight("sugar", "Sugar")]
+    ? orderNutrition([highlight("calories", "Calories"), highlight("protein", "Protein", true), highlight("carbs", "Carbs"), highlight("sugar", "Sugar")])
     : [highlight("protein", "Protein", true)];
 }

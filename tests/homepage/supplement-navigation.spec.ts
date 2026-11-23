@@ -19,7 +19,7 @@ const categories = [
   ["Vegan Protein", "/?category=vegan-plant-protein"],
   ["Electrolytes", "/?category=electrolyte"],
   ["Supplements", "/supplements"],
-  ["Recipes", "/recipes"],
+  ["Recipes & Books", "/recipes"],
   ["Shop All", "/shop"],
 ] as const;
 
@@ -415,7 +415,7 @@ for (const { surface, restoredColors, enlargedText, width, changeWhileAway, filt
         navigation.getByRole("link", { name, exact: true }));
       await expectForcedColorsControl(embed, name, restoredColors === "active");
     }
-    for (const name of ["Recipes", "Supplements"]) {
+    for (const name of ["Recipes & Books", "Supplements"]) {
       await page.keyboard.press("Shift+Tab");
       await expectVisibleHeaderFocus(embed, name,
         navigation.getByRole("link", { name, exact: true }));
@@ -788,6 +788,132 @@ async function embeddedHeaderExposure(embed: Locator) {
       }
     }
     return { errors, regions };
+  });
+}
+
+for (const surface of ["review", "Canvas"] as const) {
+  test(`${surface} 390px: native Space keeps the enlarged supplement menu steady through both frames`, async ({ page, context, browserName }) => {
+    test.skip(browserName !== "chromium", "Native Space regression is Chromium-only");
+    await page.setViewportSize({ width: 390, height: 1000 });
+    const start = surface === "review"
+      ? "/supplement-details?product=womens-multi"
+      : "/__mockup/preview/stellar-labs/SupplementDetails?product=womens-multi";
+    await page.route("**/__test-supplement-space", route => route.fulfill({
+      contentType: "text/html",
+      // Leave real scroll room in the outer preview: a Space-induced page
+      // scroll must not pass merely because the host cannot scroll at all.
+      body: `<style>html,body{margin:0}iframe{display:block;width:100%;height:1500px;border:0}</style>
+        <iframe title="Embedded website" sandbox="${previewSandbox}" src="${start}"></iframe>`,
+    }));
+    const escapedRequests: string[] = [];
+    await context.route("**/*", async route => {
+      const request = route.request();
+      if ((request.isNavigationRequest() &&
+        new URL(request.url()).origin !== new URL(test.info().project.use.baseURL!).origin) ||
+        !["GET", "HEAD", "OPTIONS"].includes(request.method())) {
+        escapedRequests.push(`${request.method()} ${request.url()}`);
+        await route.abort();
+      } else await route.continue();
+    });
+    await page.goto("/__test-supplement-space", { waitUntil: "domcontentloaded" });
+    const outerUrl = page.url();
+    const embed = page.locator('iframe[title="Embedded website"]');
+    const host = page.frameLocator('iframe[title="Embedded website"]');
+    const capture = host.locator('iframe[title="Stellar Labs supplement product"]');
+    const snapshot = host.frameLocator('iframe[title="Stellar Labs supplement product"]');
+    await expect(snapshot.locator("#supplements-app-mount").getByRole("heading", { level: 1 }))
+      .toHaveText("Women's Daily Multivitamin");
+    await expect(embed).toHaveAttribute("sandbox", previewSandbox);
+    await expect(capture).toHaveAttribute("sandbox", snapshotSandbox);
+    await expect.poll(() => embed.evaluate((iframe: HTMLIFrameElement) =>
+      iframe.contentDocument!.querySelector<HTMLIFrameElement>('iframe[title="Stellar Labs supplement product"]')!
+        .contentWindow!.innerWidth)).toBe(390);
+    const navigation = snapshot.locator("#header-component").getByRole("navigation", { name: "Shop", exact: true });
+    const menu = navigation.locator("details");
+    const toggle = menu.locator("summary");
+    const anchors = menu.locator("a");
+    await expect(toggle).toHaveAttribute("aria-label", "Shop menu");
+    await expect(menu).not.toHaveAttribute("open");
+    await expect(anchors.first()).toBeHidden();
+    const sizes = await doubleSnapshotText(embed);
+    expect(sizes).toHaveLength(7);
+    for (const { before, after } of sizes) {
+      expect(before).toBeGreaterThan(0);
+      expect(after).toBeCloseTo(before * 2, 1);
+    }
+    const expectExposed = async (name: string) => {
+      await expectVisibleHeaderFocus(embed, name,
+        name === "Shop menu" ? toggle : navigation.getByRole("link", { name, exact: true }));
+      await expectReadableHeaderControl(embed, name, true);
+      await expect.poll(async () => (await embeddedHeaderExposure(embed)).errors,
+        { message: `${name} full label and outline must be exposed through both frames after Space` }).toEqual([]);
+    };
+    const readPreviewScroll = () => embed.evaluate((iframe: HTMLIFrameElement) => {
+      const outer = iframe.ownerDocument.defaultView!;
+      const host = iframe.contentWindow!;
+      return {
+        offsets: [outer.scrollX, outer.scrollY, host.scrollX, host.scrollY],
+        outerScrollRoom: iframe.ownerDocument.documentElement.scrollHeight - outer.innerHeight,
+      };
+    });
+    await tabToHeaderControl(page, embed, "Shop menu", toggle);
+    await expectExposed("Shop menu");
+    expect((await readPreviewScroll()).outerScrollRoom).toBeGreaterThan(400);
+    const navigations: string[] = [];
+    page.on("framenavigated", frame => navigations.push(frame.url()));
+    const toggleWithSpace = async (open: boolean) => {
+      await expectExposed("Shop menu");
+      const before = (await readPreviewScroll()).offsets;
+      await page.keyboard.press("Space");
+      if (open) {
+        await expect(menu).toHaveAttribute("open");
+        await expect(anchors.first()).toBeVisible();
+      } else {
+        await expect(menu).not.toHaveAttribute("open");
+        await expect(anchors.first()).toBeHidden();
+      }
+      await expectExposed("Shop menu");
+      // Sample beyond the key release to catch delayed native page scrolling,
+      // rather than accepting one matching instant before smooth scroll starts.
+      const samples: number[][] = [];
+      await expect.poll(async () => {
+        samples.push((await readPreviewScroll()).offsets);
+        return samples.length;
+      }, { intervals: [100] }).toBeGreaterThanOrEqual(6);
+      for (const sample of samples) {
+        sample.forEach((offset, index) => expect(Math.abs(offset - before[index]),
+          "Space must not scroll either embedding document").toBeLessThanOrEqual(1));
+      }
+      await expectExposed("Shop menu");
+    };
+    await toggleWithSpace(true);
+    await toggleWithSpace(false);
+    await toggleWithSpace(true);
+    const names = ["Shop Lean Nutrition", ...categories.map(([name]) => name)];
+    // No searching for a matching link: each native key must reach the very
+    // next control, with its complete doubled label and focus ring exposed.
+    for (const name of names) {
+      await page.keyboard.press("Tab");
+      await expectExposed(name);
+    }
+    await page.keyboard.press("Tab");
+    await expect(snapshot.getByRole("button", { name: "Cart", exact: true })).toBeFocused();
+    for (const name of [...names].reverse()) {
+      await page.keyboard.press("Shift+Tab");
+      await expectExposed(name);
+    }
+    await page.keyboard.press("Shift+Tab");
+    await toggleWithSpace(false);
+    await toggleWithSpace(true);
+    await page.keyboard.press("Tab");
+    await expectExposed(names[0]);
+    await expect(embed).toHaveAttribute("sandbox", previewSandbox);
+    await expect(capture).toHaveAttribute("sandbox", snapshotSandbox);
+    await expect.poll(() => hostLocation(embed)).toBe(start);
+    await expect(page).toHaveURL(outerUrl);
+    expect(navigations, "Space and native traversal must not reload or navigate any frame").toEqual([]);
+    expect(context.pages(), "Space must not open another page").toHaveLength(1);
+    expect(escapedRequests, "No external store navigation or mutations").toEqual([]);
   });
 }
 

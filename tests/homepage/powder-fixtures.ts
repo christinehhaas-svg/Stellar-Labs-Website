@@ -25,7 +25,7 @@ export const vegan = [
   { component: "VeganVanilla", handle: "vanilla-vegan-shake", title: "Vanilla Vegan Protein · 2 lb", size: "2lb", flavor: "Vanilla", formula: "vegan" },
 ] as const;
 export const veganCollectionClaims = [
-  "Non-GMO", "Certified Gluten-Free",
+  "Non-GMO", "Certified Gluten-Free", "Easy-to-Digest Ingredients", "Vegan",
 ];
 export const veganProductClaims = [
   "Certified Gluten-Free", "Non-GMO",
@@ -150,7 +150,7 @@ export const expectedCardNutrition: Record<string, string[]> = {
   ProteinCaramelBlend: ["130", "24g", "3g", "2g"],
   VeganVanilla: ["130", "20g", "6g", "3g"],
   VeganChocolate: ["130", "20g", "6g", "2g"],
-  ElectrolyteLemonLime: ["5", "280mg", "51mg", "47mg", "80mg"],
+  ElectrolyteLemonLime: ["5", "280mg", "51mg", "80mg", "47mg"],
   ProteinClassicChocolate: ["24g", "130", "4g", "2g"],
   ProteinClassicVanilla: ["24g", "130", "4g", "2g"],
   ProteinClassicCookiesCream: ["24g", "130", "4g", "2g"],

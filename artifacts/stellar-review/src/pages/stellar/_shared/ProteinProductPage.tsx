@@ -13,6 +13,8 @@ import { useProductSnapshot } from "./useProductSnapshot";
 import { uploadedPowderLabels } from "./uploaded-powder-labels";
 import { powderDisplayName, powderProductBlurb } from "./whey-lines";
 import { isolatePageWarnings } from "./powder-page-notes";
+import { HeavyMetalsBadge } from "./HeavyMetalsBadge";
+import { heavyMetalsTestingStatement } from "./heavy-metals-testing";
 import { ProductQualityList } from "./ProductQualityList";
 
 const products = [...proteinProducts, ...veganProducts, ...electrolyteProducts].map((product) => ({
@@ -168,6 +170,7 @@ function ProductDetail({ product }: { product: ProteinProduct }) {
             </div>
             <button className="sl-protein-cart" type="button" onClick={() => setAdded(true)}>Add to Cart</button>
           </div>
+          <HeavyMetalsBadge />
           {added && <p className="sl-protein-selection-status" role="status">Selection updated.</p>}
           <nav className="sl-protein-jump-links" aria-label="On this page">
             <a href="#product-details">Product Details</a>
@@ -182,6 +185,7 @@ function ProductDetail({ product }: { product: ProteinProduct }) {
         <section className="sl-protein-section">
           <h2 id="product-claims" className="sl-product-claims-heading" tabIndex={-1}>Product details</h2>
           <ProductQualityList claims={quality} />
+          <p data-heavy-metals-statement>{heavyMetalsTestingStatement}</p>
         </section>
           <div className="sl-product-safety-notes">
             <ul className="sl-protein-warnings">{displayedWarnings.filter(warning => !/These statements have not been evaluated/i.test(warning)).map((warning) => <li key={warning}>{warning}</li>)}</ul>

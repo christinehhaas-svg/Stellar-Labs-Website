@@ -50,6 +50,23 @@ test("live recipes apply approved wording without changing legacy routes, images
   assert(live.some(recipe => recipe.slug === "low-fodmap-strawberry-banana-vanilla-smoothie"));
 });
 
+test("recipe photos use bar-free edits while keeping the original photos available", () => {
+  const directory = "artifacts/stellar-review";
+  const recipes = JSON.parse(fs.readFileSync(`${directory}/src/pages/stellar/_shared/recipes.json`, "utf8"));
+  const replacements = [
+    ["cc030b1928fb37bfd9b6.jpg", "vanilla-board-no-bar.jpg"],
+    ["a650ce6cc4069c4d3df5.jpg", "chocolate-desk-no-bar.jpg"],
+    ["c384a128b280764a43b3.jpg", "chocolate-notebook-no-bar.jpg"],
+    ["bab4114c356b4e263e9f.jpg", "vanilla-board-no-bar.jpg"],
+  ];
+  for (const [original, edited] of replacements) {
+    assert(fs.existsSync(`${directory}/source-assets/images/stellar-recipes/${original}`), "Keep the original photo");
+    assert(fs.existsSync(`${directory}/source-assets/images/stellar-recipes/${edited}`), "Keep the edited photo deployable");
+    assert(recipes.some(recipe => recipe.image.endsWith(`/${edited}`)), "Use the edited photo in recipes");
+    assert(!JSON.stringify(recipes).includes(original), "Do not expose the original bar photo in cards or bodies");
+  }
+});
+
 for (const [name, directory, snapshot] of [
   ["review", "artifacts/stellar-review/src/pages/stellar", "artifacts/stellar-review/source-assets/stellar-current/homepage-snapshot.html"],
   ["Canvas", "artifacts/mockup-sandbox/src/components/mockups/stellar-labs", "artifacts/mockup-sandbox/public/stellar-current/homepage-snapshot.html"],

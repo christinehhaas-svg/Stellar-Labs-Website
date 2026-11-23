@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { HeavyMetalsBadge } from "./HeavyMetalsBadge";
 
 /** Local review selection only; does not contact a live checkout. */
 export function ProductPurchaseControls() {
@@ -19,6 +20,7 @@ export function ProductPurchaseControls() {
       </div>
       <button type="button" className="sl-protein-cart" onClick={() => setAdded(true)}>Add to Cart</button>
     </div>
+    <HeavyMetalsBadge />
     {added && <p className="sl-protein-selection-status" role="status">Selection updated.</p>}
   </>;
 }

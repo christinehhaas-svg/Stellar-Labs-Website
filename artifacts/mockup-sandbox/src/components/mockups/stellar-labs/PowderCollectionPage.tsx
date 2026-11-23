@@ -31,7 +31,7 @@ type PowderFilter = "all" | "isolate" | "blend" | "lemon-lime" | "strawberry";
 const collectionDetails: Record<PowderCollection, { title: string; description: string }> = {
   whey: { title: "WHEY PROTEIN", description: "Browse whey isolates and blends by flavor." },
   vegan: { title: "VEGAN PROTEIN", description: "20g of plant protein per serving, made with pea, brown rice, and quinoa proteins and sweetened with stevia." },
-  electrolyte: { title: "ELECTROLYTES", description: "Lemon Lime electrolyte powder for everyday hydration." },
+  electrolyte: { title: "ELECTROLYTES", description: "Low calorie delicious hydration with all major electrolytes that tastes great." },
 };
 
 const categoryFilters: Record<PowderCollection, { filter: PowderFilter; label: string; query: string }[]> = {
@@ -178,7 +178,7 @@ function PowderCollection({ category }: { category: PowderCollection }) {
   const productGroups = useMemo(() => groupCollectionProducts(categoryProducts, category === "whey", filter === "isolate" ? "1lb" : "2lb"), [categoryProducts, category, filter]);
   const electrolyteClaims = [
     "Non-GMO", "Certified Gluten-Free",
-    "5 Major Electrolytes",
+    "Easy-to-Digest Ingredients",
     "Vegan",
     "No Added Sugars",
   ];
@@ -188,6 +188,7 @@ function PowderCollection({ category }: { category: PowderCollection }) {
   const proteinClaims = visibleClaims
     .filter(claim => /^(Non-GMO|Certified Gluten-Free|Easy-to-Digest)/.test(claim));
   if (category === "whey" && filter === "blend") proteinClaims.push("rBGH-Free Whey", "No Added Sugars");
+  if (category === "vegan") proteinClaims.push("Easy-to-Digest Ingredients", "Vegan");
   const heading = category === "whey" && filter === "isolate" ? wheyLines.isolate.name
     : category === "whey" && filter === "blend" ? wheyLines.blend.name : details.title;
   const description = category === "whey" && filter === "isolate"
@@ -196,14 +197,14 @@ function PowderCollection({ category }: { category: PowderCollection }) {
       ? "Whey concentrate and isolate, sweetened with stevia"
       : details.description;
   const selectedTab = categoryFilters[category].find((item) => item.filter === filter)?.filter ?? "all";
-  const showCollectionClaims = category !== "whey" || filter === "all";
+  const showCollectionClaims = category !== "whey" || filter === "all" || filter === "isolate" || filter === "blend";
   const baseCategory = category === "whey" ? "100-isolate-whey-protein" : category === "vegan" ? "vegan-plant-protein" : "electrolyte";
   return (
     <div className="sl-collection sl-whey-collection" data-collection={category} data-collection-filter={selectedTab}>
       <header className="sl-collection-heading">
         <div className="sl-heading-inner">
           <h1>{heading}</h1>
-          {(category === "whey" || category === "vegan") && <p>{description}</p>}
+          <p>{description}</p>
         </div>
       </header>
       {category === "whey" && <nav className="sl-whey-category-buttons" style={{ gridTemplateColumns: `repeat(${categoryFilters[category].length}, minmax(0, 1fr))` }} aria-label={`${details.title} filters`}>
@@ -235,18 +236,12 @@ function PowderCollection({ category }: { category: PowderCollection }) {
             .sl-electrolyte-collection-claims .review-quality-strip>p{max-width:80%;margin-right:0}
           }
         `}</style>}
-        {category === "whey" && filter === "blend" && <QualityCallouts
-          listing
-          items={qualityCallouts(["Easy-to-Digest Ingredients"])}
-          label="Whey Protein Blend quality callouts"
-          note=""
-        />}
         {showCollectionClaims && <QualityCallouts
           listing
           items={qualityCallouts(category === "electrolyte" ? electrolyteClaims : simplifiedCallouts ? proteinClaims : visibleClaims)}
           label={`${details.title} quality callouts`}
           singleLine={false}
-          note={category === "electrolyte" ? "Includes chloride; the amount is not separately listed on the product label." : category === "whey" || category === "vegan" ? "" : note}
+          note={category === "electrolyte" || category === "whey" || category === "vegan" ? "" : note}
         />}
       </div>
       <section className="sl-grid-section" aria-label={`${details.title.toLowerCase()} products`}>

@@ -4,6 +4,7 @@ import { StellarProductInformation } from "./StellarProductInformation";
 import { initializeHomepageProducts } from "./_homepageProducts";
 import { initializeHomepageTypography } from "./_shared/homepage-typography";
 import { initializeOutlineHomepage } from "./_shared/outline-homepage";
+import { addHomepageTestingBadge } from "../../../../../stellar-review/src/pages/stellar/_shared/heavy-metals-testing";
 import { initializeHomepageComparisons } from "../../../../../stellar-review/src/pages/stellar/_shared/homepage-comparisons";
 import { initializeHomepageFeaturedProducts } from "../../../../../stellar-review/src/pages/stellar/_shared/homepage-featured-products";
 import "./_group.css";
@@ -65,6 +66,7 @@ export function initializeSnapshot(event: SyntheticEvent<HTMLIFrameElement>) {
   if (frame.contentDocument) initializeHomepageProducts(frame.contentDocument);
   if (doc) initializeReviewLinks(doc);
   if (doc) initializeOutlineHomepage(doc, reviewUrl);
+  if (doc) addHomepageTestingBadge(doc);
   if (doc) initializeHomepageComparisons(doc, reviewUrl);
   if (doc) initializeHomepageFeaturedProducts(doc, reviewUrl);
   if (!doc) return;

@@ -36,8 +36,9 @@ for (const width of [390, 1440]) {
       if (route === "/pages/about-us") expect(text).toContain("CHRISTINE HAAS, MS, LDN, CNS");
       if (route === "/supplements") {
         expect(text).toContain("Daily supplements designed to complement your nutrition and wellness routine.");
-        expect(text).not.toContain("Easy-to-Digest Ingredients");
+        expect(text).toContain("Easy-to-Digest Ingredients");
       }
+      if (route === "/?category=electrolyte") expect(text).toContain("Easy-to-Digest Ingredients");
       if (route.includes("vanilla-vegan-shake")) {
         expect(text).toMatch(/6g[\s\S]*Carbs|Carbs[\s\S]*6g/);
         expect(text).toContain("20g of plant protein per serving");

@@ -1,4 +1,5 @@
 import { powderNutritionMetrics } from "./ProductCardNutrition";
+import { orderNutrition } from "./nutrition-order";
 import type { Supplement } from "./supplements-data";
 
 type Metric = { label: string; value: string };
@@ -15,7 +16,7 @@ function NutritionSummary({ metrics, basis, servingWeight }: { metrics: Metric[]
       @media(max-width:360px){.sl-detail-nutrition[data-metric-count="5"] dl{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
     `}</style>
     <dl style={{ gridTemplateColumns: `repeat(${metrics.length}, minmax(0, 1fr))` }}>
-      {metrics.map(({ label, value }) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+      {orderNutrition(metrics).map(({ label, value }) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
     </dl>
     <p>{servingWeight ? `Per ${servingWeight} serving` : "Per serving"}{basis ? ` · ${basis}` : ""}</p>
   </section>;
