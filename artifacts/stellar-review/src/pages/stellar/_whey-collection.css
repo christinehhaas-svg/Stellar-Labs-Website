@@ -196,6 +196,11 @@
 }
 #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-single-size{font-size:14px;font-weight:400;line-height:1.4;color:#111}
 #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  box-sizing:border-box;
   flex:0 1 92px;
   min-width:0;
   min-height:31px;
@@ -211,14 +216,14 @@
   cursor:pointer;
   transition:background-color .16s ease,color .16s ease,border-color .16s ease;
 }
-#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option[aria-pressed="true"]{
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option[aria-current="true"]{
   border-color:#111;
   background:#111;
   color:#fff;
 }
 @media(hover:hover){
   #supplements-app-mount .sl-whey-collection .sl-whey-category-button:not(.is-active):hover,
-  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option:not([aria-pressed="true"]):hover{
+  #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option:not([aria-current="true"]):hover{
     border-color:#111;background:#fff;color:#111;text-decoration:underline;text-underline-offset:3px;
   }
 }
@@ -294,9 +299,9 @@
 #supplements-app-mount .sl-supplement-filter-footer p{margin:4px 0 0;font-size:12px;line-height:1.5;color:#514c49}
 @media(hover:hover){#supplements-app-mount .sl-whey-collection[data-collection="supplements"] .sl-whey-category-button:hover{background:#111;color:#fff}}
 #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-category-button:not([aria-current="page"]),
-#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option[aria-pressed="false"]{background:#fff!important;color:#111!important}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option:not([aria-current="true"]){background:#fff!important;color:#111!important}
 #supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-whey-category-button[aria-current="page"],
-#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option[aria-pressed="true"]{background:#111!important;color:#fff!important}
+#supplements-app-mount .sl-whey-collection[data-collection="whey"] .sl-size-option[aria-current="true"]{background:#111!important;color:#fff!important}
 @media(forced-colors:active){
   /* Keep native system colors, but prevent button color substitution from
      making the selected filter look identical to the other three controls. */

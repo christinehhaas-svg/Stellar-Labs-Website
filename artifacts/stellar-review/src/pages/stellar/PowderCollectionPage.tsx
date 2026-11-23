@@ -14,7 +14,7 @@ import { packageImages, packageFrontStyle, isIllustrativePackage, wheyDisplayOrd
 import { useProductSnapshot } from "./_shared/useProductSnapshot";
 import { WheyNutritionSummary } from "./_shared/WheyNutritionSummary";
 import { ProductCardNutrition } from "./_shared/ProductCardNutrition";
-import { groupCollectionProducts } from "./_shared/collection-product-groups";
+import { collectionPackageHref, groupCollectionProducts, initialCollectionPackage } from "./_shared/collection-product-groups";
 import { powderDisplayName, wheyLines } from "./_shared/whey-lines";
 import { classicWheyProducts } from "./_shared/classic-whey-products";
 import { ClassicWheyCard } from "./_shared/ClassicWheyCard";
@@ -118,8 +118,8 @@ function initializeSnapshot(doc: Document, view: Window, category: PowderCollect
 }
 
 function ProductCard({ product: initialProduct, variants, showServings = false }: { product: PowderProduct; variants?: PowderProduct[]; showServings?: boolean }) {
-  const [selectedComponent, setSelectedComponent] = useState(initialProduct.component);
   const options = variants ? [...variants].sort((a, b) => Number.parseFloat(a.size) - Number.parseFloat(b.size)) : [initialProduct];
+  const [selectedComponent, setSelectedComponent] = useState(() => initialCollectionPackage(initialProduct, options, window.location.search).component);
   const product = options.find(option => option.component === selectedComponent);
   if (!product) throw new Error(`Selected package is unavailable: ${selectedComponent}`);
   const singlePackageSize = Boolean(variants) && options.length === 1;
@@ -137,9 +137,13 @@ function ProductCard({ product: initialProduct, variants, showServings = false }
           {!variants && product.formula !== "electrolyte" && <span className="sl-card-variant">{product.size.replace(/(\d)\s*lb/, "$1 lb")}</span>}
         </h2>
         {variants && <div className="sl-card-package"><div className="sl-size-options" role={singlePackageSize ? undefined : "group"} aria-label={singlePackageSize ? undefined : `${product.formula === "isolate" ? "Whey isolate" : "Whey blend"} ${product.flavor} size`}>
-          {singlePackageSize ? <span className="sl-single-size">{product.size.replace(/(\d)\s*lb/, "$1 lb")}</span> : options.map(option => <button type="button" className="sl-size-option" key={option.component} aria-pressed={option.component === selectedComponent} data-testid={`size-${option.component}`} onClick={() => setSelectedComponent(option.component)}>
+          {singlePackageSize ? <span className="sl-single-size">{product.size.replace(/(\d)\s*lb/, "$1 lb")}</span> : options.map(option => <a className="sl-size-option" key={option.component} href={collectionPackageHref(window.location, option.component)} target="_parent" aria-current={option.component === selectedComponent ? "true" : undefined} data-testid={`size-${option.component}`} onClick={(event) => {
+            if (event.button !== 0 || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+            event.preventDefault();
+            setSelectedComponent(option.component);
+          }}>
             {option.size.replace(/(\d)\s*lb/, "$1 lb")}
-          </button>)}
+          </a>)}
         </div>
           {showServings && <p className="sl-card-servings">{getPowderCopy(product).servings} servings per container</p>}
         </div>}

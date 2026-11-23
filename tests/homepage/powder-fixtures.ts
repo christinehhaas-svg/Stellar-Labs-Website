@@ -32,12 +32,17 @@ export const veganProductClaims = [
   "Vegan", "Sweetened with Stevia", "Tested for Heavy Metals",
 ];
 export type Product = (typeof whey)[number] | (typeof electrolytes)[number] | (typeof vegan)[number];
-export function collectionRepresentatives(products: readonly Product[]) {
+export function collectionRepresentatives(products: readonly Product[], requestedPackage: string | null = null) {
   const preferred = products.every(product => product.formula === "isolate") ? "1lb" : "2lb";
   const groups = new Map<string, Product>();
   for (const product of products) {
     const key = product.formula === "isolate" || product.formula === "blend" ? `${product.formula}:${product.flavor}` : product.component;
     if (!groups.has(key) || product.size === preferred) groups.set(key, product);
+  }
+  const requested = products.find(product => product.component === requestedPackage);
+  if (requested) {
+    const key = requested.formula === "isolate" || requested.formula === "blend" ? `${requested.formula}:${requested.flavor}` : requested.component;
+    groups.set(key, requested);
   }
   return [...groups.values()];
 }

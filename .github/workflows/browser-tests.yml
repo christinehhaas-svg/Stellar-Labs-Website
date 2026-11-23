@@ -49,6 +49,7 @@ jobs:
           pnpm typecheck:homepage
           pnpm test:homepage:parity
           pnpm test:browser-runner
+          node --test tests/whey-flavor-groups.test.mjs
       - name: Run the existing browser coverage
         run: pnpm exec playwright test --config tests/homepage/playwright.config.ts --project=${{ matrix.browser }}
       - name: Retain browser report, screenshots, and traces

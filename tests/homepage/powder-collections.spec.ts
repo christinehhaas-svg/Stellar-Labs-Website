@@ -35,7 +35,7 @@ async function clickTopLink(page: Page, link: Locator, path: string, keyboard = 
   await assertLocation(page, path);
 }
 
-async function tabToCollectionLink(page: Page, selector: string) {
+async function tabToCollectionLink(page: Page, selector: string, key: "Tab" | "Shift+Tab" = "Tab") {
   const link = collection(page).locator(selector);
   await expect(link).toHaveCount(1);
   await expect(link).toBeVisible();
@@ -43,7 +43,7 @@ async function tabToCollectionLink(page: Page, selector: string) {
   // script-disabled snapshot. Do not use focus(), click(), or synthetic events:
   // every activation must earn focus through the browser's real Tab order.
   for (let tabs = 0; tabs < 80; tabs++) {
-    await page.keyboard.press("Tab");
+    await page.keyboard.press(key);
     const focused = await page.evaluate(selector => {
       const iframe = document.querySelector<HTMLIFrameElement>(".stellar-supplements-frame");
       return document.activeElement === iframe &&
@@ -154,11 +154,11 @@ async function assertCollection(page: Page, family: Family, filter: Filter) {
 }
 
 async function openProduct(page: Page, product: Product, imageLink: boolean) {
-  const before = new URL(page.url());
-  const backPath = before.pathname + before.search;
   if (product.formula === "isolate" && ["Vanilla", "Chocolate"].includes(product.flavor)) {
     await collection(page).getByTestId(`size-${product.component}`).click();
   }
+  const before = new URL(page.url());
+  const backPath = before.pathname + before.search;
   await clickTopLink(page, collection(page).getByTestId(`card-product-${product.component}`)
     .locator(imageLink ? ".sl-product-image" : ".sl-details-button"), `/products/${product.handle}`, false, "_parent");
   const frame = detail(page);
@@ -331,16 +331,29 @@ for (const surface of surfaces) {
               if (product.component.endsWith("Isolate1lb")) {
                 await tabToCollectionLink(page, `[data-testid="size-${product.component}"]`);
                 await page.keyboard.press("Enter");
+                await expect(collection(page).getByTestId(`size-${product.component}`))
+                  .toHaveAttribute("aria-current", "true");
               }
+              // The image precedes the size controls. Reach it with real
+              // backward Tab presses when an in-place selection kept focus.
+              // Native fallback navigation instead starts a fresh document.
+              const sizeStillFocused = await page.evaluate(component => {
+                const iframe = document.querySelector<HTMLIFrameElement>(".stellar-supplements-frame");
+                return document.activeElement === iframe &&
+                  iframe?.contentDocument?.activeElement?.getAttribute("data-testid") === `size-${component}`;
+              }, product.component);
+              const key = sizeStillFocused && affordance === ".sl-product-image" ? "Shift+Tab" : "Tab";
               const link = await tabToCollectionLink(page,
-                `[data-testid="card-product-${product.component}"] ${affordance}`);
+                `[data-testid="card-product-${product.component}"] ${affordance}`, key);
+              const source = new URL(page.url());
+              const returnPath = source.pathname + source.search;
               const path = `/products/${product.handle}`;
               await clickTopLink(page, link, path, true, "_parent");
               await assertSandbox(page.locator(".stellar-protein-product-frame"));
               await expect(detail(page).locator("#protein-title")).toHaveText(detailHeading(product));
               await assertLocalOnlyOrdering(detail(page));
               await page.goBack({ waitUntil: "domcontentloaded" });
-              await assertLocation(page, startPath);
+              await assertLocation(page, returnPath);
               await assertCollection(page, family, all);
             });
           }

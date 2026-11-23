@@ -87,11 +87,11 @@ for (const width of [390, 1440]) {
         for (const { flavor } of sizes) {
           for (const small of [true, false]) {
             await frame.locator(`[data-whey-family="isolate:${flavor}"]`)
-              .getByRole("button", { name: small ? "1 lb" : "2 lb", exact: true }).click();
+              .getByRole("link", { name: small ? "1 lb" : "2 lb", exact: true }).click();
             const card = frame.getByTestId(`card-product-Protein${flavor}Isolate${small ? "1lb" : ""}`);
             await expect(card.locator("h2 .sl-card-name")).toHaveText(`${flavor} Whey Protein Isolate`);
             await expect(card.locator("h2 .sl-card-variant")).toHaveCount(0);
-            await expect(card.locator('.sl-size-option[aria-pressed="true"]')).toHaveText(small ? "1 lb" : "2 lb");
+            await expect(card.locator('.sl-size-option[aria-current="true"]')).toHaveText(small ? "1 lb" : "2 lb");
             for (const selector of [".sl-product-image", ".sl-details-button"]) {
               await expect(card.locator(selector)).toHaveAttribute("href", `/products/${handle(flavor, small)}`);
             }
@@ -108,11 +108,59 @@ for (const width of [390, 1440]) {
       // Canvas intentionally links into the review app; test that native exit.
       await page.frameLocator(".stellar-supplements-frame")
         .locator('[data-whey-family="isolate:Chocolate"]')
-        .getByRole("button", { name: "1 lb", exact: true }).click();
+        .getByRole("link", { name: "1 lb", exact: true }).click();
       await page.frameLocator(".stellar-supplements-frame")
         .getByTestId("card-product-ProteinChocolateIsolate1lb").locator(".sl-product-image").click();
       await expect(page).toHaveURL(url => url.pathname === `/products/${handle("Chocolate")}`);
       await assertDetail(page, sizes[0]);
+    });
+
+    test(`${surface} ${width}px: native package links reload the selected size without snapshot scripts`, async ({ page }) => {
+      test.setTimeout(120_000);
+      await page.setViewportSize({ width, height: 900 });
+      const start = surface === "review"
+        ? "/?category=100-isolate-whey-protein&formula=isolate"
+        : `${canvasRoot}/PowderWhey?category=100-isolate-whey-protein&formula=isolate`;
+      await page.goto(start, { waitUntil: "domcontentloaded" });
+      const frame = page.frameLocator(".stellar-supplements-frame");
+      for (const { flavor, sugar } of sizes) {
+        for (const small of [true, false]) {
+          const component = `Protein${flavor}Isolate${small ? "1lb" : ""}`;
+          const link = frame.getByTestId(`size-${component}`);
+          const href = (await link.getAttribute("href"))!;
+          const destination = new URL(href, page.url());
+          expect(destination.pathname).toBe(new URL(start, page.url()).pathname);
+          expect(destination.searchParams.get("category")).toBe("100-isolate-whey-protein");
+          expect(destination.searchParams.get("formula")).toBe("isolate");
+          expect(destination.searchParams.getAll("package")).toEqual([component]);
+          await expect(link).toHaveAttribute("target", "_parent");
+          // Simulate an unavailable enhancement, not a synthetic activation:
+          // suppress only size-link event handlers, then use a real click.
+          // Native default navigation remains enabled; permissions never change.
+          await page.evaluate(() => {
+            const doc = document.querySelector<HTMLIFrameElement>(".stellar-supplements-frame")!.contentDocument!;
+            doc.addEventListener("click", event => {
+              if ((event.target as Element | null)?.closest(".sl-size-option")) event.stopImmediatePropagation();
+            }, true);
+          });
+          await link.click();
+          await expect(page).toHaveURL(destination.href);
+          const card = frame.getByTestId(`card-product-${component}`);
+          await expect(card.locator(".sl-card-name")).toHaveText(`${flavor} Whey Protein Isolate`);
+          await expect(card.locator('.sl-size-option[aria-current="true"]')).toHaveText(small ? "1 lb" : "2 lb");
+          await expect(card.locator(".sl-product-price")).toHaveText(small ? "$52.95" : "$89.95");
+          await expect(card.locator(".sl-details-button")).toHaveAttribute("href", `/products/${handle(flavor, small)}`);
+          await expect(card.locator(".sl-card-nutrition dt")).toHaveText(["Calories", "Protein", "Carbs", "Sugar"]);
+          await expect(card.locator(".sl-card-nutrition dd")).toHaveText(small
+            ? ["110", "25g", "1g", sugar]
+            : flavor === "Chocolate" ? ["110", "25g", "2g", "1g"] : ["120", "26g", "1g", "1g"]);
+          await expect(page.locator(".stellar-supplements-frame")).toHaveAttribute("sandbox", sandbox);
+          await page.reload({ waitUntil: "domcontentloaded" });
+          await expect(card).toHaveCount(1);
+          await expect(frame.getByTestId(`size-${component}`)).toHaveAttribute("aria-current", "true");
+          await expect(page).toHaveURL(destination.href);
+        }
+      }
     });
 
     test(`${surface} ${width}px: Shop All includes both one-pound isolates without borrowing artwork`, async ({ page }) => {

@@ -11,6 +11,7 @@ export async function assertLocalOnlyOrdering(frame: FrameLocator) {
 }
 
 export async function assertCompactCards(page: Page, products: readonly Product[]) {
+  const requestedPackage = new URL(page.url()).searchParams.get("package");
   const hasSingleIsolateSize = (product: Product) => (product.formula === "isolate" || product.formula === "blend") && products.filter(option => option.formula === product.formula && option.flavor === product.flavor).length === 1;
   // Read through the host, not by executing scripts in the restricted snapshot.
   // One retried snapshot preserves exact per-card checks without hundreds of
@@ -26,7 +27,7 @@ export async function assertCompactCards(page: Page, products: readonly Product[
         id: card.dataset.testid,
         name: text("h2 .sl-card-name"), variant: text("h2 .sl-card-variant"),
         price: text(".sl-product-price"),
-        sizes: [...card.querySelectorAll(".sl-size-option")].map(button => ({ label: button.textContent?.trim(), selected: button.getAttribute("aria-pressed") })),
+        sizes: [...card.querySelectorAll(".sl-size-option")].map(link => ({ label: link.textContent?.trim(), selected: link.getAttribute("aria-current") })),
         singleSize: text(".sl-single-size") ?? null,
         links: [...card.querySelectorAll<HTMLAnchorElement>(".sl-product-image, .sl-details-button")]
           .map(link => ({ href: link.getAttribute("href"), target: link.target })),
@@ -38,7 +39,7 @@ export async function assertCompactCards(page: Page, products: readonly Product[
         retiredCopy: /Non-GMO|Certified Gluten-Free|Low-FODMAP|rBGH|No Added Sugars|\b\d+\s+servings\b/i.test(card.textContent ?? ""),
       };
     });
-  })).toEqual(collectionRepresentatives(products).map(product => ({
+  })).toEqual(collectionRepresentatives(products, requestedPackage).map(product => ({
     id: `card-product-${product.component}`,
     name: `${product.flavor} ${product.formula === "isolate" ? "Whey Protein Isolate" : product.formula === "blend" ? "Whey Protein Blend"
       : product.formula === "vegan" ? "Vegan Protein" : "Electrolyte Powder"}`,
@@ -49,7 +50,7 @@ export async function assertCompactCards(page: Page, products: readonly Product[
     sizes: (product.formula === "isolate" || product.formula === "blend") && !hasSingleIsolateSize(product)
       ? products.filter(option => option.formula === product.formula && option.flavor === product.flavor)
         .sort((a, b) => Number(b.size === "1lb") - Number(a.size === "1lb"))
-        .map(option => ({ label: option.size === "1lb" ? "1 lb" : "2 lb", selected: option.component === product.component ? "true" : "false" }))
+        .map(option => ({ label: option.size === "1lb" ? "1 lb" : "2 lb", selected: option.component === product.component ? "true" : null }))
       : [],
     links: [1, 2].map(() => ({ href: `/products/${product.handle}`, target: "_parent" })),
     images: [{

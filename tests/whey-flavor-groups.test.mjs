@@ -8,8 +8,8 @@ const source = fs.readFileSync("artifacts/stellar-review/src/pages/stellar/_shar
 const module = { exports: {} };
 vm.runInNewContext(ts.transpileModule(source, {
   compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
-}).outputText, { module, exports: module.exports });
-const { groupCollectionProducts } = module.exports;
+}).outputText, { module, exports: module.exports, URLSearchParams });
+const { groupCollectionProducts, initialCollectionPackage, collectionPackageHref } = module.exports;
 const products = JSON.parse(fs.readFileSync("artifacts/stellar-review/src/pages/stellar/_shared/protein-products.json", "utf8"));
 
 test("Whey Isolate can feature 1 lb packages while keeping both size options", () => {
@@ -53,4 +53,37 @@ test("Other categories stay ungrouped and malformed duplicate sizes fail explici
   assert.equal(groupCollectionProducts(products, false).length, products.length);
   assert.throws(() => groupCollectionProducts([products[0], products[0]], true), /Duplicate product/);
   assert.throws(() => groupCollectionProducts([products[0], { ...products[0], component: "DuplicateSize" }], true), /Duplicate package size/);
+});
+
+test("Native package URLs preserve review and Canvas paths and active filters", () => {
+  for (const pathname of ["/", "/__mockup/preview/stellar-labs/PowderWhey", "/nested/review/"]) {
+    const href = collectionPackageHref({
+      pathname,
+      search: "?category=100-isolate-whey-protein&formula=isolate&formula=blend&package=old&package=duplicate",
+    }, "ProteinChocolateIsolate1lb");
+    const url = new URL(href, "https://example.test");
+    assert.equal(url.pathname, pathname);
+    assert.equal(url.searchParams.get("category"), "100-isolate-whey-protein");
+    assert.deepEqual(url.searchParams.getAll("formula"), ["isolate", "blend"]);
+    assert.deepEqual(url.searchParams.getAll("package"), ["ProteinChocolateIsolate1lb"]);
+    assert.equal(url.origin, "https://example.test");
+  }
+});
+
+test("Reloaded size selection is restricted to the card's real variants", () => {
+  const groups = groupCollectionProducts(products, true);
+  const chocolate = groups.find(group => group.key === "isolate:Chocolate");
+  const small = initialCollectionPackage(chocolate.initialProduct, chocolate.variants, "?package=ProteinChocolateIsolate1lb");
+  assert.equal(small.component, "ProteinChocolateIsolate1lb");
+  assert.equal(small.price, 5295);
+  assert.equal(chocolate.initialProduct.component, "ProteinChocolateIsolate");
+  for (const requested of ["unknown", "", "ProteinVanillaIsolate1lb", "ProteinChocolateBlend", "javascript:alert(1)"]) {
+    assert.equal(initialCollectionPackage(chocolate.initialProduct, chocolate.variants,
+      `?package=${encodeURIComponent(requested)}`), chocolate.initialProduct);
+  }
+  assert.equal(initialCollectionPackage(chocolate.initialProduct, chocolate.variants,
+    "?package=unknown&package=ProteinChocolateIsolate1lb"), chocolate.initialProduct);
+  const vanilla = groups.find(group => group.key === "isolate:Vanilla");
+  assert.equal(initialCollectionPackage(vanilla.initialProduct, vanilla.variants,
+    "?package=ProteinChocolateIsolate1lb"), vanilla.initialProduct);
 });
