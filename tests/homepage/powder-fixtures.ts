@@ -5,31 +5,31 @@ export const isolateClaims = [
 export const lowFodmap = "Easy-to-Digest Ingredients";
 
 export const whey = [
-  { component: "ProteinVanillaIsolate", handle: "100-isolate-whey-protein-shake-vanilla", title: "100% Isolate Whey Protein Shake Vanilla 2lb", flavor: "Vanilla", formula: "isolate" },
-  { component: "ProteinChocolateIsolate", handle: "100-isolate-whey-protein-shake-chocolate", title: "100% Isolate Whey Protein Shake Chocolate 2lb", flavor: "Chocolate", formula: "isolate" },
-  { component: "ProteinChocolateIsolate1lb", handle: "100-isolate-whey-protein-shake-chocolate-1lb", title: "100% Isolate Whey Protein Shake Chocolate 1lb", flavor: "Chocolate", formula: "isolate" },
-  { component: "ProteinVanillaIsolate1lb", handle: "100-isolate-whey-protein-shake-vanilla-1lb", title: "100% Isolate Whey Protein Shake Vanilla 1lb", flavor: "Vanilla", formula: "isolate" },
-  { component: "ProteinMixedBerry", handle: "100-isolate-whey-protein-shake-mixed-berry", title: "100% Isolate Whey Protein Shake Mixed Berry 1lb", flavor: "Mixed Berry", formula: "isolate" },
-  { component: "ProteinUnflavored", handle: "whey-protein-shake-unflavored", title: "100% Isolate Whey Protein Shake Unflavored 1lb", flavor: "Unflavored", formula: "isolate" },
-  { component: "ProteinCappuccino", handle: "100-isolate-whey-protein-shake-cappuccino", title: "100% Isolate Whey Protein Shake Cappuccino 1lb", flavor: "Cappuccino", formula: "isolate" },
-  { component: "ProteinCaramelBlend", handle: "whey-protein-salted-caramel-shake", title: "Whey Protein Shake Salted Caramel 2lb", flavor: "Caramel", formula: "blend" },
-  { component: "ProteinVanillaBlend", handle: "vanilla-whey-protein-shake", title: "Whey Protein Shake Vanilla 2lb", flavor: "Vanilla", formula: "blend" },
-  { component: "ProteinChocolateBlend", handle: "grass-fed-whey-chocolate-protein-shake", title: "Whey Protein Shake Chocolate 2lb", flavor: "Chocolate", formula: "blend" },
+  { component: "ProteinVanillaIsolate", handle: "100-isolate-whey-protein-shake-vanilla", title: "Vanilla Whey Protein Isolate · 2 lb", size: "2lb", flavor: "Vanilla", formula: "isolate" },
+  { component: "ProteinChocolateIsolate", handle: "100-isolate-whey-protein-shake-chocolate", title: "Chocolate Whey Protein Isolate · 2 lb", size: "2lb", flavor: "Chocolate", formula: "isolate" },
+  { component: "ProteinChocolateIsolate1lb", handle: "100-isolate-whey-protein-shake-chocolate-1lb", title: "Chocolate Whey Protein Isolate · 1 lb", size: "1lb", flavor: "Chocolate", formula: "isolate" },
+  { component: "ProteinVanillaIsolate1lb", handle: "100-isolate-whey-protein-shake-vanilla-1lb", title: "Vanilla Whey Protein Isolate · 1 lb", size: "1lb", flavor: "Vanilla", formula: "isolate" },
+  { component: "ProteinMixedBerry", handle: "100-isolate-whey-protein-shake-mixed-berry", title: "Mixed Berry Whey Protein Isolate · 1 lb", size: "1lb", flavor: "Mixed Berry", formula: "isolate" },
+  { component: "ProteinUnflavored", handle: "whey-protein-shake-unflavored", title: "Unflavored Whey Protein Isolate · 1 lb", size: "1lb", flavor: "Unflavored", formula: "isolate" },
+  { component: "ProteinCappuccino", handle: "100-isolate-whey-protein-shake-cappuccino", title: "Cappuccino Whey Protein Isolate · 1 lb", size: "1lb", flavor: "Cappuccino", formula: "isolate" },
+  { component: "ProteinCaramelBlend", handle: "whey-protein-salted-caramel-shake", title: "Salted Caramel Whey Protein Blend · 2 lb", size: "2lb", flavor: "Caramel", formula: "blend" },
+  { component: "ProteinVanillaBlend", handle: "vanilla-whey-protein-shake", title: "Vanilla Whey Protein Blend · 2 lb", size: "2lb", flavor: "Vanilla", formula: "blend" },
+  { component: "ProteinChocolateBlend", handle: "grass-fed-whey-chocolate-protein-shake", title: "Chocolate Whey Protein Blend · 2 lb", size: "2lb", flavor: "Chocolate", formula: "blend" },
 ] as const;
 
 export const electrolytes = [
-  { component: "ElectrolyteLemonLime", handle: "supplements-lemon-lime-electrolyte-powder", title: "Lemon Lime Electrolyte Powder", flavor: "Lemon Lime", formula: "electrolyte" },
+  { component: "ElectrolyteLemonLime", handle: "supplements-lemon-lime-electrolyte-powder", title: "Lemon Lime Electrolyte Powder", size: "30 servings", flavor: "Lemon Lime", formula: "electrolyte" },
 ] as const;
 export const vegan = [
-  { component: "VeganChocolate", handle: "chocolate-vegan-shake", title: "Chocolate Vegan Plant Protein Shake 2lb", flavor: "Chocolate", formula: "vegan" },
-  { component: "VeganVanilla", handle: "vanilla-vegan-shake", title: "Vanilla Vegan Plant Protein Shake 2lb", flavor: "Vanilla", formula: "vegan" },
+  { component: "VeganChocolate", handle: "chocolate-vegan-shake", title: "Chocolate Vegan Protein · 2 lb", size: "2lb", flavor: "Chocolate", formula: "vegan" },
+  { component: "VeganVanilla", handle: "vanilla-vegan-shake", title: "Vanilla Vegan Protein · 2 lb", size: "2lb", flavor: "Vanilla", formula: "vegan" },
 ] as const;
 export const veganCollectionClaims = [
   "Non-GMO", "Certified Gluten-Free",
 ];
 export const veganProductClaims = [
   "Certified Gluten-Free", "Non-GMO",
-  "Vegan", "Tested for Heavy Metals", "Sweetened with Stevia",
+  "Vegan", "Sweetened with Stevia", "Tested for Heavy Metals",
 ];
 export type Product = (typeof whey)[number] | (typeof electrolytes)[number] | (typeof vegan)[number];
 export function collectionRepresentatives(products: readonly Product[]) {
@@ -37,7 +37,7 @@ export function collectionRepresentatives(products: readonly Product[]) {
   const groups = new Map<string, Product>();
   for (const product of products) {
     const key = product.formula === "isolate" || product.formula === "blend" ? `${product.formula}:${product.flavor}` : product.component;
-    if (!groups.has(key) || product.title.endsWith(preferred)) groups.set(key, product);
+    if (!groups.has(key) || product.size === preferred) groups.set(key, product);
   }
   return [...groups.values()];
 }
@@ -45,8 +45,8 @@ export type Family = "whey" | "electrolyte" | "vegan";
 export const filters = {
   whey: [
     { name: "All whey", query: "", products: [...whey] },
-    { name: "Whey isolate", query: "&formula=isolate", products: whey.filter(p => p.formula === "isolate") },
-    { name: "Whey blends", query: "&formula=blend", products: whey.filter(p => p.formula === "blend") },
+    { name: "Whey Protein Isolate", query: "&formula=isolate", products: whey.filter(p => p.formula === "isolate") },
+    { name: "Whey Protein Blend", query: "&formula=blend", products: whey.filter(p => p.formula === "blend") },
   ],
   electrolyte: [
     { name: "All electrolytes", query: "", products: [...electrolytes] },
@@ -72,8 +72,7 @@ export function frontFilename(product: Product) {
   if (product.component === "ProteinVanillaIsolate" || product.component === "ProteinChocolateIsolate") {
     return `${product.handle}-0-black-bottle-clean-rim.png`;
   }
-  const black = product.formula === "isolate" && product.title.endsWith("2lb");
-  return `${product.handle}-0${black ? "-black-bottle" : ""}.png`;
+  return `${product.handle}-0.png`;
 }
 
 // Deliberately literal expectations: never import the production parser or
@@ -153,9 +152,9 @@ export const expectedCardNutrition: Record<string, string[]> = {
 };
 
 export function detailHeading(product: Product) {
-  return product.formula === "isolate" ? "Stellar Labs Whey Isolate Protein Powder"
-    : product.formula === "blend" ? "Stellar Labs Natural Whey Protein Blend"
-    : product.formula === "vegan" ? "Vegan Protein" : "Electrolyte Hydration";
+  return product.formula === "isolate" ? `${product.flavor} Whey Protein Isolate`
+    : product.formula === "blend" ? `${product.flavor} Whey Protein Blend`
+    : product.title;
 }
 
 export const suppliedLabels: Record<string, { slug: string; name: string; fullSlug?: string; barcodeUpdated?: boolean }> = {

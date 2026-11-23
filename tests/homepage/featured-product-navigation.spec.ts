@@ -26,8 +26,8 @@ test("Shop All e-books open their existing store destinations outside the previe
 });
 
 const featured = [
-  ["Stellar Labs Whey Isolate Protein Powder", "/?category=100-isolate-whey-protein&formula=isolate"],
-  ["Stellar Labs Natural Whey Protein Blend", "/?category=100-isolate-whey-protein&formula=blend"],
+  ["Whey Protein Isolate", "/?category=100-isolate-whey-protein&formula=isolate"],
+  ["Whey Protein Blend", "/?category=100-isolate-whey-protein&formula=blend"],
   ["Vegan Protein", "/?category=vegan-plant-protein"],
   ["Electrolyte Hydration", "/?category=electrolyte"],
   ["Supplements", "/supplements"],

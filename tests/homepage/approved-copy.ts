@@ -15,5 +15,5 @@ export const approvedCopy = {
 // Keep the homepage-only Shopify handoff fixture above independent.
 export const approvedReviewNavigation = [
   "Shop Lean Nutrition", "Whey Protein", "Vegan Protein", "Electrolytes",
-  "Supplements", "Recipes",
+  "Supplements", "Recipes", "Shop All",
 ];

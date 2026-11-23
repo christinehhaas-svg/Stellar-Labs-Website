@@ -9,14 +9,14 @@ const sizes = [
 const handle = (flavor: string, small = true) =>
   `100-isolate-whey-protein-shake-${flavor.toLowerCase()}${small ? "-1lb" : ""}`;
 const title = (flavor: string, small = true) =>
-  `100% Isolate Whey Protein Shake ${flavor} ${small ? "1lb" : "2lb"}`;
+  `${flavor} Whey Protein Isolate · ${small ? "1 lb" : "2 lb"}`;
 const canvasRoot = "/__mockup/preview/stellar-labs";
 const sandbox = "allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation";
 
 async function assertDetail(page: Page, product: (typeof sizes)[number], small = true) {
   const frame = page.frameLocator(".stellar-protein-product-frame");
   await expect(page.locator(".stellar-protein-product-frame")).toHaveAttribute("sandbox", sandbox);
-  await expect(frame.locator("#protein-title")).toHaveText("Stellar Labs Whey Isolate Protein Powder");
+  await expect(frame.locator("#protein-title")).toHaveText(`${product.flavor} Whey Protein Isolate`);
   await expect(frame.locator(".sl-protein-price")).toHaveText(small ? "$52.95" : "$89.95");
   const flavors = frame.getByRole("group", { name: "Select a flavor", exact: true });
   const sizeOptions = frame.getByRole("group", { name: "Select a size", exact: true });
@@ -37,7 +37,7 @@ async function assertDetail(page: Page, product: (typeof sizes)[number], small =
     await expect(link).toHaveAttribute("target", "_top");
   }
   if (small) {
-    await expect(frame.locator(".sl-protein-meta")).toHaveText(`${product.flavor} · 1 lb · 16 servings`);
+    await expect(frame.locator(".sl-protein-meta")).toHaveText("1 lb · 16 servings");
     await expect(frame.locator(".sl-protein-hero-image img")).toHaveAttribute("alt", `${title(product.flavor)} — front of package`);
     await expect(frame.locator(".sl-protein-hero-image img")).toHaveAttribute("src", /-1lb-mockup\.webp$/);
     await expect(frame.locator(".sl-protein-label-grid img")).toHaveCount(0);
@@ -52,7 +52,7 @@ async function assertDetail(page: Page, product: (typeof sizes)[number], small =
     await expect(frame.locator(".sl-protein-uploaded-label img").last())
       .toHaveAttribute("src", new RegExp(`${product.flavor.toLowerCase()}-whey-isolate-1lb-label\\.png$`));
   } else {
-    await expect(frame.locator(".sl-protein-meta")).toHaveText(`${product.flavor} · 2 lb · 29 servings`);
+    await expect(frame.locator(".sl-protein-meta")).toHaveText("2 lb · 29 servings");
     await expect(frame.locator(".sl-protein-hero-image img")).toHaveCount(1);
     await expect(frame.locator(".sl-protein-label-grid img")).toHaveCount(0);
     await expect(frame.locator("#product-facts-label [role=note]")).toHaveCount(0);
@@ -89,8 +89,9 @@ for (const width of [390, 1440]) {
             await frame.locator(`[data-whey-family="isolate:${flavor}"]`)
               .getByRole("button", { name: small ? "1 lb" : "2 lb", exact: true }).click();
             const card = frame.getByTestId(`card-product-Protein${flavor}Isolate${small ? "1lb" : ""}`);
-            await expect(card.locator("h2 .sl-card-name")).toHaveText("Stellar Labs Whey Isolate Protein Powder");
-            await expect(card.locator("h2 .sl-card-variant")).toHaveText(flavor);
+            await expect(card.locator("h2 .sl-card-name")).toHaveText(`${flavor} Whey Protein Isolate`);
+            await expect(card.locator("h2 .sl-card-variant")).toHaveCount(0);
+            await expect(card.locator('.sl-size-option[aria-pressed="true"]')).toHaveText(small ? "1 lb" : "2 lb");
             for (const selector of [".sl-product-image", ".sl-details-button"]) {
               await expect(card.locator(selector)).toHaveAttribute("href", `/products/${handle(flavor, small)}`);
             }
@@ -177,20 +178,20 @@ for (const width of [390, 1440]) {
       for (const { flavor } of sizes) {
         const card = frame.locator(`[data-stellar-product="${handle(flavor)}"] product-card`);
         await expect(card).toHaveCount(1);
-        await expect(card.locator(".sl-card-name")).toHaveText("Stellar Labs Whey Isolate Protein Powder");
-        await expect(card.locator(".sl-card-variant")).toHaveText(`${flavor} · 1 lb`);
+        await expect(card.locator(".sl-card-name")).toHaveText(`${flavor} Whey Protein Isolate`);
+        await expect(card.locator(".sl-card-variant")).toHaveText("1 lb");
         await expect(card.locator(".sl-product-price")).toHaveText("$52.95");
         await expect(card.locator("img")).toHaveAttribute("alt", `${title(flavor)} — illustrative bottle mockup`);
         await expect(card.locator("img")).toHaveAttribute("src", /-1lb-mockup\.webp$/);
         const facts = sizes.find(product => product.flavor === flavor)!;
-        await expect(card.locator(".sl-card-nutrition dd")).toHaveText([`${facts.protein}g`, facts.calories, `${facts.carbs}g`, facts.sugar]);
+        await expect(card.locator(".sl-card-nutrition dd")).toHaveText([facts.calories, `${facts.protein}g`, `${facts.carbs}g`, facts.sugar]);
         await expect(card.locator(".sl-card-per-serving")).toHaveText("Per serving");
         await expect(card.locator(".stellar-nutrition-source-link")).toHaveCount(0);
         await expect(card.locator(".sl-catalog-view-product"))
           .toHaveAttribute("href", `/products/${handle(flavor)}`);
         const large = frame.locator("product-card").filter({ has: frame.locator(`a[href="/products/${handle(flavor, false)}"]`) });
         await expect(large).toHaveCount(1);
-        await expect(large.locator(".sl-card-variant")).toHaveText(`${flavor} · 2 lb`);
+        await expect(large.locator(".sl-card-variant")).toHaveText("2 lb");
       }
       if (surface === "review") {
         await frame.locator(`[data-stellar-product="${handle("Vanilla")}"] .sl-catalog-view-product`).click();

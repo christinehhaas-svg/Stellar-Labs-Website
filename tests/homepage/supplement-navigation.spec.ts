@@ -65,11 +65,11 @@ async function expectVisibleHeaderFocus(embed: Locator, label: string, control: 
   await expect(control).toBeInViewport();
 }
 
-async function tabToHeaderControl(page: Page, embed: Locator, label: string, control: Locator) {
+async function tabToHeaderControl(page: Page, embed: Locator, label: string, control: Locator, key: "Tab" | "Shift+Tab" = "Tab") {
   // All focus is earned by real Tab presses; no focus(), clicks, dispatchEvent,
   // or programmatic disclosure changes are allowed in these keyboard cases.
   for (let tabs = 0; tabs < 40; tabs++) {
-    await page.keyboard.press("Tab");
+    await page.keyboard.press(key);
     if (await headerFocus(embed, label)) {
       await expectVisibleHeaderFocus(embed, label, control);
       return;
@@ -605,8 +605,9 @@ for (const width of [390, 1440]) {
           await expectForcedColorsControl(embed, name);
         }
         const link = navigation.getByRole("link", { name: label, exact: true });
-        // Shop All is already focused at the end of the ordered traversal.
-        if (!await headerFocus(embed, label)) await tabToHeaderControl(page, embed, label, link);
+        // Shop All is already focused. Return through the header with real
+        // backward Tab presses rather than traversing the entire product/footer.
+        if (!await headerFocus(embed, label)) await tabToHeaderControl(page, embed, label, link, "Shift+Tab");
         expect(await anchors.evaluateAll(links => links.map(link => ({
           href: link.getAttribute("href"), target: link.getAttribute("target"),
         })))).toEqual(originalLinks);
@@ -1593,7 +1594,7 @@ for (const width of [390, 1440]) {
         const purchase = host.frameLocator('iframe[title="Stellar Labs supplement product"]');
         const root = purchase.locator("#supplements-app-mount");
         await expect(root.getByRole("heading", { level: 1 })).toHaveText(product.name);
-        await expect(root.locator(".sl-protein-price")).toHaveText("$24.95");
+        await expect(root.locator(".sl-protein-price")).toHaveText(product.id === "omega-3" ? "$29.95" : "$24.95");
         await expect(purchaseFrame).toHaveAttribute("sandbox", snapshotSandbox);
         const navigation = await assertHeader(purchase, width);
 
@@ -1617,7 +1618,7 @@ for (const width of [390, 1440]) {
         await expect.poll(() => hostLocation(embed)).toBe(`/supplement-details?product=${product.id}`);
         await expect(root.getByRole("heading", { level: 1 })).toHaveText(product.name);
         await expect(root.getByRole("combobox", { name: "Choose supplement" })).toHaveValue(product.id);
-        await expect(root.locator(".sl-protein-price")).toHaveText("$24.95");
+        await expect(root.locator(".sl-protein-price")).toHaveText(product.id === "omega-3" ? "$29.95" : "$24.95");
         await expect(purchaseFrame).toHaveAttribute("sandbox", snapshotSandbox);
         const finalNavigation = await assertHeader(purchase, width);
         await finalNavigation.getByRole("link", { name: "Shop Lean Nutrition", exact: true }).click();

@@ -9,8 +9,8 @@ test("whey filters navigate inside a sandboxed preview without replacing its par
   const host = page.frameLocator('iframe[title="Embedded website"]');
   const collection = host.frameLocator(".stellar-supplements-frame");
   for (const [label, heading, formula] of [
-    ["Whey isolate", "Stellar Labs Whey Isolate Protein Powder", "isolate"],
-    ["Whey blends", "Whey Protein Blends", "blend"],
+    ["Whey Protein Isolate", "Whey Protein Isolate", "isolate"],
+    ["Whey Protein Blend", "Whey Protein Blend", "blend"],
     ["All whey", "WHEY PROTEIN", null],
   ] as const) {
     await collection.getByRole("link", { name: label, exact: true }).click();

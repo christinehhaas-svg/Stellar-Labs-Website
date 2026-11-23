@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { createHash } from "node:crypto";
 import { inspectHomepage } from "./inspect-homepage";
-import { approvedCopy } from "./approved-copy";
+import { approvedCopy, approvedReviewNavigation } from "./approved-copy";
 
 const logoHash =
   "88c1504d444f479a7e28ac2e8bb4b66c010bffc2feac480cb3da3d6a83aaaebb";
@@ -205,9 +205,7 @@ for (const surface of surfaces) {
           const visibleHeader = state.headerLinks.filter(
             (link) => link.visible,
           );
-          expect(visibleHeader.map((link) => link.text)).toEqual(width < 768 ? [] : [
-            "Shop Lean Nutrition", ...approvedCopy.navigation,
-          ]);
+          expect(visibleHeader.map((link) => link.text)).toEqual(width < 768 ? [] : approvedReviewNavigation);
           expect(state.categoryLinks.map((link) => link.text)).toEqual([
             "Whey Proteins",
             "Vegan Protein",

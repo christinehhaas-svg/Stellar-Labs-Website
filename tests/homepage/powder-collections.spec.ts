@@ -1,7 +1,7 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
 import {
   collectionRepresentatives, detailHeading, filters, frontFilename, isolateClaims, lowFodmap, queryCases, reviewPath, suppliedLabels, wheyClaimLabels,
-  veganCollectionClaims, veganProductClaims,
+  veganCollectionClaims, veganProductClaims, expectedCardNutrition,
   type Family, type Filter, type Product,
 } from "./powder-fixtures";
 import { assertCompactCards, assertFodmapFootnote, assertLocalOnlyOrdering, collectionNotes } from "./collection-assertions";
@@ -76,8 +76,8 @@ async function assertLocation(page: Page, path: string) {
 async function assertCollection(page: Page, family: Family, filter: Filter) {
   const frame = collection(page);
   const title = family === "whey" ? "WHEY PROTEIN" : family === "vegan" ? "VEGAN PROTEIN" : "ELECTROLYTES";
-  const heading = family === "whey" && filter.query.includes("formula=isolate") ? "Stellar Labs Whey Isolate Protein Powder"
-    : family === "whey" && filter.query.includes("formula=blend") ? "Whey Protein Blends" : title;
+  const heading = family === "whey" && filter.query.includes("formula=isolate") ? "Whey Protein Isolate"
+    : family === "whey" && filter.query.includes("formula=blend") ? "Whey Protein Blend" : title;
   await expect(frame.getByRole("heading", { name: heading, exact: true })).toBeVisible();
   const nav = frame.getByRole("navigation", { name: `${title} filters` });
   if (family === "whey") {
@@ -114,7 +114,7 @@ async function assertCollection(page: Page, family: Family, filter: Filter) {
   // Exact membership/order and both link affordances prevent cross-formula/flavor cards.
   await assertCompactCards(page, filter.products);
   const claimsTitle = family === "whey" && filter.name !== "All whey"
-    ? filter.name === "Whey isolate" ? "Whey Protein Isolate" : "Whey Protein Blend"
+    ? filter.name === "Whey Protein Isolate" ? "Whey Protein Isolate" : "Whey Protein Blend"
     : title;
   const claims = frame.getByRole("region", { name: `${claimsTitle} quality callouts`, exact: true });
   const labels = claims.locator(".review-quality-claim > span");
@@ -123,21 +123,22 @@ async function assertCollection(page: Page, family: Family, filter: Filter) {
     // Scope to collection copy, not unrelated navigation/footer or original artwork.
     await assertNoForeignVeganClaims(frame.locator("#supplements-app-mount"));
   }
-  if (family === "whey" && filter.name === "Whey isolate") await expect(claims).toHaveCount(0);
-  else await assertFodmapFootnote(claims, collectionNotes[family]);
+  if (family === "whey" && filter.name === "Whey Protein Isolate") await expect(claims).toHaveCount(0);
+  else await assertFodmapFootnote(claims, collectionNotes[family],
+    family !== "whey" || filter.name !== "Whey Protein Blend");
   for (const claim of isolateClaims) {
     await expect(labels.filter({ hasText: claim })).toHaveCount(0);
   }
   if (family === "whey") {
     await expect(labels).toHaveText(filter.name === "All whey" ? wheyClaimLabels
-      : filter.name === "Whey blends" ? ["Easy-to-Digest Ingredients"] : []);
+      : filter.name === "Whey Protein Blend" ? ["Easy-to-Digest Ingredients"] : []);
     const values = frame.locator(".sl-whey-nutrition-value");
-    if (filter.name === "Whey isolate") {
+    if (filter.name === "Whey Protein Isolate") {
       await expect(values).toHaveText(["110", "26g", "1g", "0g"]);
       await expect(frame.locator(".sl-whey-nutrition-caption")).toHaveText(["As low as", "Up to", "As low as", "As low as"]);
       await expect(frame.locator(".sl-whey-nutrition dt")).toHaveText(["Calories", "Protein", "Carbs", "Sugar"]);
     }
-    else if (filter.name === "Whey blends") {
+    else if (filter.name === "Whey Protein Blend") {
       await expect(values).toHaveText(["24g"]);
       await expect(frame.locator(".sl-whey-nutrition-compact > p")).toHaveText("24g protein per serving");
     }
@@ -167,7 +168,7 @@ async function openProduct(page: Page, product: Product, imageLink: boolean) {
   const illustrative = product.component.endsWith("Isolate1lb");
   const sizes = frame.getByRole("group", { name: "Select a size", exact: true });
   if (product.formula === "isolate" && ["Vanilla", "Chocolate"].includes(product.flavor)) {
-    await expect(sizes.locator("[aria-current=page]")).toHaveText(product.title.endsWith("1lb") ? "1 lb" : "2 lb");
+    await expect(sizes.locator("[aria-current=page]")).toHaveText(product.size === "1lb" ? "1 lb" : "2 lb");
     await expect(sizes.getByRole("link")).toHaveText(["1 lb", "2 lb"]);
   } else await expect(sizes).toHaveCount(0);
   if (illustrative) {
@@ -207,10 +208,10 @@ async function openProduct(page: Page, product: Product, imageLink: boolean) {
     // selected and addressable. The collection still exposes both direct routes.
     await expect(frame.getByRole("group", { name: "Select a flavor", exact: true }).locator("a"))
       .toHaveText([product.flavor]);
-    await expect(frame.locator("#product-facts-label .sl-protein-quality li")).toHaveText([
-      "Serving size: 32 g", "28 servings per container",
-      "Protein: 20 g per serving",
-    ]);
+    await expect(frame.locator(".sl-detail-nutrition > p")).toHaveText("Per 32 g serving");
+    await expect(frame.locator(".sl-detail-nutrition dt")).toHaveText(["Calories", "Protein", "Carbs", "Sugar"]);
+    await expect(frame.locator(".sl-detail-nutrition dd")).toHaveText(expectedCardNutrition[product.component]);
+    await expect(frame.locator("#product-facts-label .sl-protein-quality li")).toHaveCount(0);
     const productClaims = frame.locator(".sl-protein-section").filter({
       has: frame.getByRole("heading", { name: "Product details", exact: true }),
     });

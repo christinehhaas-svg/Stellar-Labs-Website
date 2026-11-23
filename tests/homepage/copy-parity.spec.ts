@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { runInNewContext } from "node:vm";
-import { approvedCopy } from "./approved-copy";
+import { approvedCopy, approvedReviewNavigation } from "./approved-copy";
 import { inspectHomepage } from "./inspect-homepage";
 
 const read = (relative: string) =>
@@ -125,7 +125,7 @@ for (const surface of [
     expect(state.subtitle.text).toBe(approvedCopy.subtitle.join(" "));
     expect(state.cta.text).toBe(approvedCopy.cta);
     expect(state.headerLinks.filter((link) => link.visible).map((link) => link.text))
-      .toEqual(["Shop Lean Nutrition", ...approvedCopy.navigation]);
+      .toEqual(approvedReviewNavigation);
     expect(state.categoryLinks.map((link) => link.text?.toUpperCase()))
       .toEqual(approvedCopy.categories);
     const announcement = await page.evaluate(() => {

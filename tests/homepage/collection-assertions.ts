@@ -40,16 +40,16 @@ export async function assertCompactCards(page: Page, products: readonly Product[
     });
   })).toEqual(collectionRepresentatives(products).map(product => ({
     id: `card-product-${product.component}`,
-    name: product.formula === "isolate" ? "Stellar Labs Whey Isolate Protein Powder" : product.formula === "blend" ? "Stellar Labs Natural Whey Protein Blend"
-      : product.formula === "vegan" ? "Vegan Protein" : "Electrolyte Powder",
-    variant: product.formula === "isolate" || product.formula === "blend" ? product.flavor : `${product.flavor} · ${product.formula === "electrolyte" ? "4.76 oz (135 g)" : "2 lb"}`,
+    name: `${product.flavor} ${product.formula === "isolate" ? "Whey Protein Isolate" : product.formula === "blend" ? "Whey Protein Blend"
+      : product.formula === "vegan" ? "Vegan Protein" : "Electrolyte Powder"}`,
+    variant: product.formula === "vegan" ? "2 lb" : undefined,
     price: product.formula === "electrolyte" ? "$31.95" : product.formula === "isolate"
-      ? product.title.endsWith("1lb") ? "$52.95" : "$89.95" : product.formula === "blend" ? "$78.95" : "$64.95",
-    singleSize: hasSingleIsolateSize(product) ? (product.title.endsWith("1lb") ? "1 lb" : "2 lb") : null,
+      ? product.size === "1lb" ? "$52.95" : "$89.95" : product.formula === "blend" ? "$78.95" : "$64.95",
+    singleSize: hasSingleIsolateSize(product) ? (product.size === "1lb" ? "1 lb" : "2 lb") : null,
     sizes: (product.formula === "isolate" || product.formula === "blend") && !hasSingleIsolateSize(product)
       ? products.filter(option => option.formula === product.formula && option.flavor === product.flavor)
-        .sort((a, b) => Number(b.title.endsWith("1lb")) - Number(a.title.endsWith("1lb")))
-        .map(option => ({ label: option.title.endsWith("1lb") ? "1 lb" : "2 lb", selected: option.component === product.component ? "true" : "false" }))
+        .sort((a, b) => Number(b.size === "1lb") - Number(a.size === "1lb"))
+        .map(option => ({ label: option.size === "1lb" ? "1 lb" : "2 lb", selected: option.component === product.component ? "true" : "false" }))
       : [],
     links: [1, 2].map(() => ({ href: `/products/${product.handle}`, target: "_parent" })),
     images: [{
@@ -64,14 +64,15 @@ export async function assertCompactCards(page: Page, products: readonly Product[
   })));
 }
 
-export async function assertFodmapFootnote(claims: Locator, note: string, activate = false) {
+export async function assertFodmapFootnote(claims: Locator, note: string, expectGlutenFree = true) {
   // Keep this shared assertion's call sites while enforcing the new policy:
   // retired ingredient claims and their footnotes must not be rendered.
   await expect(claims).not.toContainText(/fodmap/i);
   const collection = claims.locator('xpath=ancestor::*[contains(concat(" ", normalize-space(@class), " "), " sl-collection ")][1]');
   await expect(collection.locator("#collection-fodmap-note")).toHaveCount(0);
   const gluten = claims.locator(".review-quality-claim").filter({ hasText: "Certified Gluten-Free" });
-  await expect(gluten.locator("span")).toHaveText("Certified Gluten-Free");
+  if (expectGlutenFree) await expect(gluten.locator("span")).toHaveText("Certified Gluten-Free");
+  else await expect(gluten).toHaveCount(0);
   await expect(gluten.locator("a")).toHaveCount(0);
 }
 

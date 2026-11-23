@@ -30,7 +30,7 @@ for (const width of [390, 1440]) {
         { message: `${route} must not show retired marketing copy` }).toBe(false);
       const text = await content();
       if (route === "/") {
-        expect(text).toContain("for those focused on fat loss and maintaining lean muscle");
+        expect(text).toContain("supporting lean muscle maintenance and everyday wellness");
         expect(text).toContain("Easy-to-Digest Ingredients");
       }
       if (route === "/pages/about-us") expect(text).toContain("CHRISTINE HAAS, MS, LDN, CNS");
@@ -43,7 +43,7 @@ for (const width of [390, 1440]) {
         expect(text).toContain("20g of plant protein per serving");
       }
       if (route.includes("vanilla-whey-protein-shake")) {
-        expect(text).toContain("Natural Whey Protein Blend");
+        expect(text).toContain("Vanilla Whey Protein Blend");
         expect(text).not.toMatch(/artificial (flavors|colors|sweeteners)/i);
       }
       if (route.startsWith("/products/") || route.startsWith("/supplement-details")) {
@@ -72,7 +72,7 @@ for (const width of [390, 1440]) {
       await expect.poll(async () => /fodmap|new products, same label|low sodium|less sodium/i.test(await content())).toBe(false);
       if (component === "Homepage") {
         await expect.poll(content).toContain("Easy-to-Digest Ingredients");
-        expect(await content()).toContain("for those focused on fat loss and maintaining lean muscle");
+        expect(await content()).toContain("supporting lean muscle maintenance and everyday wellness");
       }
       if (component === "ProteinVanillaBlend") {
         expect(await content()).not.toMatch(/artificial (flavors|colors|sweeteners)/i);
